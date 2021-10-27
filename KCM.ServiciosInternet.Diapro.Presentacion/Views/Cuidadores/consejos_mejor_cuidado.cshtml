@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Consejos para ayudarlo | Diapro Productos para Incontinencia";
+}
+
+@section metas{
+    <meta id="ctl00_MetaDesc" name="description" content="Diapro Cuidado Extra te brinda estos consejos para poder auxiliar a tu paciente durante su tratamiento." />
+    <meta id="ctl00_MetaKey" name="keywords" content="cuidador de paciente, paciente con incontinencia, cuidando incontinencia, cuidador de adulto mayor," />
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Cuidadores/consejos-para-un-mejor-cuidado")' />
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerConsejosParaCuidado.webp" title="Consejos para un mejor cuidado" alt="Consejos para un mejor cuidado" class="img-responsive d-none d-sm-none d-lg-block">
+             <img src="~/img/headerConsejosParaCuidadoMobile.webp" title="Consejos para un mejor cuidado" alt="Consejos para mejor cuidado" class="img-responsive d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+    <h1>Consejos para un mejor cuidado</h1>
+    <p>Ser un cuidador es una gran responsabilidad y un gran reto para cualquier familiar, pues necesita adquirir conocimientos médicos, familiarizarse con el padecimiento y las necesidades del paciente pero no es algo imposible.</p>
+    <p>Algunas circunstancias no son las ideales, será con ayuda de los familiares más cercanos y el paciente que lograrás realizar esta actividad de la mejor manera para el paciente.</p>
+    <p>Buscar ayuda será fácil, el personal médico te dará muchos consejos y recomendaciones de lugares en los que puedes encontrar los accesorios y la información necesaria para desempeñar tu actividad.</p>
+    <p>Para lograrlo, te recomendamos estos pasos que te pueden ayudar a lograrlo:</p>
+    <p>Reconocimiento: Hay muchas formas en las que puedes notar la incontinencia y el mismo paciente no lo nota. Mantente pendiente de la forma en la que se desenvuelve el paciente y sus actividades.</p>
+    <p>Platicar: Una de las formas de apoyo más importantes en la que el paciente puede sentir su apoyo, platicarlo con ellos y entre los familiares hará que esta condición sea normal y el paciente se sienta menos incómodo.</p>
+    <p>Cuidados: Ayudar a que el paciente se sienta amado y procurado es primordial, lo notará poco a poco con las atenciones que le des.</p>
+    <p>Pide ayuda: Aunque tú solo puedas llevar a cabo esta actividad, recuerda que necesitas tiempo para ti para seguir desempeñando esta labor. Pierde el miedo a pedir ayuda a los demás familiares y amigos para poder lograrlo.</p>
+    <p>Acércate a los recursos: Hay muchos recursos que ayudan a los cuidadores a desempeñar su labor, desde informativos sobre padecimientos, artículos, libros y videos para ayudar al paciente a tener una mejor calidad de vida.</p>
+    <p>¿Estás más seguro para hacer tu labor?</p>
+    <p class="text-info small">
+        <strong>Fuente:</strong> Instituto Nacional de Incontinencia, E.E.U.U.<br>
+        <strong>Link:</strong><a href="https://www.nafc.org/at-home-care/" target="_blank" rel="noopener">
+            http://bit.ly/2jh9ZQg
+        </a>
+    </p>
+    <br>
+</div>
+
+@Html.Partial("_panalAtomico")
+
+@Html.Partial("_sliderCuidadores")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-icons.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css/Admin")
+    @RenderSection("styles", required: false)
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">Kleenbebé</div>
+            <i class='bi bi-list' id="btn"></i>
+
+        </div>
+        <ul class="nav-list">
+
+            <li>
+                <a href="/Winners/Index">
+                    <i class="bi bi-joystick"></i>
+
+                    <span class="links_name">Consulta de juegos</span>
+                </a>
+                <span class="tooltip">Consulta de juegos</span>
+            </li>
+            <li>
+                <a href="/PivotDay/Index">
+                    <i class="bi bi-bar-chart-fill"></i>
+                    <span class="links_name">Cortes por semana</span>
+                </a>
+                <span class="tooltip">Cortes por semana</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bi bi-box'></i>
+                    <span class="links_name">Productos</span>
+                </a>
+                <span class="tooltip">Productos</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-clock-history"></i>
+                    <span class="links_name">Control de Promociones</span>
+                </a>
+                <span class="tooltip">Control de Promociones</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-grid-3x3"></i>
+                    <span class="links_name">Sopa de letras</span>
+                </a>
+                <span class="tooltip">Sopa de letras</span>
+            </li>
+            <li>
+                <a href="#">
+
+                    <i class="bi bi-search"></i>
+                    <span class="links_name">Busca objetos</span>
+                </a>
+                <span class="tooltip">Busca objetos</span>
+            </li>
+
+            <li class="profile">
+                <div class="profile-details">
+
+                    <div class="name_job">
+
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-right"></i>
+            </li>
+        </ul>
+    </div>
+
+    @RenderBody()
+    <script>
+
+        (function () {
+            let objSidebar = document.querySelector(".sidebar");
+            let objCloseBtn = document.querySelector("#btn");
+            let ObjsearchBtn = document.querySelector(".bx-search");
+
+            objCloseBtn.addEventListener("click", () => {
+                objSidebar.classList.toggle("open");
+                menuBtnChange();//calling the function(optional)
+            });
+            //ObjsearchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            //    objSidebar.classList.toggle("open");
+            //    menuBtnChange(); //calling the function(optional)
+            //});
+
+            // following are the code to change sidebar button(optional)
+            function menuBtnChange() {
+                if (objSidebar.classList.contains("open")) {
+                    objCloseBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+                } else {
+                    objCloseBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+                }
+            }
+        })();
+    </script>
+    <script src="~/js/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/Admin")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

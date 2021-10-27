@@ -1,0 +1,102 @@
+﻿
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+    <style>
+        body {
+            margin: auto 0px;
+            width: 100%;
+        }
+
+        #soupBoard {
+            margin: auto 0px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            touch-action: none;
+        }
+
+        .soupRow {
+            /* margin: auto 0px; */
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+        .soupCell {
+            margin: 2px;
+            padding: 1px;
+        }
+
+            .soupCell > span {
+                display: block;
+                border: 1px solid black;
+                width: 18px;
+                text-align: center;
+            }
+    </style>
+
+}
+
+<section id="juego"></section>
+<section id="clock" style="display: flex;justify-content: space-between;width: 100px;font-size: 28px;">
+    <div id="clockMinutes"><span></span></div>
+    <div class="clockSeparator"><span>&#58;</span></div>
+    <div id="clockSecond"><span></span></div>
+    <div class="clockSeparator"><span>&#58;</span></div>
+    <div id="clockMiliseconds"><span></span></div>
+</section>
+
+<section id="wordsToFind" style="display:flex;justify-content: space-between;flex-wrap: wrap;"></section>
+<section id="cancel"><input id="cancelButton" type="button" class="btn btn-primary my-1" value="Retirar"></section>
+
+<script src="~/js/games/JFM.AlphabetSoup.js"></script>
+<script src="~/js/games/JFM.Clock.js"></script>
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    <script>
+        function endOfGameEvent() {
+            clock.stopClock();
+        }
+
+        function afterFindWord(strWord) {
+            let objWord = document.getElementById("soupWord_" + strWord);
+            objWord.style.textDecoration = "line-through";
+        }
+
+        let objBoard = new Board(15, 15, ['KLEENBEBE', 'MAMELUCO', 'MANTITA', 'MAMA', 'BEBE', 'CUNA', 'CHUPON', 'PAÑALES', 'PELOTA', 'FAMILIA'], afterFindWord, endOfGameEvent);
+        let objPlayGame = document.getElementById('juego');
+        objPlayGame.appendChild(objBoard.printBoard());
+        objBoard.handleTouchEvent();
+        console.log('palabras a encontrar:');
+        console.log(objBoard.MissingWords);
+
+        objBoard.MissingWords.forEach((v, k) => {
+            let divW = document.createElement('DIV'),
+                spanW = document.createElement('SPAN'),
+                objWordsToFind = document.getElementById('wordsToFind');
+
+            divW.id = "soupWord_" + k;
+            divW.style = "margin:10px";
+            spanW.innerText = k;
+            divW.appendChild(spanW);
+            objWordsToFind.appendChild(divW);
+        });
+
+        let clock = new Clock({
+            limitMinutes: 5,
+            milisecondsSelector: '#clockMiliseconds',
+            secondsSelector: '#clockSecond',
+            minutesSelector: '#clockMinutes'
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', endOfGameEvent, false);
+        console.log(clock.Time);
+    </script>
+}

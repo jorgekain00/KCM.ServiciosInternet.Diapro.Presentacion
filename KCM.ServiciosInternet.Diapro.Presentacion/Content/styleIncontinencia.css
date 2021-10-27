@@ -1,0 +1,172 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0px;
+	padding:0px;
+	background-image: url(/img/bg-textura.webp);
+	background-repeat: repeat;
+}
+#carouselCardMovil .carousel-indicators [data-bs-target] {
+	width: 30px;
+	height: 20px;
+	border-radius: 100%;
+	background-color: #797979 !important;
+	margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  #carouselCardMovil .carousel-indicators .active {
+	width: 30px;
+	height: 20px;
+	border-radius: 100%;
+	background-color: #171d6f !important;
+  }
+
+  #carouselCardMovil .carousel-indicators {
+	bottom: -65px !important;
+  }
+  #carouselCardDesk .carousel-indicators [data-bs-target] {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-color: #797979 !important;
+	margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #carouselCardDesk .carousel-indicators .active {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-color: #171d6f !important;
+  }
+
+  #carouselCardDesk .carousel-indicators {
+	bottom: -65px !important;
+  }
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+.container{
+	width:100%;
+	height: 100vh;
+	background-color:white;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(/img/bg-textura.webp);
+	background-repeat: repeat;
+}
+.card {
+	height:460px;
+	background-color:white;
+	border-radius: 10px !important;
+	box-shadow: 2px 3px 7px rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	margin: 20px 10px;
+	
+}
+#carouselCardMovil{
+    display: none;
+  }
+  #carouselCardDesk{
+    display: block;
+	width: 1000px;
+  }
+  #carouselCardDesk .card{
+    width: 300px;
+  }
+#carouselCardMovil a .card {
+	text-decoration: none !important;
+	color: black !important;
+}
+#carouselCardMovil a {
+	text-decoration: none !important;
+	color: black !important;
+}
+
+#carouselCardDesk a .card {
+	text-decoration: none !important;
+	color: black !important;
+}
+#carouselCardDesk a {
+	text-decoration: none !important;
+	color: black !important;
+}
+#carouselCard a .card {
+	text-decoration: none !important;
+	color: black !important;
+}
+#carouselCard a {
+	text-decoration: none !important;
+	color: black;
+}
+
+
+.card-body {
+	margin-top: 20px;
+}
+
+.card-body .card-img-top{
+	border-radius: 10px !important;
+}
+
+.card-body .card-title{
+	text-align: center;
+	color: black !important;
+  }
+.card-body .p{
+	text-align: center;
+	font-size: 29px !important;
+  }
+/*--responsive for mobile phone--*/
+@media(max-width:480px){
+	.card-body {
+		margin-top: 1px;
+	}
+	#carouselCard .card{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  #carouselCardMovil .carousel-indicators [data-bs-target] {
+		width: 20px !important;
+		height: 20px !important;
+		border-radius: 100%;
+		background-color: #797979 !important;
+		margin-left: 12px;
+		margin-right: 12px;
+	  }
+	
+	  #carouselCardMovil .carousel-indicators .active {
+		width: 20px !important;
+		height: 20px !important;
+		border-radius: 100%;
+		background-color: #171d6f !important;
+	  }
+	
+	#carouselCardMovil{
+		display: block;
+	  }
+	  #carouselCardDesk{
+		display: none;
+	  }
+}
+/*--responsive for mobile phone--*/
+
+@media (min-width: 361px) and (max-width: 380px) {
+	
+	
+}
+/*--responsive for mobile phone--*/
+@media(max-width:350px){
+
+	
+}

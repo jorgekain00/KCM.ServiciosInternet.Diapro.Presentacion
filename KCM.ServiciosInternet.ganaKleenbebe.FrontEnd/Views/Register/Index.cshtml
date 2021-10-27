@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Forma de registro";
+}
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+}
+
+
+<main class="kbb_game">
+    <div id="registro">
+
+    </div>
+</main>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    <script>
+        window.addEventListener('SSO.Complete', function (event) {
+            objSSOBussiness.logIn('registro')
+
+            let objContainer = document.getElementById('registro');
+            if (!!objContainer) {
+                objContainer.addEventListener('SSO.LOGIN.AfterSubmit', function (event) {
+                    if (event.detail.Data.isSuccessful) {
+                        location.href = '/Ticket/index';
+                    }
+                    else {
+                        DisplayError.show('Error', objData.strErrorMessage);
+                    }
+                }, false);
+            }
+        }, false);
+    </script>
+
+}

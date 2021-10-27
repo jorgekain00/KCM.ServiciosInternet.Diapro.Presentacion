@@ -1,0 +1,266 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Cuidadores</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/SliderCuidadores")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="carouselCardMovil" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+
+                <!--First slide-->
+                <div class="carousel-item active" role="option" data-bs-interval="4000">
+                    <div class="col-md-3">
+                        <a href="/Cuidadores/cuidado-de-pacientes-en-silla-de-ruedas" target="_parent">
+                            <div class="card mb-2">
+                                <img class="card-img-top img-rounded" src="~/img/rotatorCudadoPacientesSilla.webp"
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Cuidado de pacientes en silla de ruedas</h4>
+
+                                    <p>Conoce las necesidades específicas para las personas en silla de ruedas.</p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item" role="option" data-bs-interval="4000">
+                    <div class="col-md-3 ">
+                        <a href="/Cuidadores/cuidado-de-pacientes-en-cama" target="_parent">
+                            <div class="card mb-2">
+                                <img src="~/img/rotatorCuidadoPacCama.webp" alt="Cuidado de pacientes en cama"
+                                     class="card-img-top img-rounded">
+                                <div class="card-body">
+                                    <h4 class="card-title">Cuidado de pacientes en cama</h4>
+                                    <p>
+                                        Conoce algunos problemas que puede presentar un paciente en cama y cómo podemos
+                                        resolverlos.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item" role="option" data-bs-interval="4000">
+                    <div class="col-md-3  ">
+                        <a href="/Cuidadores/herramientas-para-cuidadores" target="_parent">
+                            <div class="card mb-2">
+                                <img src="~/img/rotatorHerramientasCuidadores.webp" alt="Herramientas para Cuidadores"
+                                     class="card-img-top img-rounded">
+                                <div class="card-body">
+                                    <h4 class="card-title">Herramientas para cuidadores</h4>
+                                    <p>
+                                        Cuidar de un paciente es una tarea muy importante, es necesario aprender a
+                                        conocerlo.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item" role="option" data-bs-interval="4000">
+                    <div class="col-md-3  ">
+                        <a href="/Cuidadores/higiene-en-pacientes" target="_parent">
+                            <div class="card mb-2">
+                                <img class="card-img-top img-rounded" src="~/img/rotatorHigienePacientes.webp"
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Higiene en pacientes</h4>
+                                    <p>
+                                        El aseo general de un paciente en cama es de vital importancia. Ayudamos
+                                        a asearse.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item" role="option" data-bs-interval="4000">
+                    <div class="col-md-3  ">
+                        <a href="/Cuidadores/consejos-para-un-mejor-cuidado" target="_parent">
+                            <div class="card mb-2">
+                                <img class="card-img-top img-rounded" src="~/img/rotatorConsejosParaCuidado.webp"
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Consejos para un mejor cuidado</h4>
+                                    <p>
+                                        Ser un cuidador es una gran responsabilidad y un gran reto para cualquier
+                                        familiar.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCardMovil"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCardMovil"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!--Carousel desktop-->
+    <div class="container-fluid d-flex justify-content-center">
+        <div id="carouselCardDesk" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCardDesk" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCardDesk" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+
+            </div>
+            <div class="carousel-inner">
+
+                <!--First slide-->
+                <div class="carousel-item active" role="option" data-bs-interval="4000">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/Cuidadores/cuidado-de-pacientes-en-silla-de-ruedas" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorCudadoPacientesSilla.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Cuidado de pacientes en silla de ruedas</h4>
+
+                                        <p>Conoce las necesidades específicas para las personas en silla de ruedas.</p>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a href="/Cuidadores/cuidado-de-pacientes-en-cama" target="_parent">
+                                <div class="card mb-2">
+                                    <img src="~/img/rotatorCuidadoPacCama.webp" alt="Cuidado de pacientes en cama"
+                                         class="card-img-top img-rounded">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Cuidado de pacientes en cama</h4>
+                                        <p>
+                                            Conoce algunos problemas que puede presentar un paciente en cama y cómo
+                                            podemos resolverlos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4  ">
+                            <a href="/Cuidadores/herramientas-para-cuidadores" target="_parent">
+                                <div class="card mb-2">
+                                    <img src="~/img/rotatorHerramientasCuidadores.webp" alt="Herramientas para Cuidadores"
+                                         class="card-img-top img-rounded">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Herramientas para cuidadores</h4>
+                                        <p>
+                                            Cuidar de un paciente es una tarea muy importante, es necesario aprender a
+                                            conocerlo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" role="option" data-bs-interval="4000">
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/Cuidadores/higiene-en-pacientes" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorHigienePacientes.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Higiene en pacientes</h4>
+
+                                        <p>
+                                            El aseo general de un paciente en cama es de vital importancia. Ayudamos
+                                            a asearse.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a href="/Cuidadores/consejos-para-un-mejor-cuidado" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorConsejosParaCuidado.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Consejos para un mejor cuidado</h4>
+                                        <p>
+                                            Ser un cuidador es una gran responsabilidad y un gran reto para cualquier
+                                            familiar.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4  ">
+                            <a href="/Cuidadores/cuidado-de-pacientes-en-silla-de-ruedas" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorCudadoPacientesSilla.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Cuidado de pacientes en silla de ruedas</h4>
+
+                                        <p>Conoce las necesidades específicas para las personas en silla de ruedas.</p>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCardDesk" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCardDesk" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/scripts")
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

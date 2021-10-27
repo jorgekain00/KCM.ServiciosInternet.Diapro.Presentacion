@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diapro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/Home")
+
+</head>
+
+<body>
+    <div id="objetoslider" class="contain">
+        <ul class="slider">
+            <li id="slide1">
+                <video controls id="mivideo" poster="~/img/poster-Diapro.webp" muted>
+                    <source src="~/img/Elviajelargo.mp4" type="video/mp4">
+                </video>
+            </li>
+
+
+        </ul>
+        <ul class="menu" style="display: none;">
+            <li>
+                <a href="#slide1"></a>
+            </li>
+            <li>
+                <a href="#slide2"></a>
+            </li>
+
+        </ul>
+
+    </div>
+    @Scripts.Render("~/bundles/scripts")
+
+
+
+    <script>
+
+        function play(objVideo) {
+            objVideo.play()
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+
+        $(() => {
+            let objVideo = $('#mivideo').get(0);
+            objVideo.addEventListener('ended', function () {
+                v = objVideo.currentSrc;
+                objVideo.src = '';
+                objVideo.src = v;
+                objVideo.muted = false;
+            });
+			play(objVideo);
+        });
+
+    </script>
+
+</body>
+
+</html>

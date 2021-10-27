@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "registra Ticket";
+}
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+
+
+<main class="kbb_game">
+
+    <div class="col-12 game">
+        <div class="gameinner">
+            <div id="gameinfo">
+                <div class="gameselect">
+
+                    <div class="gameText">
+                        <img src="/images/logo_feria.png" alt="">
+                        <h1>¡Juega por 1 año de productos para tu bebé!</h1>
+                    </div>
+                </div>
+            </div>
+
+            <form class="homeform">
+                <div class="gamecontent2">
+
+                    <div class="gameProduct-info">
+                        <label for="price" class="home-label">Ingresa el monto de tu compra:</label>
+                        <button type="button" class="btndude" data-bs-toggle="modal" data-bs-target="#MontoModal">
+                            ?
+                        </button>
+                        <div class="modal fade" id="MontoModal" tabindex="-1" aria-labelledby="MontoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        monto
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btnmodal" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="number" name="productPrice" id="productPrice"
+                                   class="ticket-info" aria-describedby="ayuda-productPrice" aria-label="Amount (to the nearest dollar)" placeholder="Ingrese su noimbre" required>
+                        </div>
+                    </div>
+
+                    <div class="gameProduct-info">
+                        <label for="clave" class="home-label">Ingresa la clave del producto:</label>
+                        <button type="button" class="btndude" data-bs-toggle="modal" data-bs-target="#ClaveModal">
+                            ?
+                        </button>
+                        <div class="modal fade" id="ClaveModal" tabindex="-1" aria-labelledby="ClaveModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        clave
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btnmodal" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" name="productClave" id="productClave"
+                                   class="ticket-info" aria-describedby="ayuda-productClave" placeholder="Ingresa la clave del producto" required>
+                            <div id="claveHelp" class="form-text">*Si compraste productos de Etapas Chicas, ¡tienes más oportunidades de ganar!</div>
+                        </div>
+                    </div>
+
+                    <div class="gameProduct-info">
+                        <label for="ticket" class="home-label">Ingresa el número de ticket</label>
+                        <button type="button" class="btndude" data-bs-toggle="modal" data-bs-target="#TicketModal">
+                            ?
+                        </button>
+                        <div class="modal fade" id="TicketModal" tabindex="-1" aria-labelledby="TicketModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        ticket
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btnmodal" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" name="productTicket" id="productTicket"
+                                   class="ticket-info" aria-describedby="ayuda-productTicket" placeholder="Ingresa número de ticket" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="formFile" class="home-label mb-3">Sube la foto de tu ticket</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="gigyaJFMform-wrapper">
+                        <div id='gigyaJFMsignUprecaptcha'></div>
+                    </div>
+
+
+                    <button class="playbtn">
+                        ¡List@@ para jugar!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+
+}

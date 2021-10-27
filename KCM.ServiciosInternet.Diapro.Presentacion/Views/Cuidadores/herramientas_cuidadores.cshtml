@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Herramientas para ayudarlo | Diapro Productos para Incontinencia";
+}
+
+@section metas{
+   <meta id="ctl00_MetaDesc" name="description" content="Conoce las herramientas que pueden facilitar el cuidado extra de tu paciente." />
+   <meta id="ctl00_MetaKey" name="keywords" content="cuidador de paciente, paciente con incontinencia, cuidando incontinencia, cuidador de adulto mayor," />
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Cuidadores/herramientas-para-cuidadores")' />
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerHerramientasParaCuidadores.webp" title="Herramientas para cuidadores" alt="Herramientas para cuidadores" class="img-responsive d-none d-sm-none d-lg-block">
+              <img src="~/img/headerHerramientasParaCuidadoresMobile.webp" title="Herramientas para cuidadores" alt="Herramientas para cuidadores de pacientes con incontinencia" class="img-responsive d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+    <h1>Herramientas para cuidadores</h1>
+    <p>Cuidar de un paciente es una tarea muy importante, es necesario aprender a conocerlo para auxiliarle en todas su necesidades.</p>
+
+    <p>Es importante conocer el rol del cuidador para evitar cometer errores que afecten su salud.</p>
+
+    <p>Algunos conocimientos de enfermería pueden ser necesarios, asesórate  con su  médico de cabecera para adquirirlos y poder brindarle la atención adecuada a su padecimiento.</p>
+
+    <p>Pide ayuda a sus familiares y personas cercanas para cuidarlo de mejor manera.</p>
+
+    <p>Cuida de ti como lo haces de él para poder darle la mejor atención.</p>
+
+    <p>Intenta comprender el proceso psicológico y de salud por el que está pasando para mejorar la forma en la que lo cuidas y le ayudas.</p>
+
+    <p>Pregunta todas tus dudas, acerca del padecimiento, lo que le gusta y lo que no para ayudarlo de mejor manera.</p>
+    <br>
+    <p class="text-info small">
+        <strong>Fuente:</strong> Instituto Nacional de Incontinencia, E.E.U.U.<br>
+        <strong>Link:</strong><a href="https://www.nafc.org/caring-for" target="_blank" rel="noopener">
+            http://bit.ly/2jBNWas
+        </a>
+    </p>
+
+</div>
+
+@Html.Partial("_panalAtomico")
+
+@Html.Partial("_sliderCuidadores")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

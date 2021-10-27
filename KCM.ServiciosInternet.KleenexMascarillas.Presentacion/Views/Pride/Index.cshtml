@@ -1,0 +1,336 @@
+﻿@using KCM.ServiciosInternet.Site.Entity.Formularios
+@using KCM.ServiciosInternet.Site.Entity.Config
+@model ContactCasaFridaModel
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="~/css/all.css">
+    <link type="text/css" rel="stylesheet" href="~/css/estilos.css">
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NVS2XTM');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <title>Kleenex® Mascarillas / Pride</title>
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVS2XTM"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <a class="logopride" href="/home/index">
+                    <img src="~/images/logo_pride.webp" alt="">
+                </a>
+            </div>
+            <div class="col rojon"></div>
+            <div class="col naranjan"></div>
+            <div class="col amarillon"></div>
+            <div class="col verden"></div>
+            <div class="col azuln"></div>
+            <div class="col moradon"></div>
+        </div>
+
+        <section id="heropride" class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <img src="~/images/hero_pride.webp" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid" id="cfrida">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4 order-md-1 order-2 imgfrid">
+                    <img src="~/images/par_pride.webp" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-8 order-md-2 order-1 textfrida">
+                    <img src="~/images/casa_frida.webp" alt="">
+                    <p>
+                        Casa Frida es un Refugio ubicado en la Ciudad de México que brinda rescate, alojamiento, cuidado y atención a la salud integral de personas LGBTI+ que huyen de extremas violencias, perseguidas y desplazadas, personas que migran y jóvenes que son expulsados de sus hogares a razón de su orientación sexual, identidad y/o expresión
+                        de género, incluyendo personas con VIH
+                        y otras poblaciones clave.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid" id="maskpride">
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <p>
+                        En Kleenex® Mascarillas celebramos
+                        la diversidad y creemos que todas
+                        las formas de amor son merecedoras
+                        de reconocimiento y respeto.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 friends">
+                    <img src="~/images/friend_pride.webp" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-6 text-center infofriend">
+                    <p>
+                        Por ello, te invitamos a registrar
+                        tu Asociación, Organización,
+                        Iniciativa o Colectivo en pro de
+                        los derechos de la
+                    </p>
+                    <img src="~/images/comunidad.webp" alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="registropride">
+            <div class="row">
+
+                <div class="col-12 formpride">
+                    <p>
+                        Nos pondremos en contacto para ver de qué manera
+                        podemos contribuir y sumar a su esfuerzo.
+                    </p>
+
+
+                    @using (Ajax.BeginForm("validaContacto", "Pride", null, new AjaxOptions
+                    {
+                        HttpMethod = "Post",
+                        OnFailure = "msgAlertError",
+                        OnSuccess = "envioCompletado"
+
+
+                    }, new { autocomplete = "off", @class = "row" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="col-sm-12 imgform">
+                            <img src="~/images/registro_pride.webp" alt="">
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.Organization, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*Nombre de la ORG I ONG I OSC", id = "inputnamepride" } })
+                            @Html.ValidationMessageFor(model => model.Organization, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.Acronym, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*Acrónimo", id = "acronimo" } })
+                            @Html.ValidationMessageFor(model => model.Acronym, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.LegalRepresentative, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*Representante Legal", id = "legalpride" } })
+                            @Html.ValidationMessageFor(model => model.LegalRepresentative, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.RFC, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*RFC de la Organización", id = "rfcpride" } })
+                            @Html.ValidationMessageFor(model => model.RFC, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.ONGRegister, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*Registro de ONG I OSC", id = "regispride" } })
+                            @Html.ValidationMessageFor(model => model.ONGRegister, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*Correo Electrónico", id = "emailpride" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.EditorFor(model => model.CellPhone, new { htmlAttributes = new { @class = "form-control", aria_describedby = "nameHelp", placeholder = "*Teléfono Celular", id = "phonepride" } })
+                            @Html.ValidationMessageFor(model => model.CellPhone, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="col-sm-12 mt-2">
+                            @Html.LabelFor(model => model.ProjectDescription)
+                            @Html.TextAreaFor(model => model.ProjectDescription, new { @class = "form-control", aria_describedby = "nameHelp", id = "textarea1pride", rows = "6" })
+                            @Html.ValidationMessageFor(model => model.ProjectDescription, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="form-check mt-3">
+                            @Html.CheckBoxFor(model => model.Terms, new { @class = "form-check-label", rows = "1", id = "checkpride" })
+                            @Html.LabelFor(model => model.Terms)
+                            @Html.ValidationMessageFor(model => model.Terms, "", new { style = "color:red" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.HiddenFor(model => model.recaptchaResponse)
+                        </div>
+
+                        <div class="form-group">
+                            <div id="contactEmailRecaptcha"></div>
+                        </div>
+
+                        <div class="col-12 mt-3 formbtn">
+                            <button type="submit" class="btnpride" id="btnoption">Enviar</button>
+                        </div>
+
+                    }
+
+                </div>
+
+                <div class="col-12 text-center contactpride">
+                    <img src="~/images/visit.webp" alt="">
+                    <p>www.refugiocasafrida.com <br>para más información</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="container-fluid">
+            <div class="row" id="colors">
+                <div class="col-1 rojo"></div>
+                <div class="col-1 naranja"></div>
+                <div class="col-1 amarillo"></div>
+                <div class="col-1 verde"></div>
+                <div class="col-1 azul"></div>
+                <div class="col-1 morado"></div>
+                <div class="col-1 rojo"></div>
+                <div class="col-1 naranja"></div>
+                <div class="col-1 amarillo"></div>
+                <div class="col-1 verde"></div>
+                <div class="col-1 azul"></div>
+                <div class="col-1 morado"></div>
+            </div>
+        </footer>
+
+        <div class="modal fade" tabindex="-1" id="exampleModalLong">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="display: flex;align-items: flex-end;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script type='text/javascript' src="~/js/jquery-3.6.0.min.js"></script>
+        <script defer type='text/javascript' src="~/js/bootstrap.min.js"></script>
+        <script defer type='text/javascript' src="~/js/fontawesome.min.js"></script>
+
+        <script defer type='text/javascript' src="~/js/jquery.unobtrusive-ajax.min.js"></script>
+        <script defer type='text/javascript' src="~/js/jquery.validate.min.js"></script>
+        <script defer type='text/javascript' src="~/js/jquery.validate.unobtrusive.min.js"></script>
+        <script defer type='text/javascript' src="~/js/xss.min.js"></script>
+
+        <script>
+            let objgrecaptchaContacto = null;   // objeto para generar el recaptcha dinámicamente mediante script
+
+            /**
+            * @@description genera el recaptcha y se ejecuta en automático en el momento de cargar dinámicamente
+            *               la librería de Google https://www.google.com/recaptcha/api.js?onload=onloadGenerateRecaptcha&render=explicit
+            * @@summary genera el recaptcha y almacena el objeto en objgrecaptchaContacto
+            */
+            function onloadGenerateRecaptcha() {
+                objgrecaptchaContacto = grecaptcha.render('contactEmailRecaptcha', {
+                    'sitekey': '@Global.strRecaptchaSiteKey'
+                });
+            }
+
+            /**
+            * @@description Si la petición ajax no se produce muestra el error
+            * @@ param {Object} obj respuesta del servidor
+            */
+            function msgAlertError(obj) {
+                showMessageModal(obj.responseText);
+            }
+            /**
+            * @@description muestra el mensaje de alert en el envío de información de contacto
+            * @@param  {String} msg mensaje a mostrar en el alert
+            */
+            function showMessageModal(msg) {
+                $("#exampleModalLong h5#exampleModalLongTitle").html("Envio de información de contacto");
+                $("#exampleModalLong div.modal-body").html(msg);
+                $("#exampleModalLong").modal("show");
+            }
+
+            /**
+            * @@description Asigna la validación del recaptcha en el evento de submit
+            */
+            function asignaSubmitEvent() {
+                let objFormularioContacto = $(".formpride form");
+
+                objFormularioContacto.submit(function (evt) {
+                    if (objFormularioContacto.valid()) {
+                        if ($(".formpride form #checkpride").get(0).checked) {
+
+                            let objRecaptchaResponse = grecaptcha.getResponse(objgrecaptchaContacto);
+                            if (objRecaptchaResponse.length > 0) {
+                                $("#btnoption").get(0).disabled = true;
+                                $("#recaptchaResponse").val(objRecaptchaResponse);
+                                $(objFormularioContacto).find("input:not([type='hidden'], [type='checkbox']), textarea:not(.g-recaptcha-response)").each(function () {
+                                    let strValor = $(this).val();
+                                    strValor = filterXSS(strValor);
+                                    $(this).val(strValor);
+                                });
+                            }
+                            else {
+                                showMessageModal("<span style='font-size:26px;margin-right:10px'>&#x26A0;</span>  Por favor presione el recaptcha antes de continuar");
+                                return false;
+                            }
+                        }
+                        else {
+                            showMessageModal("<span style='font-size:26px;margin-right:10px'>&#x26A0;</span>  Por favor acepte terminos y condiciones");
+                            return false;
+                        }
+                    }
+                });
+            }
+
+            function envioCompletado() {
+                $("#btnoption").get(0).disabled = false;
+                showMessageModal("<span style='font-size: 19px;color: white;margin-right: 10px;border-radius: 50%;width: 30px;text-align: center;background: green;height: 30px;'>&#10003;</span>  Mensaje enviado exitosamente");
+                $(".formpride form").trigger('reset');
+
+                grecaptcha.reset(objgrecaptchaContacto);
+            }
+
+                $(function () {
+                    asignaSubmitEvent()
+                });
+        </script>
+
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadGenerateRecaptcha&render=explicit"></script>
+</body>
+</html>

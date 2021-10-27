@@ -1,0 +1,578 @@
+﻿<style>
+
+.boardfind{
+      width: 740px;
+      height: auto;
+     margin-left: auto;
+     margin-right: auto;
+    }
+    
+    .findgames{
+    width: 720px;
+    height: 720px;
+    margin-top: 20px;
+    }
+    
+    .findboard {
+        width: 720px;
+    height: 720px;
+        position: relative;
+    }
+
+    #rugImage {
+        width: 100%;
+        height: auto;
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+    }
+
+    #imagesboard img {
+        width: 98%;
+        height: auto;
+    }
+
+    #encuentra_01 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 73%;
+        left: 3%;
+    }
+
+    #encuentra_02 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 63.2%;
+        left: 25%;
+    }
+
+    #encuentra_03 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 71%;
+        left: 55.6%;
+    }
+
+    #encuentra_04 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 54.2%;
+        left: 60%;
+    }
+
+    #encuentra_05 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 53.5%;
+        left: 40.4%;
+    }
+
+    #encuentra_06 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 86%;
+        left: 8.5%;
+    }
+
+    #encuentra_07 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 12.8%;
+        left: 30%;
+    }
+
+    #encuentra_08 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 43%;
+        left: 54.4%;
+    }
+
+    #encuentra_09 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 28.5%;
+        left: 29%;
+    }
+
+    #encuentra_10 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 25%;
+        left: 4%;
+    }
+
+    #encuentra_11 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 61.8%;
+        left: 69.4%;
+    }
+
+    #encuentra_12 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 42.5%;
+        left: 74.6%;
+    }
+
+    #encuentra_13 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 59%;
+        left: 89%;
+    }
+
+    #encuentra_14 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 74%;
+        left: 89%;
+    }
+
+    #encuentra_15 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 84%;
+        left: 45%;
+    }
+
+    #encuentra_16 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 54%;
+        left: 76%;
+    }
+
+    #encuentra_17 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 60.8%;
+        left: 47%;
+    }
+
+    #encuentra_18 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 47.6%;
+        left: 84%;
+    }
+
+    #encuentra_19 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 77.8%;
+        left: 68%;
+    }
+
+    #encuentra_20 {
+        width: 10%;
+        height: 10%;
+        ;
+        position: absolute;
+        top: 52.2%;
+        left: 68.4%;
+    }
+
+    #encuentra_21 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 62.4%;
+        left: 16.3%;
+    }
+
+    #encuentra_22 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 73%;
+        left: 45%;
+    }
+
+    #encuentra_23 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+    }
+
+    #encuentra_24 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 75.4%;
+        left: 15%;
+    }
+
+    #encuentra_25 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 17.2%;
+        left: 5%;
+    }
+
+    #encuentra_26 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 37%;
+        left: 18%;
+    }
+
+    #encuentra_27 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 66%;
+        left: 35%;
+    }
+
+    #encuentra_28 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 38%;
+        left: 29%;
+    }
+
+    #encuentra_29 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 67.8%;
+        left: 81%;
+    }
+
+    #encuentra_30 {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 86%;
+        left: 82%;
+    }
+
+    .FoundElement {
+        position: relative;
+    }
+
+        .FoundElement:after {
+            content: "";
+            display: block;
+            width: 45%;
+            height: 45%;
+            position: absolute;
+            top: -12px;
+            right: 1px;
+            background-image: url(/images/check-circle-fill.svg);
+            background-repeat: no-repeat;
+        }
+    .FoundWordsToFind {
+        border: 2px solid black;
+    }
+
+    .pistasgame2 {
+        display: block;
+        background-color: #fff;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        border-top: 5px solid #f8b115;
+        border-bottom: 5px solid #f8b115;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #wordsToFind ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-right: 2px;
+        text-align: left;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .ThingsTofindElement span{
+        font-size: 16px;
+        font-weight: 700;
+        color: #0b2a81;
+        background-color: rgb(235, 255, 252);
+        border: 1px solid #f8ca66;
+        padding: 4px;
+        border-radius: 10px;
+        margin-right: 4px;
+        margin-top: 7px;
+    }
+
+        .ThingsTofindElement::marker {
+            display: none;
+        }
+
+    @media (max-width: 767.98px) {
+
+        .boardfind {
+            width: 100%;
+        }
+
+        .findgames {
+            width: 98%;
+            height: 20em;
+            margin-top: 20px;
+        }
+
+        .findboard {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        #imagesboard img {
+            width: 120%;
+            height: auto;
+        }
+
+        .pistasgame2 {
+            margin-top: 12%;
+        }
+
+        .ThingsTofindElement span{
+        font-size: 14px;
+        margin-right: 4px;
+        margin-top: 4px;
+    }
+
+        #encuentra_01 {
+            width: 11%;
+            height: 11%;
+            top: 72.8%;
+            left: 3%;
+        }
+
+        #encuentra_02 {
+            width: 11%;
+            height: 11%;
+            top: 63.2%;
+            left: 26%;
+        }
+
+        #encuentra_03 {
+            width: 11%;
+            height: 11%;
+            top: 71%;
+            left: 54%;
+        }
+
+        #encuentra_04 {
+            width: 11%;
+            height: 11%;
+            top: 56.2%;
+            left: 60%;
+        }
+
+        #encuentra_05 {
+            width: 11%;
+            height: 11%;
+            top: 55%;
+            left: 40.4%;
+        }
+
+        #encuentra_06 {
+            width: 11%;
+            height: 11%;
+            top: 86%;
+            left: 8.5%;
+        }
+
+        #encuentra_07 {
+            width: 11%;
+            height: 11%;
+            top: 11.8%;
+            left: 30%;
+        }
+
+        #encuentra_08 {
+            width: 11%;
+            height: 11%;
+            top: 43.9%;
+            left: 52.4%;
+        }
+
+        #encuentra_09 {
+            width: 11%;
+            height: 11%;
+            top: 29.5%;
+            left: 29%;
+        }
+
+        #encuentra_10 {
+            width: 11%;
+            height: 11%;
+            top: 25.6%;
+            left: 4.6%;
+        }
+
+        #encuentra_11 {
+            width: 11%;
+            height: 11%;
+            top: 62.8%;
+            left: 67.4%;
+        }
+
+        #encuentra_12 {
+            width: 11%;
+            height: 11%;
+            top: 43.4%;
+            left: 73%;
+        }
+
+        #encuentra_13 {
+            width: 11%;
+            height: 11%;
+            top: 61%;
+            left: 86%;
+        }
+
+        #encuentra_14 {
+            width: 11%;
+            height: 11%;
+            top: 74%;
+            left: 86%;
+        }
+
+        #encuentra_15 {
+            width: 11%;
+            height: 11%;
+            top: 84%;
+            left: 45%;
+        }
+
+        #encuentra_16 {
+            width: 11%;
+            height: 11%;
+            top: 55.8%;
+            left: 76%;
+        }
+
+        #encuentra_17 {
+            width: 11%;
+            height: 11%;
+            top: 60.8%;
+            left: 45.5%;
+        }
+
+        #encuentra_18 {
+            width: 11%;
+            height: 11%;
+            top: 49.4%;
+            left: 82%;
+        }
+
+        #encuentra_19 {
+            width: 11%;
+            height: 11%;
+            top: 77.8%;
+            left: 68%;
+        }
+
+        #encuentra_20 {
+            width: 11%;
+            height: 11%;
+            top: 52.2%;
+            left: 68.4%;
+        }
+
+        #encuentra_21 {
+            width: 11%;
+            height: 11%;
+            top: 62.4%;
+            left: 16.3%;
+        }
+
+        #encuentra_22 {
+            width: 11%;
+            height: 11%;
+            top: 73%;
+            left: 45%;
+        }
+
+        #encuentra_23 {
+            width: 11%;
+            height: 11%;
+            top: 52%;
+            left: 30%;
+        }
+
+        #encuentra_24 {
+            width: 11%;
+            height: 11%;
+            top: 75.4%;
+            left: 15%;
+        }
+
+        #encuentra_25 {
+            width: 11%;
+            height: 11%;
+            top: 17.6%;
+            left: 6%;
+        }
+
+        #encuentra_26 {
+            width: 11%;
+            height: 11%;
+            top: 38%;
+            left: 18%;
+        }
+
+        #encuentra_27 {
+            width: 11%;
+            height: 11%;
+            top: 66%;
+            left: 35.5%;
+        }
+
+        #encuentra_28 {
+            width: 11%;
+            height: 11%;
+            top: 38%;
+            left: 29%;
+        }
+
+        #encuentra_29 {
+            width: 11%;
+            height: 11%;
+            top: 67.8%;
+            left: 81%;
+        }
+
+        #encuentra_30 {
+            width: 11%;
+            height: 11%;
+            top: 86%;
+            left: 82%;
+        }
+    }
+</style>

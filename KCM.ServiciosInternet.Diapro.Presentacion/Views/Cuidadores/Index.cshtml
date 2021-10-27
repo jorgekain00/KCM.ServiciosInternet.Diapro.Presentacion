@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Diapro Información relevante acerca de los cuidadores de pacientes con incontinencia";
+}
+
+
+@section metas{
+   <meta id="ctl00_MetaDesc" name="description" content="Información relevante acerca de los cuidadores de personas con incontinencia urinaria." />
+<meta id="ctl00_MetaKey" name="keywords" content="Diapro, Productos incontinencia, incontinencia urinaria, pipi, pañales para adulto, pañales predoblados, calzón para incontinecia, toallitas húmedas, Incontinencia, incontinencia en adultos, escapes de orina, se me sale la pipi"/>
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Cuidadores/Index")' />
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+     <img src="~/img/headerHigienePacientes.webp" class="img-responsive d-none d-sm-none d-lg-block headerNotas" title="Información acerca de los cuidadores de pacientes con incontinencia" alt="Información acerca de los cuidadores de pacientes con incontinencia">
+     <img src="~/img/headerHigienePacientesMobile.webp" class="img-responsive  d-lg-none d-md-none headerNotas" title="Información acerca de los cuidadores de pacientes con incontinencia" alt="Información sobre cuidadores de pacientes con incontinencia urinaria">
+
+<br /><br />
+<div class="container incontinencia">
+    <h1>Artículos sobre Cuidadores</h1>
+     <p class="introText">Información relevante acerca de los cuidadores.</p>
+</div>
+
+
+
+@Html.Partial("_sliderCuidadores")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

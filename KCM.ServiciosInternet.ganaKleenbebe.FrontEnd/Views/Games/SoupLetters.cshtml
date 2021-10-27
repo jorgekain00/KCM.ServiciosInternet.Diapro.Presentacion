@@ -1,0 +1,84 @@
+﻿@model KCM.ServiciosInternet.Site.Entity.www.gana.kleenbebe.com_1.Data.Data
+@{
+    ViewBag.Title = "SoupLetters";
+}
+
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+}
+
+<div class="game">
+    <div class="gameinner">
+        <div class="homeform">
+
+            <div class="container-fluid" id="intentos">
+                <div class="row" id="introw">
+
+                    <div class="col-sm-12" id="intcol">
+                        <div class="row">
+
+                            <div id="intlogo">
+                                <img src="/images/logo_feria.png" alt="">
+                            </div>
+
+                            <div class="col-sm-12" id="inthome">
+                                <h3>¿Cómo Jugar?</h3>
+                            </div>
+
+                            <div class="col-sm-12" id="intrucciones">
+                                <p>Encuentra todas las palabras en el menor tiempo posible.</p>
+                            </div>
+
+                            <div class="col-sm-12" id="inthome">
+                                <p>TE QUEDAN <span>@(Model.Body)</span> JUEGOS</p>
+                            </div>
+
+                            <div class="col-sm-12" id="inthome">
+                                <h3>¡SUERTE!</h3>
+                            </div>
+
+                            <div class="col-12" id="buttonhome">
+                                <a class="btnGo" id="startGame" style="pointer-events:none" href="javascript:void(0)">¡JUGAR AHORA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="GameBoard" class="boarsoup" style="display:none">
+    <div class="controlgame">
+        <section id="clock" style="display: flex;justify-content: space-between;width: 100px;font-size: 28px;">
+            <div id="clockMinutes"><span></span></div>
+            <div class="clockSeparator"><span>&#58;</span></div>
+            <div id="clockSecond"><span></span></div>
+            <div class="clockSeparator"><span>&#58;</span></div>
+            <div id="clockMiliseconds"><span></span></div>
+        </section>
+        <section id="cancel"><input id="cancelButton" type="button" class="btncancel my-1" value="Abandonar juego"></section>
+    </div>
+    <section id="juego"></section>
+
+    <div class="pistasgame">
+        <section id="wordsToFind"></section>
+    </div>
+
+</div>
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    @Scripts.Render("~/bundles/GameCtrl")
+    @Scripts.Render("~/bundles/SoupLetters")
+}
+
+

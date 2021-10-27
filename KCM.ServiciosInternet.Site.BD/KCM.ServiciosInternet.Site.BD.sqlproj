@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>KCM.ServiciosInternet.Site.BD</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5be8fc57-6323-4000-bc8b-5e1f845c57c3}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>KCM.ServiciosInternet.Site.BD</RootNamespace>
+    <AssemblyName>KCM.ServiciosInternet.Site.BD</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="www.gana.kleenbebe.com_1" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\DDL" />
+    <Folder Include="www.gana.kleenbebe.com_1\SQL" />
+    <Folder Include="www.gana.kleenbebe.com_1\SQL\Tables" />
+    <Folder Include="www.gana.kleenbebe.com_1\SQL\Tables\SiteMap" />
+    <Folder Include="www.gana.kleenbebe.com_1\SQL\Tables\Product" />
+    <Folder Include="www.gana.kleenbebe.com_1\SQL\Tables\Size" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\Ticket" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\Game" />
+    <Folder Include="www.gana.kleenbebe.com_1\SQL\Tables\Params" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\Winners" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\DDL\Admin" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\Pivot" />
+    <Folder Include="www.gana.kleenbebe.com_1\SP\DDL\Session" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\www.gana.kleenbebe.com_1.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SQL\Tables\SiteMap\insert.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SQL\Tables\Product\insert.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SQL\Tables\Size\insert.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Ticket\SP_InsertTicket.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SQL\Tables\restoredata.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Ticket\SP_GetAttemps.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Game\SP_GetGameInfo.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Game\SP_UpdateSetGame.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SQL\Tables\Params\insertWords.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Game\SP_GetParamsFromGame.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Game\SP_UpdateSaveGame.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Game\SP_GetScore.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\Admin\dbo.vwTicketByPivotDay.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\GameTable.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\dbo.vwGame.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\dbo.Sec_GameNumber.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_GetRangeDates.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_UpdateTicketByPivotDay.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_GetTickets.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_GetGamesByTicket.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_UpdateTickets.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_UpdateLockPivotDay.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_GetAllTickets.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Winners\SP_Winners_GetUserRecords.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Pivot\SP_Pivot_GetPivotDays.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Pivot\SP_Pivot_UpdatePivotDay.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Pivot\SP_Pivot_DeletePivotDay.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Pivot\SP_Pivot_GetGameInfo.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\Pivot\SP_Pivot_GetParams.sql" />
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\Session\SP_Session_GetAdminUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\Admin\dbo.TicketByPivotDay.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="www.gana.kleenbebe.com_1\SP\DDL\AllStore.sql" />
+  </ItemGroup>
+</Project>

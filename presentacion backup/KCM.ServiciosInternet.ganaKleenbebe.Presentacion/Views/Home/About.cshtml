@@ -1,0 +1,24 @@
+﻿@model Models.datatest
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+<div id="contactForm">
+
+    @using (Ajax.BeginForm("About", "Home", null, new AjaxOptions
+    {
+        HttpMethod = "Post",
+        //InsertionMode = InsertionMode.Replace,
+        Confirm = "¿Desea enviar el formulario?",
+        //LoadingElementId = "sendEmailWaiting",
+        UpdateTargetId = "contactForm"   // indica que se reemplaza todo el formulario por la vista parcial devuelta por home/validaContacto
+                                         //OnFailure = "msgAlertError",
+    }, new { autocomplete = "off", id = "formularioContacto", novalidate = "novalidate" }))
+    {
+        @Html.EditorFor(c=>c.password,new { htmlAttributes = new { @class = "form-control", placeholder = "Ingresa tu correo electrónico" } })
+        @Html.EditorFor(c=>c.confirmPassword,new { htmlAttributes = new { @class = "form-control", placeholder = "Ingresa tu correo electrónico nuevamente" } })
+    }
+    </div>

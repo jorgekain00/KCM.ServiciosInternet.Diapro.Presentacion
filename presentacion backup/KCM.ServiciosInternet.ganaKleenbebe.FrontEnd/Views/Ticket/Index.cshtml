@@ -1,0 +1,187 @@
+﻿@using KCM.ServiciosInternet.Site.Entity.Config
+@{
+    ViewBag.Title = "registra Ticket";
+}
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<div class="game">
+    <div class="gameinner">
+        <div id="gameinfo">
+            <div class="gameselect">
+
+                <div class="gameText">
+                    <img src="~/images/logo_animate.gif" alt="Logo Feria Kleenbebe">
+                    <div class="gamenameText">
+                        <h2>Hola Ernesto</h2>
+                    </div>
+                    <h1>Juega por 1 año de productos para tu bebé</h1>
+                    <a type="button" class="btnecanica" href="/Home/Rules">Mecánica</a>
+                </div>
+            </div>
+        </div>
+
+
+        <form id="ticketForm" class="homeform" autocomplete="off" novalidate="novalidate">
+            <div class="gamecontent2">
+
+                <div class="gameProduct-info">
+                    <div>
+                        <img src="/images/separador.png" alt="">
+                    </div>
+                    <label for="productPrice" class="home-label">Ingresa el monto de tu compra:</label>
+                    <button type="button" class="btndude" data-bs-toggle="modal" data-bs-target="#MontoModal">
+                        ?
+                    </button>
+                    <div class="modal fade" id="MontoModal" tabindex="-1" aria-labelledby="MontoModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="/images/ejemplos_monto.jpg" alt="Ejemplo monto de producto">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btnmodal" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="number" name="productPrice" id="productPrice" class="ticket-info" aria-describedby="ayuda-productPrice" aria-label="Amount (to the nearest dollar)" placeholder="Ingresa monto de compra"
+                               data-val="true" data-val-regex-pattern="^([0-9]{3,6}\.[0-9]{2})$" data-val-regex="Monto inválido" data-val-required="Ingresa el monto de compra">
+
+
+                        <div>
+                            <span class="field-validation-valid" data-valmsg-for="productPrice" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="gameProduct-info">
+                    <label for="productClave" class="home-label">Ingresa la clave del producto:</label>
+                    <button type="button" class="btndude" data-bs-toggle="modal" data-bs-target="#ClaveModal">
+                        ?
+                    </button>
+                    <div class="modal fade" id="ClaveModal" tabindex="-1" aria-labelledby="ClaveModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="/images/ejemplo_clave.jpg" alt="Ejemplo clave de producto">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btnmodal" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" name="productClave" id="productClave" class="ticket-info" aria-describedby="ayuda-productClave" placeholder="Ingresa la clave del producto"
+                               data-val="true" data-val-regex-pattern="^([0-9]{5})$" data-val-regex="Clave inválida" data-val-required="Ingresa la clave del producto">
+                        <div id="claveHelp" class="form-text">*Si compraste productos de Etapas Chicas, ¡tienes más oportunidades de ganar!</div>
+
+
+                        <div>
+                            <span class="field-validation-valid" data-valmsg-for="productClave" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="gameProduct-info">
+                    <label for="productTicket" class="home-label">Ingresa el número de ticket</label>
+                    <button type="button" class="btndude" data-bs-toggle="modal" data-bs-target="#TicketModal">
+                        ?
+                    </button>
+                    <div class="modal fade" id="TicketModal" tabindex="-1" aria-labelledby="TicketModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="/images/ejemplo_no_ticket.jpg" alt="Ejemplo número de ticket">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btnmodal" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" name="productTicket" id="productTicket" class="ticket-info" aria-describedby="ayuda-productTicket" placeholder="Ingresa número de ticket"
+                               data-val="true" data-val-regex-pattern="^([a-zA-ZñÑ0-9-_]){5,40}$" data-val-regex="Folio del ticket inválido" data-val-required="Ingresa el folio del ticket">
+
+
+                        <div>
+                            <span class="field-validation-valid" data-valmsg-for="productTicket" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gameProduct-info mb-5">
+                    <label for="formFile" class="home-label mb-3">Sube la foto de tu ticket</label>
+                    <input class="form-control" type="file" id="formFile" name="ImageFile"
+                           data-val="true" data-val-required="Favor de subir su foto del ticket"
+                           data-val-type-of-file="Sólo se aceptan archivos .jpg .jpeg .png" data-val-type-of-file-format="jpg,jpeg,png"
+                           data-val-size-of-file="El archivo no debe ser mayor a 4mb" data-val-size-of-file-bytes="4194304"
+                           accept=".png, .jpg, .jpeg">
+                    <div>
+                        <span class="field-validation-valid" data-valmsg-for="ImageFile" data-valmsg-replace="true"></span>
+                    </div>
+                    <div>
+                        <img src="/images/separador.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gigyaJFMform-wrapper">
+                    <div id='gigyaJFMsignUprecaptcha'></div>
+                    <input type="hidden" name="recaptchaResponse" data-recaptcha-value="Presione el recaptcha para continuar" data-val="true" />
+                    <div>
+                        <span class="field-validation-valid" data-valmsg-for="recaptchaResponse" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <input type="hidden" id="ticketUID" name="UID" data-val="true" />
+                <input type="hidden" id="ticketFirstName" name="FirstName" data-val="true" />
+                <input type="hidden" id="ticketLastName" name="LastName" data-val="true" />
+                <input type="hidden" id="ticketEmail" name="Email" data-val="true" />
+                <input type="hidden" id="ticketBirthYear" name="BirthYear" data-val="true" />
+                <input type="hidden" id="ticketBirthMonth" name="BirthMonth" data-val="true" />
+                <input type="hidden" id="ticketBirthDay" name="BirthDay" data-val="true" />
+                <input type="hidden" id="ticketCellPhone" name="CellPhone" data-val="true" />
+
+                <div class="form-group">
+                    <span class="field-validation-valid" data-msg-error="true" data-valmsg-replace="true"></span>
+                </div>
+
+                <button class="playbtn mt-3" type="submit">
+                    ¡List@@ para jugar!
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid mt-0">
+    <div class="row">
+        <div class="col-sm-12" id="buttonhome" style="display:flex">
+            <a id="idScore" class="btnRecord" href="/Games/MyScore" style="align-items:center; margin:0px auto">Mi Puntaje</a>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    <script>
+        let strGlobalRecaptchaSiteKey = '@(Global.strRecaptchaSiteKey)';
+    </script>
+    <script src="~/js/JsLogica/Bussiness/Ticket/registerTicket.js"></script>
+}

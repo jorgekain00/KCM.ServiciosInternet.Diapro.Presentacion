@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBE3D5D0-1EDB-4D3F-B57F-698329613DBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KCM.ServiciosInternet.Site.Entity</RootNamespace>
+    <AssemblyName>KCM.ServiciosInternet.Site.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\Global.cs" />
+    <Compile Include="Config\KleenexMascarillas\PrideFormulario.cs" />
+    <Compile Include="CustomAttributes\IsImage.cs" />
+    <Compile Include="CustomAttributes\MustBeTrueAttribute.cs" />
+    <Compile Include="CustomAttributes\SizeOfFile.cs" />
+    <Compile Include="CustomAttributes\TypeOfFile.cs" />
+    <Compile Include="Formularios\ContactCasaFridaModel.cs" />
+    <Compile Include="Formularios\ContactModelKleenexMascarillas.cs" />
+    <Compile Include="Formularios\ContactModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SSO\Data.cs" />
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\AdminUser.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Competitor.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\GameInfo.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\GetScore_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\GetTicket_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Param.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\PivotDay.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Pivot_ComboBox_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Pivot_GetPivotDays_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Product.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Session_GetAdminUser_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Size.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_GetScore_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Pivot_GetGameInfo_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Pivot_GetParams_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Pivot_GetPivotDays_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Session_GetAdminUser_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_UpdateSetGame_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Winners_GetAllTickets_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Winners_GetGamesByTicket_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Winners_GetRangeDates_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Winners_GetTickets_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\SP_Winners_GetUserRecords_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Ticket.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\UpdateSetGame_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\vwGame.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\vwTicketByPivotDay.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Winners_GetGamesByTicket_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Winners_GetRangeDates_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Winners_GetTickets_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\Winners_GetUserRecords_Result.cs">
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>www.gana.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>www.gana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.kleenbebe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>www.gana.kleenbebe.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="www.gana.kleenbebe.com_1\Data\Data.cs" />
+    <Compile Include="www.gana.kleenbebe.com_1\Data\Game.cs" />
+    <Compile Include="www.gana.kleenbebe.com_1\Data\RoutePath.cs" />
+    <Compile Include="www.gana.kleenbebe.com_1\Formularios\TicketModel.cs" />
+    <Compile Include="www.gana.kleenbebe.com_1\Reports\UserRecords\UserRecords.Designer.cs">
+      <DependentUpon>UserRecords.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.kleenbebe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>www.gana.kleenbebe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.kleenbebe.edmx.diagram">
+      <DependentUpon>www.gana.kleenbebe.edmx</DependentUpon>
+    </None>
+    <Content Include="www.gana.kleenbebe.com_1\Reports\UserRecords\UserRecords.xsc">
+      <DependentUpon>UserRecords.xsd</DependentUpon>
+    </Content>
+    <None Include="www.gana.kleenbebe.com_1\Reports\UserRecords\UserRecords.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserRecords.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="www.gana.kleenbebe.com_1\Reports\UserRecords\UserRecords.xss">
+      <DependentUpon>UserRecords.xsd</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KCM.ServiciosInternet.Google.Services\KCM.ServiciosInternet.Google.Services.csproj">
+      <Project>{e92ef58e-0137-42bc-b307-5344346e3e71}</Project>
+      <Name>KCM.ServiciosInternet.Google.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="www.gana.kleenbebe.com_1\Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>www.gana.kleenbebe.edmx</DependentUpon>
+      <LastGenOutput>www.gana.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="www.gana.kleenbebe.com_1\BD\EF\www.gana.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>www.gana.kleenbebe.edmx</DependentUpon>
+      <LastGenOutput>www.gana.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="www.gana.kleenbebe.com_1\Reports\UserRecords\UserRecords.rdlc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

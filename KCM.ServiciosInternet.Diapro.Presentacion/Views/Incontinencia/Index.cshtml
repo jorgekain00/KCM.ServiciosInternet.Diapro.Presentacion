@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Diapro - Información relevante acerca de la incontinencia";
+}
+
+
+@section metas{
+<meta id="ctl00_MetaDesc" name="description"
+    content="Información relevante acerca de las causas de la incontinencia, tipos de incontinencia, tratamientos para la incontinencia y más." />
+<meta id="ctl00_MetaKey" name="keywords"
+    content="Diapro, incontinencia, incontinencia urinaria, pipi, pañales para adulto, pañales predoblados, calzón para incontinecia, toallitas húmedas, incontinencia en adultos, escapes de orina, se me sale la pipi" />
+<link rel="canonical" href="/Incontinencia/Index" />
+}
+
+
+@section styles{
+
+@*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<img src="~/img/headerVerdadIncont.webp" loading="lazy" title="Información relevante sobre Incontinencia" alt="Información relevante sobre Incontinencia" class="img-responsive d-none d-sm-none d-lg-block headerNotas">
+<img src="~/img/headerVerdadIncontMobile.webp" loading="lazy" title="Información valiosa para pacientes con Incontinencia" alt="Información valiosa para pacientes con Incontinencia" class="img-responsive  d-lg-none d-md-none headerNotas">
+
+<br>
+<div class="container incontinencia">
+    <h1>Artículos sobre Incontinencia</h1>
+    <p class="introText">
+        Información relevante acerca de las causas de la incontinencia, tipos de incontinencia, tratamientos para la
+        incontinencia y más.
+    </p>
+</div>
+
+@Html.Partial("_sliderIncontinencia")
+
+
+@section scripts{
+@*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+    y antes del cierra de la etiqueta </body>*@
+
+
+}

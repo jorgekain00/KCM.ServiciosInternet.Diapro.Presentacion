@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "MyScore";
+}
+
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+}
+
+<div class="game">
+    <div class="gameinner">
+        <div id="gameinfo">
+            <div class="gameselect">
+
+                <div class="gameText">
+                    <img src="~/images/logo_animate.gif" alt="Logo Feria Kleenbebe">
+                    <div class="gamenameText">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeform">
+
+            <div class="container" id="conteo-game">
+                <div class="row">
+                    <div class="col-12" id="headPoint">
+                        <h2>Mi Puntaje</h2>
+                    </div>
+
+                    <div id="ScoreSection" class="col-12">
+                        <table class="table table-striped">
+                            <thead class="pointsWord">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Juego</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-12" id="mensaggePoint">
+                        <p>
+                            <span>¡Vas muy bien!</span><br>
+                            Sigue participando
+                            y anímate a ir por más.
+                        </p>
+                        <h4 class="recdata">*Recuerda que cada semana se borran los resultados. ¡Cada semana tienes más oportunidades de ganar!</h4>
+
+                        <a class="btnGo" id="play" href="/Ticket/Index">IR AL INICIO</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    @Scripts.Render("~/bundles/GameCtrl")
+    @Scripts.Render("~/bundles/MyScore")
+}

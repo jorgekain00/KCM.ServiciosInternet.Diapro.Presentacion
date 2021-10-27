@@ -1,0 +1,82 @@
+﻿@using KCM.ServiciosInternet.Site.Entity.Config;
+@{
+    /**/
+
+    ViewBag.Title = "Inicio de sesión";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html
+        de la página*@
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @@media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="~/css/signin.css" rel="stylesheet" />
+}
+
+
+
+<main class="form-signin">
+    <form id="AdminLogin" action="/Register/LogInSession" autocomplete="off" novalidate="novalidate" data-ajax="true" data-ajax-method="Post" data-ajax-mode="" data-ajax-update="" method="post">
+        <img class="mb-4" src="/images/kleenbebe_logo.png" alt="" width="250" height="auto">
+        <h1 class="h3 mb-3 fw-normal">Ingrese</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="registroSSOemail" name="email" placeholder="name@example.com" aria-describedby="ayuda-registroSSOemail" data-val="true" data-val-email="La dirección de E-mail no es válida" data-val-required="Por favor ingresa tu correo electrónico" data-field-object="email">
+            <label for="registroSSOemail">Correo eléctronico</label>
+            <div>
+                <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="registroSSOpassword" name="password" placeholder="Password" aria-describedby="ayuda-registroSSOpassword" data-val="true" data-val-required="Por favor ingresa tu correo electrónico" data-field-object="password">
+            <label for="registroSSOpassword">Contraseña</label>
+            <div>
+                <span class="field-validation-valid" data-valmsg-for="password" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="col-12 gigyaJFMform-wrapper">
+            <div class="pl-3" id='JFMLOGIN_Recaptcha'></div>
+            <input type="hidden" name="recaptcha" data-recaptcha-value="Presione el recaptcha para continuar" data-val="true" data-field-object="recaptcha" />
+            <span class="field-validation-valid" data-valmsg-for="recaptcha" data-valmsg-replace="true"></span>
+        </div>
+
+        @*<div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Recordar contraseña
+                </label>
+            </div>*@
+        <div class="form-group">
+            <span class="field-validation-valid" data-msg-error="true" data-valmsg-replace="true"></span>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Kimberly-Clark  2021</p>
+    </form>
+</main>
+
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+
+    <script>
+
+        let strGlobalSiteKey = '@(Global.strRecaptchaSiteKey)';
+    </script>
+    <script src="~/js/Admin/Bussiness/Register/Register.js"></script>
+}

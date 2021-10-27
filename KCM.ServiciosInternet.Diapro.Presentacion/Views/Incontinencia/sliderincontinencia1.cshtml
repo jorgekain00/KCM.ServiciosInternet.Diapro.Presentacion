@@ -1,0 +1,249 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incontinencia Slider</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/SliderCuidadores")
+</head>
+
+<body>
+    <!--Carousel movil-->
+
+    <div id="carouselCardMovil" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselCardMovil" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+
+            <!--First slide-->
+            <div class="carousel-item active" role="option" data-bs-interval="4000">
+                <div class="col-md-3">
+                    <a href="/Incontinencia/tipos-de-incontinencia" target="_parent">
+                        <div class="card mb-2">
+                            <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont.webp"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Tipos de incontinencia</h4>
+                                <p>
+                                    Cuáles son los tipos de incontinencia que existen y por qué existen los
+                                    escapes de orina.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" role="option" data-bs-interval="4000">
+                <div class="col-md-3 ">
+                    <a href="/Incontinencia/la-verdad-acerca-de-la-incontinencia" target="_parent">
+                        <div class="card mb-2">
+                            <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont2.webp"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">La verdad acerca de la incontinencia</h4>
+                                <p>
+                                    Conoce más acerca de la incontinencia urinaria en adultos y cómo Diapro puede
+                                    ayudarte.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" role="option" data-bs-interval="4000">
+                <div class="col-md-3  ">
+                    <a href="/Incontinencia/tratamientos-para-la-incontinencia" target="_parent">
+                        <div class="card mb-2">
+                            <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont3.webp"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Tratamientos para la incontinencia</h4>
+                                <p>
+                                    Conoce los distintos tipos de tratamiento que existen para prevenir, o bien,
+                                    para reducir la incontinencia.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="carousel-item" role="option" data-bs-interval="4000">
+                <div class="col-md-3  ">
+                    <a href="/Incontinencia/ejercicios-de-kegel" target="_parent">
+                        <div class="card mb-2">
+                            <img class="card-img-top img-rounded" src="~/img/rotatorIncontKegel.webp"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Ejercicios de Kegel</h4>
+                                <p>
+                                    Conoce más acerca de la incontinencia urinaria en adultos y cómo Diapro puede
+                                    ayudarte con un
+                                    cuidado extra.
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCardMovil"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCardMovil"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--Carousel DESKTOP-->
+    <div class="container-fluid d-flex justify-content-center">
+        <div id="carouselCardDesk" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCardDesk" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCardDesk" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+
+            </div>
+            <div class="carousel-inner">
+                <!--First slide-->
+                <div class="carousel-item active" role="option" data-bs-interval="4000">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/Incontinencia/tipos-de-incontinencia" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tipos de incontinencia</h4>
+                                        <p>
+                                            Cuáles son los tipos de incontinencia que existen y por qué existen los
+                                            escapes de orina.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a href="/Incontinencia/la-verdad-acerca-de-la-incontinencia" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont2.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">La verdad acerca de la incontinencia</h4>
+                                        <p>
+                                            Conoce más acerca de la incontinencia urinaria en adultos y cómo Diapro puede
+                                            ayudarte.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4  ">
+                            <a href="/Incontinencia/tratamientos-para-la-incontinencia" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont3.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tratamientos para la incontinencia</h4>
+                                        <p>
+                                            Conoce los distintos tipos de tratamiento que existen para prevenir, o bien,
+                                            para reducir.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" role="option" data-bs-interval="4000">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/Incontinencia/ejercicios-de-kegel" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorIncontKegel.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Ejercicios de Kegel</h4>
+                                        <p>
+                                            Conoce más acerca de la incontinencia urinaria en adultos y cómo Diapro puede
+                                            ayudarte con un
+                                            cuidado extra.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a href="/Incontinencia/tipos-de-incontinencia" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tipos de incontinencia</h4>
+                                        <p>
+                                            Cuáles son los tipos de incontinencia que existen y por qué existen los
+                                            escapes de orina.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4  ">
+                            <a href="/Incontinencia/la-verdad-acerca-de-la-incontinencia" target="_parent">
+                                <div class="card mb-2">
+                                    <img class="card-img-top img-rounded" src="~/img/rotatorTiposIncont2.webp"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">La verdad acerca de la incontinencia</h4>
+                                        <p>
+                                            Conoce más acerca de la incontinencia urinaria en adultos y cómo Diapro puede
+                                            ayudarte.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCardDesk" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCardDesk" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/scripts")
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+﻿@model KCM.ServiciosInternet.Site.Entity.Formularios.ContactModel
+@using KCM.ServiciosInternet.Site.Entity.Config
+
+<div class="row registro" id="contacto" style="position:relative">
+    <div id="sendEmailWaiting" class="boxloading">
+        <div class="preloader"></div>
+    </div>
+    <h4>
+        ¿Tienes dudas y/o comentarios?<br>
+        Escríbenos
+    </h4>
+    <div class="col-md-4 col-sx-12 "></div>
+    <div class="col-md-4 col-sx-12 ">
+
+        <!-- Inicia Formulario Contacto -->
+
+        @using (Ajax.BeginForm("validaContacto", "Home", null, new AjaxOptions
+        {
+            HttpMethod = "Post",
+            //InsertionMode = InsertionMode.Replace,
+            Confirm = "¿Desea enviar el formulario?",
+            LoadingElementId = "sendEmailWaiting",
+            UpdateTargetId = "contactForm",   // indica que se reemplaza todo el formulario por la vista parcial devuelta por home/validaContacto
+            OnFailure = "msgAlertError",
+        }, new { autocomplete = "off", id = "formularioContacto", novalidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Ingresa tu correo electrónico" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { style = "color:white" })
+            </div>
+            <div class="form-group">
+                @Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = "Ingresa tu mensaje", maxlength = "200", rows = "5" })
+                @Html.ValidationMessageFor(model => model.Message, "", new { style = "color:white; top:15px" })
+            </div>
+            <div class="form-group">
+                @Html.HiddenFor(model => model.recaptchaResponse, new { data_recaptcha_value = "Presione el recaptcha para continuar" })
+            </div>
+            <div class="form-group">
+                <div id="contactEmailRecaptcha"></div>
+                @Html.ValidationMessageFor(model => model.recaptchaResponse, "", new { style = "color:white; top:15px" })
+            </div>
+            <button type="submit" class="btn btn-primary butEnviar">
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                Enviar
+            </button>
+        }
+        <!-- Fin de formulario Contacto -->
+
+
+    </div>
+    <div class="col-md-4 col-sx-12 "></div>
+</div>
+
+<!-- Eventos del formulario -->
+<script>
+    var objForms = null;
+    /**
+    * @@description  Registra el script https://www.google.com/recaptcha/api.js?onload=onloadGenerateRecaptcha&render=explicit en el DOM
+    * en el momento en que el formulario es visible en el cliente del navegador.
+    */
+    document.addEventListener("readystatechange", function () {
+
+        if (document.readyState == "complete") {
+
+            Observer.registerSelector('#contacto', {
+                IntersectingAction: function () {
+                    new JFM.AJAXCommunications_JS(
+                        {
+                            type: 'POST',
+                            url: '@Url.Action("cargaExtLibs","Home", new { id = "recaptcha" })',
+                            contentType: JFM.CONST.CONTENTTYPE.JSON,
+                            successFunction: function (data) {
+                                let objDiv = document.createElement("script");
+                                objDiv.src = data;
+                                document.body.append(objDiv);
+                            },
+                            errorFunction: function (strMsg, statusText) {
+                                new PopUpAlerts_JS(strMsg, "/Home/cargaExtLibs" + ' - ' + statusText).show();
+                            }
+                        }
+                    ).AsyncSend();
+                }
+            });
+            initForm();
+        }
+    });
+
+    function initForm() {
+        objForms =  new JFM.Forms_JS({
+            selector: '#formularioContacto',
+            onErrorField: (field) => {
+                field.style.boxShadow = 'inset 0px 0px 5px red';
+            },
+            onValidField: (field) => {
+                field.style.boxShadow = 'initial';
+            },
+            isSubmitEnable: false
+        });
+
+    }
+
+    /**
+     * @@description Esta función se ejecuta al carga las libreríaS de recaptcha de google
+     *               https://www.google.com/recaptcha/api.js?onload=initRecaptcha&render=explicit
+     **/
+    function initRecaptcha() {
+        objForms.Recaptcha = new JFM.GrecaptchaV2_JS(grecaptcha,
+            {
+            selector: 'contactEmailRecaptcha',
+            siteKey: '@Global.strRecaptchaSiteKey',
+            theme: 'dark'
+        });
+        objForms.IsSubmitEnable = true;
+    }
+
+    // Valida si el formulario ya se ha enviado anteriormente para evaluar el resultado del recaptcha del lado del servidor
+    if ('@(Model==null ? string.Empty : Model.recaptchaResponse)' === 'Error') {
+        initForm();
+        initRecaptcha();
+    }
+
+    function msgAlertError(strMsg, strStack) {
+        new JFM.PopUpAlerts_JS(strStack, strMsg, new JFM.Icon_JS({ type: JFM.CONST.ICONS.DANGER, width: 36, height: 36 }), undefined, undefined, true).show();
+    }
+
+</script>
+
+<!-- Fin eventos del formulario -->

@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+    <link href="~/css/sso/registrogamestyle.css" rel="stylesheet" />
+}
+
+
+<main class="kbb_game">
+    <div id="registro">
+        <form class="form-detail">
+            <div class="registroSSOcontent2">
+                <div class="registroSSOthank">
+                    <div id="registroSSOinstru">
+                        <h3>¿Olvidaste tu contraseña?</h3>
+                        <p>Por favor coloca tu cuenta de correo para cambiar tu contraseña</p>
+                    </div>
+
+                    <div class="registroSSO-wrapper registroSSO-row">
+                        <label for="email" class="registroSSO-label">Ingresa tu correo electrónico</label>
+                        <div>
+                            <input type="text" name="registroSSOemail" id="registroSSOemail" class="registroSSOform-control" aria-describedby="ayuda-registroSSOemail" placeholder="Ingresa tu email" data-val="true" data-val-email="La dirección de E-mail no es válida" data-val-required="Por favor ingresa tu correo electrónico" data-field-object="profile.email" />
+                            <span class="field-validation-valid" data-valmsg-for="registroSSOemail" data-valmsg-replace="true" style="color:white"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 gigyaJFMform-wrapper">
+                        <div id='gigyaJFMRESETPS_Recaptcha'></div>
+                    </div>
+
+                    <button class="registroSSObtn-registro">
+                        enviar
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+
+}

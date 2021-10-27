@@ -1,0 +1,462 @@
+
+@media (max-width: 767.98px) { 
+.navbar{
+  background-color: #f39c7cab;
+}
+
+.navbar-brand{
+  width: 150px;
+  height: auto;
+}
+
+.navbar-brand img{
+  width: 110px;
+  height: auto;
+}
+
+.navbar-toggler{
+  width: 60px;
+  height: 44px;
+}
+
+.navbar-toggler-icon{
+  width: 35px;
+  height: 35px;
+}
+
+.kbb_game{
+  background-image: url(/images/fondo_kbb.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+.closesesion{
+  background-color: #fff;
+  border: 2px solid rgb(255, 201, 4);
+  font-size: 1em;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 30px;
+  color: #f39c7c;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.closesesion:hover{
+  background-color: #292e96;
+  color: white;
+}
+
+.navbar span{
+color: #00276d;
+font-size: 45px;
+}
+
+.navbar-nav{
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #0b2a81;
+}
+
+.nav-item{
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: #0b2a81;
+}
+
+.gameinner{
+  font-family: Helvetica;
+  width: 90%;
+  margin: auto;
+}
+
+#gameinfo{
+  padding-top: 1%;
+}
+
+.gameselect{
+  text-align: center;
+  color: white;
+  width: 90%;
+  margin: auto;
+}
+
+.gameText h1{
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.gameText img{
+  width: 7em;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.gameText{
+   padding-top: 2%;
+}
+
+.gameProduct-info{
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.homeform{
+  text-align: center;
+}
+
+  .home-label{
+    font-size: 1.1em;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .ticket-info{
+  text-align: center;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 30px;
+  width: 83%;
+  height: 40px;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 7px 10px #3636363c;
+  }
+
+  .ticket-info:focus{
+    border: 5px solid #ff2f7c;
+    outline: none;
+    box-shadow: 0px 7px 10px #343434eb;
+    font-size: 1.4em;
+    height: 45px;
+    }
+
+  #claveHelp{
+    font-size: .9em;
+    font-weight: 600;
+    color: #0b2a81;
+  }
+
+  .form-control{
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+  }
+
+
+  .btndude{
+    background-color: #0b2a81;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 800;
+    width: 40px;
+    height: 40px;
+    border: none;
+    box-shadow: 0px 7px 0px #061a4f;
+    margin-left: 20px;
+  }
+
+  .btndude:hover{
+    background-color: #ff2f7c;
+  }
+
+  .btnmodal{
+    background-color: #ff2f7c;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100px;
+    height: 40px;
+    border: none;
+  }
+
+  .playbtn{
+    background-color: #ff2f7c;
+    border: solid 3px #fff;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 800;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+    box-shadow: 4px 4px 5px #00000066;
+  }
+
+  .playbtn:hover{
+    background-color: #0b2a81;
+    font-size: 1.6em;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    color: rgb(255, 201, 4);
+  }
+
+  #homekbb{
+    margin: auto;
+  }
+
+  #homerow{
+    text-align: center;
+    justify-content: center;
+    padding-top: 10%;
+  }
+
+  #collogo img{
+    width: 170px;
+    height: auto;
+  }
+
+#texthome p{
+  font-size: 1.8em;
+  color: #fff;
+  font-weight: 800;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+#iconhome img{
+width: 350px;
+height: auto;
+}
+
+#buttonhome{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btnland{
+  background-color: #fff;
+  border: 2px solid rgb(255, 201, 4);
+  font-size: 18px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 30px;
+  color: #f39c7c;
+  font-weight: 700;
+  box-shadow: 4px 4px 5px #00000066;
+}
+
+.btnland:hover{
+  background-color: #292e96;
+  font-size: 18px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: white;
+  box-shadow: 4px 4px 5px #00000066;
+}
+
+#intentos{
+  margin: auto;
+  padding-top: 15%;
+  padding-bottom: 10%;
+}
+
+#introw {
+  text-align: center;
+  justify-content: center;
+  background-color: #f2907a8b;
+  width: 90%;
+  margin: auto;
+  padding: 30px;
+}
+
+#intcol {
+  text-align: center;
+  justify-content: center;
+  border: 3px solid #ff8b74;
+  border-radius: 10px;
+}
+
+#intlogo img{
+width: 100px;
+height: auto;
+display: flex;
+position: relative;
+margin-top: -14%;
+margin-left: 30%;
+}
+
+#inthome h3{
+  margin-top: 20px;
+  font-size: 1.8em;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 2px 2px #d7661f;
+}
+
+#inthome p{
+  margin-top: 20px;
+  font-size: 1.6em;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 2px 2px #d7661f;
+}
+
+#conteo-game{
+  padding-top: 15%;
+}
+
+.int-label{
+  text-align: center;
+  background-color: #0b2a81;
+  border: 4px solid rgb(254, 254, 254);
+  font-size: 18px;
+  width: 250px;
+  height: 40px;
+  margin: auto;
+  padding-top: 2px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#intrucciones p{
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 2px 2px #d7661f;
+}
+
+.btnGo{
+  background-color: #ff2173;
+  border: 3px solid white;
+  font-size: 1em;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  box-shadow: 4px 4px 5px #00000066;
+}
+
+.btnGo:hover{
+  background-color: #0b2a81;
+  font-size: 1.2em;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgb(255, 201, 4);
+  
+}
+
+#controlsGame{
+  padding-top: 10%;
+}
+
+#headPoint h2{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3em;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 2px 2px #d7661f;
+  margin-bottom: 20px;
+}
+
+.pointsWord{
+  background-color: #0b2a81;
+  border-top: 3px solid rgb(254, 254, 254);
+  border-bottom: 3px solid rgb(254, 254, 254);
+  font-size: 18px;
+  margin: auto;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+tbody{
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+tbody{
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+#mensaggePoint{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#mensaggePoint span{
+  font-size: 1.4em;
+  font-weight: 800;
+}
+
+#mensaggePoint p{
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.8em;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 2px 2px #d7661f;
+  margin-bottom: 20px;
+}
+
+footer{
+  text-align: center;
+  background-color: #f39c7cab;
+}
+
+footer p{
+  color: white;
+  font-weight: 500;
+  font-size: .8em;
+}
+
+.btnRecord{
+  background-color: #ff2173;
+  border: 3px solid white;
+  font-size: 1.6em;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  box-shadow: 4px 4px 5px #00000066;
+}
+
+.btnRecord:hover{
+  background-color: #0b2a81;
+  font-size: 1.7em;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgb(255, 201, 4);
+}
+
+}

@@ -1,0 +1,156 @@
+﻿@model KCM.ServiciosInternet.Site.Entity.www.gana.kleenbebe.com_1.Data.Data
+@{
+    ViewBag.Title = "SearchThings";
+}
+
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+}
+
+<div class="game">
+    <div class="gameinner">
+        <div class="homeform">
+
+            <div class="container-fluid" id="intentos">
+                <div class="row" id="introw">
+
+                    <div class="col-sm-12" id="intcol">
+                        <div class="row">
+
+                            <div id="intlogo">
+                                <img src="/images/logo_feria.png" alt="">
+                            </div>
+
+                            <div class="col-sm-12" id="inthome">
+                                <h3>¿Cómo Jugar?</h3>
+                            </div>
+
+                            <div class="col-sm-12" id="intrucciones">
+                                <p>Encuentra todas las palabras en el menor tiempo posible y cuando acabes, dale clic en el botón de "¡Listo, terminé!"</p>
+                            </div>
+
+                            <div class="col-sm-12" id="inthome">
+                                <p>TE QUEDAN <span>@(Model.Body)</span> JUEGOS</p>
+                            </div>
+
+                            <div class="col-sm-12" id="inthome">
+                                <h3>¡SUERTE!</h3>
+                            </div>
+
+                            <div class="col-12" id="buttonhome">
+                                <a class="btnGo" id="startGame" style="pointer-events:none" href="javascript:void(0)">¡JUGAR AHORA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="GameBoard" class="boardfind" style="display:none">
+    <div class="controlgame">
+        <section id="clock" style="display: flex;justify-content: space-between;width: 100px;font-size: 28px;">
+            <div id="clockMinutes"><span></span></div>
+            <div class="clockSeparator"><span>&#58;</span></div>
+            <div id="clockSecond"><span></span></div>
+            <div class="clockSeparator"><span>&#58;</span></div>
+            <div id="clockMiliseconds"><span></span></div>
+        </section>
+        <section id="cancel"><input id="cancelButton" type="button" class="btncancel my-1" value="Terminar juego"></section>
+        <section id="finished"><input id="finishedButton" type="button" class="btncancel my-1" value="Encontré los objetos"></section>
+    </div>
+
+    <section class="container-fluid findgames" id="juego">
+        <div class="row">
+
+            <div class="col-12 findboard">
+                <img id="rugImage" src="/images/encuentra.png" alt="">
+                <div class="row" id="imagesboard">
+                    <div class="col-1" id="encuentra_01">
+                    </div>
+                    <div id="encuentra_02">
+                    </div>
+                    <div id="encuentra_03">
+                    </div>
+                    <div id="encuentra_04">
+                    </div>
+                    <div id="encuentra_05">
+                    </div>
+                    <div id="encuentra_06">
+                    </div>
+                    <div id="encuentra_07">
+                    </div>
+                    <div id="encuentra_08">
+                    </div>
+                    <div id="encuentra_09">
+                    </div>
+                    <div id="encuentra_10">
+                    </div>
+                    <div id="encuentra_11">
+                    </div>
+                    <div id="encuentra_12">
+                    </div>
+                    <div id="encuentra_13">
+                    </div>
+                    <div id="encuentra_14">
+                    </div>
+                    <div id="encuentra_15">
+                    </div>
+                    <div id="encuentra_16">
+                    </div>
+                    <div id="encuentra_17">
+                    </div>
+                    <div id="encuentra_18">
+                    </div>
+                    <div id="encuentra_19">
+                    </div>
+                    <div id="encuentra_20">
+                    </div>
+                    <div id="encuentra_21">
+                    </div>
+                    <div id="encuentra_22">
+                    </div>
+                    <div id="encuentra_23">
+                    </div>
+                    <div id="encuentra_24">
+                    </div>
+                    <div id="encuentra_25">
+                    </div>
+                    <div id="encuentra_26">
+                    </div>
+                    <div id="encuentra_27">
+                    </div>
+                    <div id="encuentra_28">
+                    </div>
+                    <div id="encuentra_29">
+                    </div>
+                    <div id="encuentra_30">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="pistasgame2">
+        <section id="wordsToFind"></section>
+    </div>
+
+</div>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    @Scripts.Render("~/bundles/GameCtrl")
+    @Scripts.Render("~/bundles/SearchThings")
+}
+
+

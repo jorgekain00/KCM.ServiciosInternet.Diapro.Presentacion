@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Cuidado de pacientes en silla de ruedas | Incontinencia urinaria";
+}
+
+@section metas{
+   <meta id="ctl00_MetaDesc" name="description" content="Consejos" />
+   <meta id="ctl00_MetaKey" name="keywords" content="incontinencia, pacientes, silla de ruedas, cuidadores, diapro" />
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Cuidadores/cuidado-de-pacientes-en-silla-de-ruedas")' />
+}
+
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerCudadoPacientesSilla.webp" title="Pacientes en silla de ruedas" alt="Pacientes en silla de ruedas" class="img-responsive d-none d-sm-none d-lg-block">
+            <img src="~/img/headerCudadoPacientesSillaMobile.webp" title="Pacientes en silla de ruedas" alt="Pacientes con incontinencia silla de ruedas" class="img-responsive d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+    <h1>Cuidado de pacientes en silla de ruedas</h1>
+    <p>Existen necesidades específicas para las personas que repentinamente se encuentran en la necesidad de usar una silla de ruedas, ya sea por cambios en su vida personal o en su salud.</p>
+    <p>La movilidad es algo que normalmente damos por sentado. Nos levantamos, caminamos, nos dirigimos a los sitios a los que queremos ir. Así que cuando debemos encargarnos de un familiar que necesita de una silla de ruedas para desplazarse, quizá no entendamos por completo lo que le hace falta o nos cueste trabajo comprender sus necesidades concretas.
+    <p>En primer lugar, podríamos decir que es difícil agrupar a todos los usuarios de sillas de ruedas en el mismo grupo. No todas las personas que las utilizan están constantemente en ellas: algunas cambian de silla, algunas son capaces de caminar breves distancias, algunas practican deportes y a algunas les gusta bailar.</p>
+    <p>
+        Así que, para conocer sus necesidades, lo mejor es escucharlas. No temas preguntarle lo que desea, cómo
+        puedes facilitarle las tareas cotidianas, qué quiere hacer o cómo quiere hacerlo.
+    </p>
+    <p>Aunque resulte evidente, necesitarán nuestra ayuda en cualquier momento. Independientemente de que hayamos tomado las medidas para modificar el espacio vital, adaptando el mobiliario de la casa para sus necesidades, también requerirán ayuda adicional en cualquier momento del día o la noche, desde poder sentarse en su silla de ruedas hasta desplazarse al baño o vestirse.</p>
+    <p>Parece un consejo muy simple, pero al salir al aire libre debemos tener cuidado, desde los propios materiales utilizados en la fabricación de la silla de ruedas (que pueden calentarse por una exposición prolongada a los rayos solares y causar quemaduras) hasta el tipo de protector solar que necesitamos (además de untarlo sobre su rostro, cuello y brazos, no debemos descuidar sus piernas, en cuyo caso recomendamos cubrirlas con una manta).</p>
+    <p>También debemos elegirles la ropa adecuada. Ciertas prendas de vestir no son para nada adecuadas para ser utilizadas por una persona que utiliza una silla de ruedas. Los zippers, formas de cerrar complejas y con muchos botones no son fáciles de usar y pueden lastimar la piel. Debemos elegir prendas fáciles de poner y de tejidos suaves.</p>
+    <br>
+</div>
+@Html.Partial("_panalAtomico")
+
+@Html.Partial("_sliderCuidadores")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}
+

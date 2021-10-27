@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("./fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d") format("woff2"),
+url("./fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("woff");
+}
+
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bi-joystick::before { content: "\f448"; }
+.bi-bar-chart-fill::before { content: "\f17a"; }
+.bi-box-arrow-down-left::before { content: "\f1b7"; }
+.bi-box-arrow-down-right::before { content: "\f1b8"; }
+.bi-box-arrow-down::before { content: "\f1b9"; }
+.bi-box-arrow-in-down-left::before { content: "\f1ba"; }
+.bi-box-arrow-in-down-right::before { content: "\f1bb"; }
+.bi-box-arrow-in-down::before { content: "\f1bc"; }
+.bi-box-arrow-in-left::before { content: "\f1bd"; }
+.bi-box-arrow-in-right::before { content: "\f1be"; }
+.bi-box-arrow-in-up-left::before { content: "\f1bf"; }
+.bi-box-arrow-in-up-right::before { content: "\f1c0"; }
+.bi-box-arrow-in-up::before { content: "\f1c1"; }
+.bi-box-arrow-left::before { content: "\f1c2"; }
+.bi-box-arrow-right::before { content: "\f1c3"; }
+.bi-box-arrow-up-left::before { content: "\f1c4"; }
+.bi-box-arrow-up-right::before { content: "\f1c5"; }
+.bi-box-arrow-up::before { content: "\f1c6"; }
+.bi-box-seam::before { content: "\f1c7"; }
+.bi-box::before { content: "\f1c8"; }
+.bi-clock-history::before { content: "\f292"; }
+.bi-grid-3x3-gap-fill::before { content: "\f3f8"; }
+.bi-grid-3x3-gap::before { content: "\f3f9"; }
+.bi-grid-3x3::before { content: "\f3fa"; }
+.bi-search::before { content: "\f52a"; }
+.bi-list-check::before { content: "\f473"; }
+.bi-list-nested::before { content: "\f474"; }
+.bi-list-ol::before { content: "\f475"; }
+.bi-list-stars::before { content: "\f476"; }
+.bi-list-task::before { content: "\f477"; }
+.bi-list-ul::before { content: "\f478"; }
+.bi-list::before { content: "\f479"; }
+.bi-trash-fill::before { content: "\f5dd"; }
+.bi-trash::before { content: "\f5de"; }
+.bi-trash2-fill::before { content: "\f5df"; }
+.bi-trash2::before { content: "\f5e0"; }
+.bi-pencil-fill::before { content: "\f4c9"; }
+.bi-pencil-square::before { content: "\f4ca"; }
+.bi-pencil::before { content: "\f4cb"; }
+
+

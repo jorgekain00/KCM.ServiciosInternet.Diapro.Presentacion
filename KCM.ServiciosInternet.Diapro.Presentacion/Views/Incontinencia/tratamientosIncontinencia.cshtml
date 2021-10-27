@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Tratamientos para incontinencia | Diapro para Incontinencia";
+}
+
+
+@section metas{
+@* Aquí colocar los metas que van en <head> *@
+<meta id="ctl00_MetaDesc" name="description" content="Conoce los distintos tipos de tratamiento que existen para prevenir, o bien, para reducir el grado de incontinencia en un adulto." />
+<meta id="ctl00_MetaKey" name="keywords" content="tipos de incontinencia, incontinencia urinaria, que tipo de incontinencia tengo, por que aparece la incontinencia," />
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Incontinencia/tratamientos-para-la-incontinencia")' />
+}
+
+
+@section styles{
+
+@*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerTratamientosIncont.webp" title="Tratamientos para la Incontinencia" alt="Tratamientos para la Incontinencia" class="img-responsive d-none d-sm-none d-lg-block">
+             <img src="~/img/headerTratamientosIncontMobile.webp" title="Tipos de Tratamientos para la Incontinencia" alt="Tipos de Tratamientos para la Incontinencia" class="img-responsive  d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+    <h1>Tratamientos para la incontinencia</h1>
+    <p>El tratamiento de los diferentes tipos de incontinencia pueden incluir medicamentos, uso de suplementos
+        alimenticios, práctica de ejercicios para fortalecer los músculos, como los ejercicios de Kegel e incluso una
+        cirugía.</p>
+    <p>De ellos, uno de los principales métodos médicos para la incontinencia es recibir inyecciones especiales, estas
+        son aplicadas en los tejidos de la uretra y se trata de una cirugía menor que no incluye incisiones.</p>
+    <p>Las cirugías se dividen en dos grupos principales: los cabestrillos uretrales y la colposuspensión. Se realizan
+        con incisiones vaginales o laparoscópicas. En la primera, se coloca una malla debajo de la uretra para dar mayor
+        apoyo a vejiga y uretra.</p>
+    <p>En el procedimiento tradicional se coloca un tejido propio a través del hueso púbico para evitar los escapes
+        involuntarios.</p>
+    <p>El segundo procedimiento corrige la posición de la uretra a través de suturas en vejiga y uretra.</p>
+    <p>Los tres tipos de tratamiento suelen ser ambulatorios y tienen ventajas y desventajas al realizarse, por lo cual,
+        el paciente debe tomar en cuenta toda la información que provea el médico para recibir el tratamiento adecuado.
+    </p>
+    <p>Los ejercicios de Kegel pueden ayudar, se realizan desde casa y puedes ayudarte de un especialista para poder
+        saber si los estás realizando de manera óptima. Conoce abajo nuestra rutina de ejercicios de Kegel.</p>
+    <br>
+
+</div>
+
+<div class="container artProd">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 col-sm-12 col-xs-12 frase">
+                <h3><strong>Disfruta la vida</strong></h3>
+                <p><em>Mantente activa, nosotros te ayudamos<br> a sentirte segura con protección 100% confiable</em></p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 artProducto center-block text-center">
+                <img src="~/img/pantsCalzones.webp" title="Pants Calzones Diapro" alt="Pants Calzones Diapro">
+                <h4>Pants Calzones Diapro®</h4>
+                <div class="butConoceSecc"><span><a href="/Productos/pants-calzones-diapro">CONÓCELO AQUÍ</a></span></div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+@Html.Partial("_sliderIncontinencia")
+
+
+@section scripts{
+@*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+    y antes del cierra de la etiqueta </body>*@
+
+
+}

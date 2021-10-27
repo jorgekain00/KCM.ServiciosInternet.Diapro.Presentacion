@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Cuáles son los tipos de incontinencia | Productos Diapro";
+}
+
+@section metas{
+    @* Aquí colocar los metas que van en <head> *@
+<meta id="ctl00_MetaDesc" name="description" content="Cuáles son los tipos de incontinencia que existen y por qué existen los escapes de orina." />
+<meta id="ctl00_MetaKey" name="keywords" content="tipos de incontinencia, incontinencia urinaria, que tipo de incontinencia tengo, por que aparece la incontinencia," />
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Incontinencia/tipos-de-incontinencia")' />
+}
+
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+
+<!--Contenido principal-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+             <img src="~/img/headerTiposIncont.webp" title="Cuáles son los Tipos de Incontinencia" alt="Cuáles son los Tipos de Incontinencia" class="img-responsive d-none d-sm-none d-lg-block">
+                <img src="~/img/headerTiposIncontMobile.webp" title="Cuantos Tipos de Incontinencia existen" alt="Cuantos Tipos de Incontinencia existen" class="img-responsive  d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+    <h1>Cuáles son los tipos de incontinencia</h1>
+    <p>Los tipos de incontinencia se identifican de acuerdo a ciertas formas en que se presentan, por ejemplo:</p>
+    <h2>Incontinencia de esfuerzo</h2>
+    <p>
+        ¿Alguna vez has levantado un objeto pesado y unas gotas de orina se te han salido? Es la pregunta que un
+        doctor le hace a un paciente sospechoso de tener incontinencia de esfuerzo; justo esa es la forma de
+        identificar esta variedad, pero no solo levantar objetos puede desencadenarla, sino también por estornudar,
+        toser e incluso ¡reír!
+        <h2>Incontinencia de urgencia</h2>
+    <p>
+        Cuando una persona siente un gran deseo de orinar ante la salida sin control de orina, se le clasifica como
+        incontinencia de urgencia, en algunos casos esta se ve influenciada por sonidos como una llave abierta,
+        lavar trastos o manos; de igual forma el frío parece incrementar los efectos de esta variedad.
+    </p>
+    <h2>Incontinencia mixta</h2>
+    <p>
+        Las personas refieren la combinación de sensaciones de esfuerzo y urgencia, son las llamadas formas
+        mixtas.<br>
+        Es más frecuente en personas de edad avanzada.
+    </p>
+    <h2>Incontinencia por rebosamiento</h2>
+    <p>
+        Imaginemos que vertemos agua en un vaso, se encuentra lleno, pero no percibimos que de continuar llenándolo
+        se derramará, así que continuamos y el agua poco a poco sale por el borde. Se clasifican dentro de esta
+        variedad a las personas que no sienten la vejiga llena, y que por consiguiente no controlan el goteo propio
+        del mismo. Se relaciona con padecimientos neurológicos.
+    </p>
+    <p>
+        Cualquiera que sea el tipo de incontinencia identificado por el médico, es importante que se maneje la
+        enfermedad conforme a los factores específicos de cada variedad para evitar complicaciones posteriores en el
+        aspecto psicológico y orgánico.
+    </p>
+    <br>
+    <p class="text-info small">
+        <strong>Fuente:</strong> Medline Plus-Biblioteca Nacional de Medicina de E. E. U.
+        U.<br>
+        <strong>Link:</strong><a href="https://medlineplus.gov/spanish/ency/article/003142.htm" target="_blank" rel="noopener">
+            http://bit.ly/2bCokn4
+        </a>
+    </p>
+</div>
+
+ <div class="container artProd">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 col-sm-12 col-xs-12 frase">
+                <h3><strong>Disfruta la vida</strong></h3>
+               <p><em>Mantente activa, nosotros te ayudamos<br> a sentirte segura con protección 100% confiable</em></p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 artProducto center-block text-center">
+                <img src="~/img/pantsCalzones.webp" title="Pants Calzones Diapro" alt="Pants Calzones Diapro">
+                <h4>Pants Calzones Diapro®</h4>
+                <div class="butConoceSecc"><span><a href="/Productos/pants-calzones-diapro">CONÓCELO AQUÍ</a></span></div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+@Html.Partial("_sliderIncontinencia")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
+    @RenderSection("metas", required: false)
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    @Html.Partial("_nav")
+    @RenderBody()
+
+    @Html.Partial("_footer")
+
+    @*@Scripts.Render("~/bundles/scripts")*@
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/JFM.ui.js"></script>
+    <script src="https://dev1.kcmsso.com/Services/SSO.svc/JS/JFMSSO?apiKey=3_nSD2myEBhdHzeIuRpz0M2fqLYeuM6mJiJsXIZ-aVVvkaDd23OOPtW5of3SqYL1u7&version=1.0"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

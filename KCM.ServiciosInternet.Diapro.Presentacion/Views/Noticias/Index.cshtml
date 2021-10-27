@@ -1,0 +1,179 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #ededed;
+            background-image: url(/img/bg-textura.webp);
+            background-repeat: repeat;
+            padding: 0px;
+            margin: 0px;
+            font-family: arial, helvetica, sans-serif, verdana, 'Open Sans'
+        }
+
+        .carousel-indicators {
+            position: relative;
+            margin-top: -16px !important;
+        }
+
+            .carousel-indicators button {
+                margin-top: 10px !important;
+                width: 220px !important;
+                height: 100px;
+                margin-left: 90px;
+                margin-right: 90px;
+            }
+    </style>
+</head>
+<body>
+    <div id="notasHome" class="carousel slide carousel-dark" data-bs-ride="carousel">
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="~/img/cuidadoPacientesSillaRuedas.webp" class="d-block w-100" loading="lazy"
+                     title="Cuidado de pacientes en silla de ruedas" alt="Cuidado de pacientes en silla de ruedas">
+                <div class="carousel-caption">
+                    <div class="tituloNota">Cuidado de pacientes en silla de ruedas</div>
+                    <div class="textoNota">
+                        Existen necesidades específicas para las personas que repentinamente se
+                        encuentran en la necesidad de usar una silla de ruedas, ya sea por cambios en su vida
+                        personal o en su salud.
+                    </div>
+                    <a href="/Cuidadores/cuidado-de-pacientes-en-silla-de-ruedas" target="_blank">
+                        <div class="button2"><span>Ir a la nota</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="~/img/tiposIcontinencia.webp" class="d-block w-100" loading="lazy"
+                     title="Tipos de incontinencia" alt="Tipos de incontinencia">
+                <div class="carousel-caption">
+                    <div class="tituloNota">Tipos de incontinencia</div>
+                    <div class="textoNota">
+                        Los tipos de incontinencia se identifican de acuerdo a ciertas formas en
+                        que se presentan.
+                    </div>
+                    <a href="/Incontinencia/tipos-de-incontinencia" target="_blank">
+                        <div class="button2"><span>Ir a la nota</span></div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="carousel-item"  data-bs-interval="4000">
+                <img src="~/img/tratamientosIncontinencia.webp" class="d-block w-100" loading="lazy"
+                     title="Tratamientos para la incontinencia" alt="Tratamientos para la incontinencia">
+                <div class="carousel-caption">
+                    <div class="tituloNota">Tratamientos para la incontinencia</div>
+                    <div class="textoNota">
+                        El tratamiento de los diferentes tipos de incontinencia pueden incluir
+                        medicamentos, uso de suplementos alimenticios, práctica de ejercicios.
+                    </div>
+                    <a href="/Incontinencia/tratamientos-para-la-incontinencia" target="_blank">
+                        <div class="button2"><span>Ir a la nota</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item"  data-bs-interval="4000">
+                <img src="~/img/ConsejosParaCuidado.webp" class="d-block w-100" loading="lazy"
+                     title="Consejos para un mejor cuidado" alt="Consejos para un mejor cuidado">
+                <div class="carousel-caption">
+                    <div class="tituloNota">Consejos para un mejor cuidado</div>
+                    <div class="textoNota">
+                        Ser un cuidador es una gran responsabilidad y un gran reto para cualquier
+                        familiar, pues necesita adquirir conocimientos médicos.
+                    </div>
+                    <a href="/Cuidadores/consejos-para-un-mejor-cuidado" target="_blank">
+                        <div class="button2"><span>Ir a la nota</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="~/img/HerramientasParaAyudarlo.webp" class="d-block w-100" loading="lazy"
+                     title="Herramientas para ayudarlo" alt="Herramientas para ayudarlo">
+                <div class="carousel-caption">
+                    <div class="tituloNota">Herramientas para ayudarlo</div>
+                    <div class="textoNota">
+                        Cuidar de un paciente es una tarea muy importante, es necesario aprender
+                        a conocerlo para auxiliarle en todas su necesidades.
+                    </div>
+                    <a href="/Cuidadores/herramientas-para-cuidadores" target="_blank">
+                        <div class="button2"><span>Ir a la nota</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="~/img/HigieneEnPacientes.webp" class="d-block w-100" loading="lazy"
+                     title="Higiene en pacientes" alt="Higiene en pacientes">
+                <div class="carousel-caption">
+                    <div class="tituloNota">Higiene en pacientes</div>
+                    <div class="textoNota">
+                        Aprendamos más sobre el aseo de un paciente en cama, ya que es de vital
+                        importancia.
+                    </div>
+                    <a href="/Cuidadores/higiene-en-pacientes" target="_blank">
+                        <div class="button2"><span>Ir a la nota</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Left and right controls -->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#notasHome" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#notasHome" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <!-- Indicators thumb-->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#notasHome" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1">
+                <img src="~/img/TbmCuidadoPacientesSillaRuedas.webp"
+                     class="d-block w-100" loading="lazy" title="Pañal Diapro" alt="Pañal Diapro">
+            </button>
+            <button type="button" data-bs-target="#notasHome" data-bs-slide-to="1" aria-label="Slide 2">
+                <img src="~/img/tmbTiposIncontinencia.webp" class="d-block w-100" loading="lazy"
+                     title="Diapro máxima absorción" alt="Diapro máxima absorción ">
+            </button>
+            <button type="button" data-bs-target="#notasHome" data-bs-slide-to="2" class="active"
+                    aria-current="true" aria-label="Slide 3">
+                <img src="~/img/tmbTratamientosIncontinencia.webp"
+                     class="d-block w-100" loading="lazy" title="Pañal Diapro" alt="Pañal Diapro">
+            </button>
+            <button type="button" data-bs-target="#notasHome" data-bs-slide-to="3" class="active"
+                    aria-current="true" aria-label="Slide 4">
+                <img src="~/img/tmbConsejosParaCuidado.webp"
+                     class="d-block w-100" loading="lazy" title="Pañal Diapro" alt="Pañal Diapro">
+            </button>
+            <button type="button" data-bs-target="#notasHome" data-bs-slide-to="4" aria-label="Slide 5">
+                <img src="~/img/tmbHerramientasParaAyudarlo.webp" class="d-block w-100" loading="lazy"
+                     title="Diapro máxima absorción" alt="Diapro máxima absorción ">
+            </button>
+            <button type="button" data-bs-target="#notasHome" data-bs-slide-to="5" class="active"
+                    aria-current="true" aria-label="Slide 6">
+                <img src="~/img/tmbHigienePacientes.webp"
+                     class="d-block w-100" loading="lazy" title="Pañal Diapro" alt="Pañal Diapro">
+            </button>
+
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/scripts")
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

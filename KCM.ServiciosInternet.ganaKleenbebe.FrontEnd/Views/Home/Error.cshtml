@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+}
+
+
+@section metas{
+    @*Aquí coloca los metas*@
+
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<div class="container" id="error">
+    <div class="row">
+
+        <div class="col-12 texterror">
+            <img src="~/images/logo_animate.gif" alt="Logo feria Kleenbebe">
+            <h2 class="hit-error">404</h2>
+            <p><span>Algo salió mal</span></p>
+            <p>@ViewBag.Message</p>
+            <p>
+                La página a la que quieres acceder no ha sido encontrada. <br>
+                Te recomendamos regresar al inicio...
+            </p>
+
+
+            <a class="mt-4 mb-3" href="/home/index">Volver al inicio</a>
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+
+}

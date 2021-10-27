@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Ejercicios de Kegel | Diapro Productos para Incontinencia";
+}
+
+
+@section metas{
+    @* Aquí colocar los metas que van en <head> *@
+<meta id="ctl00_MetaDesc" name="description" content="Estos ejercicios pueden ayudarte a controlar tu vejiga y fortalecer el suelo pélvico. Recuerda que ser constantes en su práctica es lo mejor." />
+<meta id="ctl00_MetaKey" name="keywords" content="Diapro, Productos incontinencia, incontinencia urinaria, pipi, pañales para adulto, pañales predoblados, calzón para incontinecia, Toallas Húmedas, Incontinencia, incontinencia en adultos, escapes de orina, se me sale la pipi"/>
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Incontinencia/ejercicios-de-kegel")' />
+}
+
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerEjerciciosKegel.webp" title="Ejercicios de Kegel para Incontinencia" alt="Ejercicios de Kegel para Incontinencia" class="img-responsive d-none d-sm-none d-lg-block">
+            <img src="~/img/headerEjerciciosKegelMobile.webp" title="Ejercicios de Kegel en Incontinencia" alt="Ejercicios de Kegel en Incontinencia" class="img-responsive  d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+        <h1>Ejercicios de Kegel</h1>
+        <p>Si padeces incontinencia urinaria, lo más seguro es que ya hayas escuchado sobre los ejercicios de Kegel.
+            Estos ayudan a fortalecer los músculos del suelo pélvico, encargados de contener la orina, son muy sencillos
+            de realzar y con pocos minutos que le dediques, notarás la diferencia. Te compartimos esta serie de
+            movimientos que te ayudará a lograrlo.</p>
+        <p>El primer paso es identificar los músculos del suelo pélvico, para ello, intenta retener la orina y son los
+            que se contraen.</p>
+        <p>Elige una posición cómoda para ti, ya sea sentada o recostada boca arriba. Realiza esta contracción por 5
+            segundos y relajar por 5 segundos. No debes contraer los músculos de tu abdomen, glúteos ni muslos. Al
+            principio es importante que solo hagas la repetición 5 veces y, posteriormente, aumentes a contracciones de
+            10 segundos, realizando 3 series de repeticiones al día.</p>
+        <p>Otro ejercicio que puedes realizar son las famosas sentadillas, cuidando en todo momento la posición
+            adecuada: las piernas abiertas a lo ancho de la cadera, las puntas de los pies siempre hacia el frente,
+            cuidado las rodillas al bajar, manteniendo una ángulo de 90º.</p>
+        <p>Si eres constante con los ejercicios, puedes notar resultados en un par de semanas.</p>
+    </div>
+
+<div class="container artProd">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 col-sm-12 col-xs-12 frase">
+                <h3><strong>Disfruta la vida</strong></h3>
+               <p><em>Mantente activa, nosotros te ayudamos<br> a sentirte segura con protección 100% confiable</em></p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 artProducto center-block text-center">
+                <img src="~/img/pantsCalzones.webp" title="Pants Calzones para Incontinencia" alt="Pants Calzones para Incontinencia">
+                <h4>Pants Calzones Diapro®</h4>
+                <div class="butConoceSecc"><span><a href="/Productos/pants-calzones-diapro">CONÓCELO AQUÍ</a></span></div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+@Html.Partial("_sliderIncontinencia")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

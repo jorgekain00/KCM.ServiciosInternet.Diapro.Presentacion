@@ -1,0 +1,412 @@
+﻿
+@{
+    ViewBag.Title = "Diapro";
+}
+
+@section metas{
+    <meta id="ctl00_MetaDesc" name="description" content="Diapro productos para la incontinencia urinaria. Conoce qué es la incontinencia y los tratamientos para los escapes de orina." />
+    <meta id="ctl00_MetaKey" name="keywords" content="diapro, pañales para adulto, calzones desechables, incontinencia urinaria, incontinencia en adultos, escapes de orina, se me sale la pipi, " />
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+    <style>
+        .aviso {
+            margin-top: 120px;
+            padding-bottom: 40px;
+        }
+
+            .aviso h1 {
+                font-family: Helvetica;
+            }
+
+            .aviso p {
+                font-size: 16px;
+                text-align: justify;
+            }
+
+        @@media (max-width: 420px) {
+            .aviso {
+                margin-top: 120px;
+                padding-bottom: 10px;
+            }
+
+            .divAviso {
+                text-align: right;
+            }
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="aviso">
+            <div class="col-md-12">
+                <h1>AVISO DE PRIVACIDAD</h1><br>
+                <p>
+                    NOTA: Todos los usuarios de este sitio de internet, al inscribirse aceptan expresamente el
+                    siguiente aviso de privacidad, por eso le pedimos que antes de continuar y registrarse, lea con
+                    detenimiento, el tratamiento de los datos personales a los que tendremos acceso (si usted nos
+                    los proporciona) y a los derechos que a continuación se describen.
+                </p>
+                <p>
+                    La sola navegación en este sitio de internet, no compromete ningún dato personal, salvo que usted
+                    decida voluntariamente registrarse para los fines aquí descritos.
+                </p>
+                <h2>Aviso de Privacidad</h2>
+                <h3>RESPONSABLE</h3>
+                <p>
+                    Kimberly-Clark de México, S.A.B. de C.V. (en adelante “KCM”), ubicado en la calle Jaime Balmes
+                    No. 8, piso 9 Col. Los Morales Polanco, C.P. 11510, Ciudad de México, es la responsable del
+                    debido tratamiento y resguardo de los datos personales que son recabados a través del sitio web
+                    www.diapro.com.mx.
+                </p>
+                <h3>DATOS REQUERIDOS</h3>
+                <p>
+                    Los datos que se requieren al registrase en el sitio web www.diapro.com.mx son los siguientes:
+                </p>
+                <p>
+                    i) Nombre y apellidos del usuario; ii) cuenta de correo electrónico; iii) fecha de nacimiento
+                    (año, mes y día); iv) género (sexo); v) país, estado y código postal de residencia; y vi) estado
+                    civil.
+                </p>
+                <p>
+                    Tal y como se señala en nuestro Avíso de Privacidad (www.diapro.com.mx/privacidad), al
+                    registrarse en nuestro portal usted podrá vaciar los datos requeridos a través de dos opciones
+                    de llenado: a) de manera manual, al teclear en su ordenador o dispositivo móvil la información
+                    correspondiente; o bien b) mediante el registro a través de su cuenta de usuario de las redes
+                    sociales Facebook®, Twitter® o Google® (Google+®), según sea el caso. En este último supuesto,
+                    al utilizar los datos de su cuenta de usuario de las redes sociales mencionadas se obtendrán, de
+                    manera adicional y complementaria a los ya señalados, los datos contenidos en tales redes,
+                    mismos que son los siguientes:
+                </p>
+                <p>
+                    I).- Para el caso de la red social Facebook®: a) nombre; b) nombre del usuario en su perfil de la
+                    cuenta; c) edad; d) fecha de cumpleaños; e) imagen o fotografía de perfil; f) género (sexo); g)
+                    idioma que opera en su cuenta; h) país, estado, ciudad y código postal de residencia; i) datos
+                    sobre su educación contenidos en su perfil (historial académico); j) lugar de trabajo y
+                    antecedentes laborales contenidos en su perfil; k) ciudad de origen; l) situación sentimental
+                    (relationship status); m) intereses; n) descripción personal; ñ) información sobre los “Me
+                    Gusta” (like) otorgados por el usuario; o) uso horario correspondiente; p) datos e información
+                    contenidos en su “biografía”; q) vista de la página (thumbnail); r) favoritos.
+                </p>
+                <p>
+                    II.- Para el caso de la red social Twitter®: a) nombre; b) nombre del usuario en su perfil de la
+                    cuenta; c) vista de la página (thumbnail); d)imagen o fotografía de perfil; y e) país.
+                </p>
+                <p>
+                    III.- Para el caso de la red social Google® (Google+®): a) nombre; b) nombre del usuario en su
+                    perfil; c) edad; d) fecha de nacimiento; e) género (sexo); f) ciudad de residencia; g) cuenta de
+                    correo electrónico; h) imagen o fotografía de perfil; i) datos e información del perfil; j)
+                    datos sobre su educación contenidos en su perfil (historial académico); k) lugar de trabajo y
+                    antecedentes laborales contenidos en su perfil; l) idioma que opera en su cuenta; y m) uso
+                    horario correspondiente.
+                </p>
+                <p>
+                    La anterior información sólo será accesible para nosotros una vez que el usuario de manera
+                    expresa autorice el registro en nuestro sitio (www.diapro.com.mx) mediante el uso del perfil que
+                    el usuario tiene con la red social de que se trate. Por ello, si usted no desea que la red
+                    social que utilice para registrarse en nuestro portal permita el acceso a determinados datos, le
+                    aconsejamos que revise las políticas de privacidad, términos y condiciones a las que usted se
+                    encuentra suscrito con dichas redes sociales, toda vez que KCM no tiene injerencia sobre el
+                    tenor y contenido de dichas reglas.
+                </p>
+
+                <p>
+                    DATOS PERSONALES SENSIBLES.- Es oportuno señalar que los datos que pudieran recabarse
+                    identificados en los incisos e), k), m), n) o) y r) del apartado I anterior (para el caso del
+                    registro mediante la red social Facebook®); d) del apartado II anterior (para el caso del
+                    registro mediante la red social Twitter®); y h) del apartado III anterior (para el caso del
+                    registro mediante la red social Google+®) resultan sensibles en los términos de la Ley Federal
+                    de Protección de datos Personales en Posesión de los Particulares. Lo anterior se hace de su
+                    conocimiento para el efecto de que el consentimiento que se otorgue al momento de suscribir el
+                    presente Aviso de Privacidad sea expreso y consiente de dicha circunstancia.
+                </p>
+
+
+                <h3>FINALIDADES DEL TRATAMIENTO DE LOS DATOS PERSONALES</h3>
+                <p>
+                    Los datos arriba listados se solicitan para:<br>
+                    Comercializar productos y servicios ofrecidos por KCM y sus empresas afiliadas y subsidiarias.
+                    Ofrecer al usuario del portal www.diapro.com.mx , información sobre cambios, nuevos productos
+                    y/o servicios de todos y cada uno de los productos, servicios y marcas de KCM y sus empresas
+                    afiliadas y subsidiarias.
+                </p>
+                <p>
+                    Realizar campañas, por medios electrónicos, de promociones de nuevos productos y/o servicios
+                    correspondientes a la marca Diapro México® así como a todas y cada una de las marcas de KCM y
+                    sus empresas afiliadas y subsidiarias.En el entendido que, para estos efectos, se podrá utilizar
+                    la cuenta de correo electrónico proporcionada, así como las redes sociales abiertas con dicha
+                    cuenta de correo electrónico.
+                </p>
+                <p>
+                    Evaluar la calidad de nuestros productos y/o servicios de KCM y sus empresas afiliadas y
+                    subsidiarias.
+                </p>
+                <p>
+                    Analizar los patrones de consumo de los productos y servicios que ofrece KCM y sus empresas
+                    afiliadas y subsidiarias.
+                </p>
+                <p>
+                    Que exista la posibilidad de tener una relación de manera directa y personal con los clientes, a
+                    fin de acreditar la identificación del titular de dichos datos personales, de conformidad con
+                    las leyes y disposiciones aplicables.
+                </p>
+                <p>
+                    Analizar el perfil de gustos, consumo, preferencias e inquietudes de nuestros usuarios para
+                    ofrecerles contenido y productos de manera personalizada.
+                </p>
+                <p>
+                    Identificar los valores de nuestros usuarios para el efecto de ser consecuentes con los mismos al
+                    momento de promocionar y ofrecer nuestros productos.
+                </p>
+                <p>
+                    Identificar el grado de preparación académica y profesional, así como el estilo de vida de nuestros
+                    usuarios para ofrecerles y comunicarles acerca de productos acordes a sus necesidades y
+                    preferencias.
+                </p>
+
+                <h3>TRANSFERENCIA DE LOS DATOS</h3>
+                <p>
+                    Los datos personales que se recaben serán compartidos en los términos del artículo 37, fracción
+                    III de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, con
+                    sociedades controladoras, subsidiarias o afiliadas bajo el control común de KCM, o a una
+                    sociedad matriz, a cualquier sociedad del mismo grupo de KCM, así como al grupo al que pertenece
+                    KCM.
+                </p>
+                <p>
+                    Exceptuando lo precisado en el párrafo anterior, a ninguna otra persona o entidad distinta de
+                    KCM, le serán transferidos los datos recabados a través del registro en el portal
+                    www.diapro.com.mx.
+                </p>
+
+                <p>
+                    <strong> ARCO</strong> (Acceso, Rectificación, Cancelación y Oposición) y REVOCACIÓN del
+                    consentimiento para el tratamiento de los datos.
+                </p>
+                <p>
+                    Para cualquier acceso, rectificación, cancelación, oposición o revocación en el manejo de los
+                    datos personales obtenidos a través del sitio de internet www.diapro.com.mx, KCM pone a su
+                    disposición el correo electrónico <a href="mailto:privacidad@kcc.com">privacidad@kcc.com</a>, a
+                    cargo de la Gerencia de Servicios de Internet, en términos del Capítulo IV de la LFPDP, artículo
+                    21 de su Reglamento, así como de las disposiciones contenidas en los Lineamientos del Aviso de
+                    Privacidad emitidas por la Secretaría de Economía. Y KCM se compromete a dar contestación a
+                    dicha solicitud en un plazo de 15 días a partir de que haya recibido dicha solicitud de derechos
+                    ARCO.
+                </p>
+                <p>
+                    Para estos efectos, el usuario deberá enviar a dicha dirección de correo electrónico un escrito
+                    en el que señale, de manera clara y expedita, qué datos y en qué medida desea tener acceso, o
+                    bien, rectificar, cancelar, oponerse o revocar su consentimiento al tratamiento de los mismos,
+                    adjuntando la documentación que sustente su petición. Además deberá señalar el nombre de usuario
+                    y la cuenta de correo electrónico con la que se dio de alta en el portal www.diapro.com.mx.
+                </p>
+                <p>
+                    Una vez que sea recibida la petición debidamente requisitada en la cuenta de correo electrónico
+                    ya señalada, KCM contará con un plazo de quince días (mismos que podrán ser ampliados por un
+                    periodo igual, dependiendo de las circunstancias del caso) para resolver la petición
+                    correspondiente.
+                </p>
+                <p>
+                    De resultar procedente la petición del usuario, KCM deberá cumplir con la misma en un plazo de
+                    quince días contados a partir de la emisión de la resolución correspondiente.
+                </p>
+
+
+                <h3>OPCIONES Y MEDIOS PARA LIMITAR EL USO O DIVULGACIÓN DE LOS DATOS PERSONALES</h3>
+                <p>
+                    El límite en cuanto al uso y divulgación de los datos personales recabados a través del portal
+                    www.diapro.com.mx., se encuentra circunscrito al Aviso de Privacidad expuesto en la dirección
+                    electrónica (www.diapro.com.mx/privacidad).
+                </p>
+                <p>
+                    Una vez que el usuario decida cancelar su cuenta personal del sitio web www.diapro.com.mx.,
+                    dejará de recibir todo tipo de avisos o notificaciones relativas a la misma.
+                </p>
+                <p>
+                    En caso de que un usuario únicamente decida dejar de recibir comunicaciones, notificaciones o
+                    avisos correspondientes a los productos y servicios de KCM, ésta pone a su disposición la
+                    dirección de correo electrónico <a href="mailto:privacidad@kcc.com">privacidad@kcc.com</a>, para
+                    que el usuario así lo manifieste de manera expresa.
+                </p>
+                <h3>MECANISMOS EN MEDIOS REMOTOS O LOCALES</h3>
+                <p>
+                    Cuando usted interactúa dentro del portal www.diapro.com.mx. Podemos reunir otra clase de
+                    información no personal, como el tipo de navegador, la dirección IP y las páginas visitadas, o
+                    información sobre los servicios que usa, las búsquedas que realiza, los resultados de esas
+                    búsquedas, correos electrónicos de KCM que abre y/o envía, ofertas de KCM o vínculos a los que
+                    se conecte mediante correos electrónicos y otra información relacionada con el uso que usted
+                    hace del portal mencionado.
+                </p>
+                <p>
+                    También usamos cookies y otras tecnologías para manejar, mejorar y optimizar nuestro sitio con el
+                    fin de ofrecerle una experiencia más personalizada. NO OBSTANTE, POR LOS MEDIOS ANTES SEÑALADOS,
+                    NUNCA SERÁN RECABADOS DATOS PERSONALES.
+                </p>
+
+
+                <h3>CAMBIOS AL AVISO DE PRIVACIDAD</h3>
+                <p>
+                    En caso de realizar modificaciones a nuestro Aviso de Privacidad, enviaremos un correo
+                    electrónico a nuestros usuarios, a la cuenta con la que se dieron de alta en el sitio web
+                    www.diapro.com.mx., para informarles sobre dichos cambios, mismo que incluirá el vínculo para
+                    consultarlos.
+                </p>
+
+
+                <h3>CONSENTIMIENTO DEL USUARIO</h3>
+                <p>
+                    <strong> DE EDAD.-</strong> Si eres menor de 18 (dieciocho) años de edad, antes de darnos tu
+                    nombre, dirección o correo electrónico, o cualquier otro dato personal que te identifique obtén
+                    permiso de tu(s) padre(s) o tutor(es), toda vez que si te inscribes a nuestro portal de
+                    internet, estás manifestando bajo protesta de decir verdad, que cuentas con la autorización
+                    tácita de sus padres o tutores para otorgarnos tus datos personales.
+                </p>
+                <p>
+                    Los padres o tutores, son exclusivamente responsables del acceso de los menores de edad a este
+                    sitio, toda vez que son los garantes legales del cuidado y supervisión de las acciones de sus
+                    hijos, dando las facilidades a sus hijos para el ingreso a internet como a este sitio; si por
+                    equivocación tu hijo mandó sus datos sin tu consentimiento, favor de ejercer sus derechos ARCO
+                    en representación de ellos, al correo <a href="mailto:privacidad@kcc.com">privacidad@kcc.com</a>
+                </p>
+                <p>
+                    Asimismo, al inscribirse a este portal, se manifiesta expresamente el consentimiento y aceptación
+                    del usuario con los términos y condiciones del presente Aviso de Privacidad, el usuario
+                    manifiesta su consentimiento expreso e inequívoco para que se dé uso y tratamiento a todos y
+                    cada uno de los datos personales señalados, así como aquellos identificados como sensibles.
+                </p>
+
+
+                <h3>POLÍTICAS DE PRIVACIDAD</h3>
+                <p>
+                    Los usuarios que se registren dentro del portal de internet de Ropa interior íntima Diapro®
+                    (www.diapro.com.mx), autorizan a Kimberly-Clark de México, S.A.B. de C.V. (en adelante “KCM”) la
+                    obtención y utilización de los datos e información que los usuarios de dicho portal le faciliten
+                    en los términos de la presentes políticas de privacidad y del Aviso de Privacidad que, en
+                    cumplimiento a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares,
+                    está al alcance y disposición de los titulares de dichos datos para que, previamente a la
+                    obtención de la información que nos ocupa, otorguen su consentimiento para estos efectos en los
+                    términos de la legislación citada.
+                </p>
+                <p>
+                    Por ello, le informamos que a través de nuestro portal (www.diapro.com.mx) se obtienen diversos
+                    datos, tanto aquellos que son proporcionados directamente por usted al registrarse, como
+                    aquellos obtenidos al navegar en nuestro portal.
+                </p>
+                <p>
+                    Asimismo, al registrarse usted podrá vaciar sus datos a través de dos opciones de llenado: a) de
+                    manera manual, al teclear en su ordenador o dispositivo móvil la información correspondiente; o
+                    bien b) mediante el registro a través de su cuenta de usuario de las redes sociales Facebook®,
+                    Twitter® o Google®. En este último caso, al utilizar los datos de su cuenta de usuario de las
+                    redes sociales mencionadas, se obtendrán los datos ahí contenidos, mismos que son los
+                    siguientes:
+                <p>
+                    Para el caso de la red social Facebook®: a) nombre; b) nombre del usuario en su perfil de la
+                    cuenta; c) edad; d) fecha de cumpleaños; e) imagen o fotografía de perfil; f) género (sexo); g)
+                    idioma que opera en su cuenta; h) país, estado, ciudad y código postal de residencia; i) datos
+                    sobre su educación contenidos en su perfil (historial académico); j) lugar de trabajo y
+                    antecedentes laborales contenidos en su perfil; k) ciudad de origen; l) creencias religiosas; m)
+                    situación sentimental (relationship status); n) intereses; ñ) descripción personal; o)
+                    información sobre los “Me Gusta” (like) otorgados por el usuario; p) uso horario
+                    correspondiente; q) datos e información contenidos en su “biografía”; r) vista de la página
+                    (thumbnail); y s) favoritos.
+                </p>
+
+                <p>
+                    Para el caso de la red social Twitter®: a) nombre; b) nombre del usuario en su perfil de la
+                    cuenta; c) vista de la página (thumbnail); d) imagen o fotografía de perfil; e) país.
+                </p>
+
+                <p>
+                    Para el caso de la red social Google® (Google+®): a) nombre; b) nombre del usuario en su perfil;
+                    c) edad; d) fecha de nacimiento; e) género (sexo); f) ciudad de residencia; g) cuenta de correo
+                    electrónico; h) imagen o fotografía de perfil; i) datos e información del perfil; j) datos sobre
+                    su educación contenidos en su perfil (historial académico); k) lugar de trabajo y antecedentes
+                    laborales contenidos en su perfil; l) idioma que opera en su cuenta; m) uso horario
+                    correspondiente.
+                </p>
+
+                <p>
+                    La anterior información sólo será accesible para nosotros una vez que el usuario de manera
+                    expresa autorice el registro en nuestro sitio (www.diapro.com.mx) mediante el uso del perfil que
+                    el usuario tiene con la red social de que se trate. Por ello, si usted no desea que la red
+                    social que utilice para registrarse en nuestro portal permita el acceso a determinados datos, le
+                    aconsejamos que revise las políticas de privacidad, términos y condiciones a las que usted se
+                    encuentra suscrito con dichas redes sociales, toda vez que KCM no tiene injerencia sobre el
+                    tenor y contenido de dichas reglas.
+                </p>
+                <p>
+                    Asimismo, al registrarse dentro de este sitio web a través de alguna de sus cuentas de redes
+                    sociales, los usuarios aceptan y están de acuerdo en que KCM, de forma constante, importe y
+                    conserve las actualizaciones o modificaciones que hagan de alguno de los datos arriba
+                    mencionados.
+                </p>
+                <p>
+                    Para estos efectos, el grado de privacidad que usted decida compartir deberá sujetarse a los
+                    términos, condiciones y ajustes de privacidad a los que usted tiene acceso como usuario de
+                    dichas redes sociales.
+                </p>
+                <p>
+                    Si usted no desea que mediante el registro en nuestro portal se tenga acceso a los datos e
+                    información arriba precisados, le sugerimos realizar su registro sin utilizar su cuenta y perfil
+                    de la red social correspondiente.
+                </p>
+                <p>
+                    Finalmente, al registrarse dentro del sitio web de Ropa interior íntima Diapro®, usted autoriza y
+                    está conforme con que KCM aloje la información que usted le comparta, misma que será utilizada
+                    de conformidad con los usos, términos y condiciones que se exponen en el Aviso de Privacidad, en
+                    cumplimiento a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+                </p>
+                <p>
+                    En esa inteligencia, hacemos del conocimiento de los usuarios del portal www.diapro.com.mx que al
+                    navegar por este portal podremos obtener, mediante la utilización de cookies y otras tecnologías
+                    de análisis web (como Web Beacons y etiquetas de remarketing) diversa información, como lo sería
+                    el tipo de navegador, su dirección IP, las páginas que usted visita, resolución de su pantalla y
+                    el tiempo de permanencia en el sitio web. En caso que usted no quiera compartir esta
+                    información, le sugerimos modificar los ajustes y configuración del navegador de red que
+                    utilice, así como los de su ordenador o dispositivo móvil para el efecto de inhabilitar el uso
+                    de las tecnologías mencionadas. No obstante, le manifestamos que a través del uso de tales
+                    tecnologías no obtendremos ningún tipo de información catalogada como Dato Personal en los
+                    términos de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+                    Cabe señalar que KCM conservará y hará uso de dicha información para, entre otros, actualizar y
+                    mejorar los servicios que este sitio web brinda y ofrece a sus usuarios, así como para ofrecerle
+                    una experiencia más personalizada al navegar en el portal www.diapro.com.mx.
+                </p>
+
+
+                <p>
+                    <strong>MENORES DE EDAD.-</strong> Si eres menor de 18 (dieciocho) años de edad, antes de darnos
+                    tu nombre, dirección o correo electrónico, o cualquier otro dato personal que te identifique
+                    obtén permiso de tus (s) padre(s) o tutor(es), toda vez que si te inscribes a nuestro portal de
+                    internet, estás manifestando bajo protesta de decir verdad, que cuentas con la autorización
+                    tácita de sus padres o tutores para otorgarnos tus datos personales.
+                </p>
+                <p>
+                    Los padres o tutores, son exclusivamente responsables del acceso de los menores de edad a este
+                    sitio, toda vez que son los garantes legales del cuidado y supervisión de las acciones de sus
+                    hijos, dando las facilidades a sus hijos para el ingreso a internet como a este sitio; si por
+                    equivocación tu hijo mandó sus datos sin tu consentimiento, favor de ejercer sus derechos ARCO
+                    en representación de ellos, al correo <a href="mailto:privacidad@kcc.com">privacidad@kcc.com</a>
+                </p>
+                <p>
+                    Asimismo, al inscribirse a este portal, se manifiesta expresamente el consentimiento y aceptación
+                    del usuario con los términos y condiciones del presente Aviso de Privacidad, el usuario
+                    manifiesta su consentimiento expreso e inequívoco para que se dé uso y tratamiento a todos y
+                    cada uno de los datos personales señalados, así como aquellos identificados como sensibles.
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Administración de Cortes";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+}
+
+<section class="home-section">
+    <div id="Alerts"></div>
+    <div id="Session" class="fixed-top" style="position:absolute;left:80%;margin-top:20px;display:flex;align-items:baseline;">
+        <h5>Usuario:&nbsp;</h5>
+        <span id="userSession"></span>
+    </div>
+    <div class="text">Cortes Por Semana</div>
+    <div class="table-responsive">
+        <table id="PivotTable" class="table table-striped table-hover ">
+            <thead class="table-azul">
+                <tr>
+                    <th scope="col">Corte por semana</th>
+                    <th scope="col">Fecha de corte​</th>
+                    <th scope="col">Juego a jugar​</th>
+                    <th scope="col">Días que comprende el corte​</th>
+                    <th scope="col">Parámetro de promoción​</th>
+                    <th scope="col">Fecha de creación​</th>
+                    <th scope="col">Corte Procesado​</th>
+                    <th scope="col">Cerrado Por​</th>
+                    <th scope="col">Fecha de Cierre​</th>
+                    <th scope="col">Esta en juego​</th>
+                    <th></th>
+
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <br><br>
+
+    <div class="stiky">
+        <button class="btn btn-primary mx-auto" id="AddPivotDay">Agregar nuevo Corte​</button>
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="modalPivot" tabindex="-1" aria-labelledby="modalTicketLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form id="PivotForm" action="/PivotDay/UpdatePivotDay" autocomplete="off" novalidate="novalidate" data-ajax="true" data-ajax-method="Post" data-ajax-mode="" data-ajax-update="" method="post" data-ajax-Confirm="¿Desea confirmar los cambios?">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTicketLabel">Nuevo corte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-auto">
+                    <input type="hidden" id="Id" name="Id" value="" />
+                    <div class="row mb-3">
+                        <label for="PivotDate" class="col-md-6 col-form-label">Fecha de corte:</label>
+                        <div class="col-md-6">
+                            <input type="date" class="form-control" name="PivotDate" id="PivotDate" data-val="true" data-val-required="Por favor ingresa la fecha de corte" data-val-date="La Fecha es inválida"/>
+                            <span class="field-validation-valid" data-valmsg-for="PivotDate" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="IdGameinfo" class="col-sm-6 col-form-label">Juego a jugar:​</label>
+                        <div class="col-sm-6">
+                            <select class="form-select" name="IdGameinfo" id="IdGameinfo" data-val="true" data-val-required="Debe seleccionar un juego">
+                                <option value="">Elegir...</option>
+                                <option>Opcion 1</option>
+                                <option>Opcion 2</option>
+                                <option>Opcion 3</option>
+                            </select>
+                            <span class="field-validation-valid" data-valmsg-for="IdGameinfo" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="Days" class="col-sm-6 col-form-label">Días comprendidos​:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" name="Days" id="Days" data-val="true" data-val-required="Debe ingresar los días que comprende el corte" data-val-regex-pattern="^([0-9]{1,2})$" data-val-regex="Número de días inválido. Permitido hasta 99.">
+                            <span class="field-validation-valid" data-valmsg-for="Days" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="IdParam" class="col-sm-6 col-form-label">Parámetro:</label>
+                        <div class="col-sm-6">
+                            <select class="form-select" id="IdParam" name="IdParam" data-val="true" data-val-required="Debe seleccionar un parámetro">
+                                <option value="">Elegir...</option>
+                                <option>Opcion 1</option>
+                                <option>Opcion 2</option>
+                                <option>Opcion 3</option>
+                            </select>
+                            <span class="field-validation-valid" data-valmsg-for="IdParam" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3 ms-0">
+                        <div class="col-9 form-check form-switch">
+                            <input type="checkbox" class="form-check-input" id="IsProcessed" name="IsProcessed">
+                            <label for="IsProcessed" class="col-sm-6 form-check-label">Cerrar corte</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="field-validation-valid" data-msg-error="true" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="PivotAccept" class="btn btn-primary" value="Agregar" />
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br><br>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    @Scripts.Render("~/bundles/PivotDay")
+}

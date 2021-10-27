@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Consulta de ganadores";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+    <style>
+        .wrapper1 {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0; /* required */
+        }
+        .wrapper1 {
+            height: 20px;
+        }
+
+        .div1 {
+            height: 20px;
+        }
+    </style>
+}
+
+<section class="home-section">
+    <div class="text">Consulta de juegos</div>
+    <div class="col-md-2 col-sm-12 selecthome" style="margin-bottom:10px;margin-top:-20px">
+        <br>
+        <label for="numeroCorte" class="form-label">Número de corte</label>
+        <select class="form-select" id="numeroCorte"></select>
+    </div>
+    <div id="Alerts"></div>
+    <div id="Session" class="fixed-top" style="position:absolute;left:80%;margin-top:20px;display:flex;align-items:baseline;">
+        <h5>Usuario:&nbsp;</h5>
+        <span id="userSession"></span>
+    </div>
+    <div class="wrapper1">
+        <div class="div1"></div>
+    </div>
+    <div class="table-responsive" id="TicketTable">
+        <table class="table table-striped table-hover">
+            <thead class="table-azul">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">#</th>
+                    <th scope="col">Corte por semana</th>
+                    <th scope="col">No. de ticket</th>
+                    <th scope="col">Juego ejecutado</th>
+                    <th scope="col">Fecha registro ticket</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Mejor tiempo</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Etapa registrada</th>
+                    <th scope="col">No. de juegos asignados</th>
+                    <th scope="col">Path de ticket</th>
+                    <th scope="col">Es válido</th>
+                    <th scope="col">Es ganador</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <br><br>
+
+
+    @*<div class="table-responsive collapse" id="competitorSection">*@
+    <div class="table-responsive" id="competitorSection" style="display:none;">
+        <table class="table  table-hover table-responsive" style="margin-left:30px">
+            <thead class="table-verde">
+                <tr>
+                    <th></th>
+                    <th scope="col">ID jugador</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Fecha de nacimiento</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Descargar historial</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+    <br><br>
+    @*<div class="table-responsive collapse" id="gameSection">*@
+    <div class="table-responsive" id="gameSection" style="display:none">
+        <table class="table  table-hover table-responsive">
+            <thead class="table-amarilla">
+                <tr>
+                    <th scope="col">No. de juego</th>
+                    <th scope="col">Fecha del juego</th>
+                    <th scope="col">Tiempo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="d-flex" style="margin-bottom:50px;margin-top:-50px">
+        <button class="btn btn-outline-danger mx-auto" id="btnMore">Cargar más registros</button>
+    </div>
+    <div class="stiky">
+        <a href="javascript:void(0)" id="btnExcel" class="btn btn-success mx-auto">Reporte Excel​</a>
+        <a href="javascript:void(0)" id="btnSave" class="btn btn-info mx-auto">Guardar</a>
+        <a href="javascript:void(0)" id="btnConfirm" class="btn btn-primary mx-auto">Confirmar ganadores</a>
+    </div>
+    <div id="alerts" class="fixed-bottom" style="margin-left:70px"></div>
+</section>
+<br><br>
+<!-- Modal -->
+<div class="modal fade" id="modalTicket" tabindex="-1" aria-labelledby="modalTicketLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTicketLabel">Ticket</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto">
+                <img src="images/ticket-walmart.jpg">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Descargar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    @*Aquí pones los scripts*@
+    @Scripts.Render("~/bundles/Winners")
+    <script>
+        window.addEventListener('load', function (event) {
+            let wrapper1 = document.querySelector('.wrapper1');
+            let wrapper2 = document.getElementById('TicketTable');
+            wrapper1.onscroll = function () {
+                wrapper2.scrollLeft = wrapper1.scrollLeft;
+            };
+            wrapper2.onscroll = function () {
+                wrapper1.scrollLeft = wrapper2.scrollLeft;
+            };
+
+        }, false)
+    </script>
+}

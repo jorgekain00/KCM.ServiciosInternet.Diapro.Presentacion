@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="www.gana.kleenbebe.com.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminUser">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Competitor">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="BirthYear" Type="int" Nullable="false" />
+          <Property Name="BirthMonth" Type="int" Nullable="false" />
+          <Property Name="BirthDay" Type="int" Nullable="false" />
+          <Property Name="CellPhone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GameInfo">
+          <Key>
+            <PropertyRef Name="IdGameinfo" />
+          </Key>
+          <Property Name="IdGameinfo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DevelopedBy" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="IdParam" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Params">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PivotDay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="PivotDate" Type="datetime" Nullable="false" />
+          <Property Name="IdGameinfo" Type="int" Nullable="false" />
+          <Property Name="IsProcessed" Type="bit" Nullable="false" />
+          <Property Name="Days" Type="int" Nullable="false" />
+          <Property Name="IdParam" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Closeby" Type="nvarchar" MaxLength="200" />
+          <Property Name="ClosebyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="SKU" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Barcode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Family" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="idSize" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="IdSize" />
+          </Key>
+          <Property Name="IdSize" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="IdTicket" />
+          </Key>
+          <Property Name="IdTicket" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="UID" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="SKU" Type="int" Nullable="false" />
+          <Property Name="UrlPhoto" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Attempts" Type="int" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www.gana.kleenbebe.com_1.dbo.vwGame' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwGame">
+          <Key>
+            <PropertyRef Name="PivotDayId" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdTicket" />
+            <PropertyRef Name="CreationDate" />
+          </Key>
+          <Property Name="PivotDayId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="IdGameInfo" Type="int" />
+          <Property Name="GameDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Time" Type="time" Precision="7" />
+          <Property Name="IdTicket" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www.gana.kleenbebe.com_1.dbo.vwTicketByPivotDay' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwTicketByPivotDay">
+          <Key>
+            <PropertyRef Name="PivotDayId" />
+            <PropertyRef Name="IdTicket" />
+            <PropertyRef Name="GameDescription" />
+            <PropertyRef Name="TicketDate" />
+            <PropertyRef Name="TicketAmount" />
+            <PropertyRef Name="Product" />
+            <PropertyRef Name="ProductSize" />
+            <PropertyRef Name="TicketAttempts" />
+            <PropertyRef Name="TicketPath" />
+            <PropertyRef Name="CompetitorUID" />
+            <PropertyRef Name="CompetitorFirstName" />
+            <PropertyRef Name="CompetitorLastName" />
+            <PropertyRef Name="CompetitorEmail" />
+            <PropertyRef Name="CompetitorBirthDay" />
+            <PropertyRef Name="CompetitorPhone" />
+            <PropertyRef Name="BestTimeIdTicket" />
+            <PropertyRef Name="IsValid" />
+            <PropertyRef Name="IsWinner" />
+          </Key>
+          <Property Name="PivotDayId" Type="int" Nullable="false" />
+          <Property Name="IdTicket" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="GameDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TicketDate" Type="datetime" Nullable="false" />
+          <Property Name="TicketAmount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="BestTime" Type="time" Precision="7" />
+          <Property Name="Product" Type="int" Nullable="false" />
+          <Property Name="ProductSize" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TicketAttempts" Type="int" Nullable="false" />
+          <Property Name="TicketPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CompetitorUID" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="CompetitorFirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompetitorLastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompetitorEmail" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="CompetitorBirthDay" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CompetitorPhone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="BestTimeIdTicket" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="IsValid" Type="bit" Nullable="false" />
+          <Property Name="IsWinner" Type="bit" Nullable="false" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="200" />
+          <Property Name="LastUpdate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Gameinfo_Params_IdParam">
+          <End Role="Params" Type="Self.Params" Multiplicity="0..1" />
+          <End Role="GameInfo" Type="Self.GameInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Params">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameInfo">
+              <PropertyRef Name="IdParam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PivotDay_GameInfo_IdGameinfo">
+          <End Role="GameInfo" Type="Self.GameInfo" Multiplicity="1" />
+          <End Role="PivotDay" Type="Self.PivotDay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GameInfo">
+              <PropertyRef Name="IdGameinfo" />
+            </Principal>
+            <Dependent Role="PivotDay">
+              <PropertyRef Name="IdGameinfo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PivotDay_Params_IdParam">
+          <End Role="Params" Type="Self.Params" Multiplicity="1" />
+          <End Role="PivotDay" Type="Self.PivotDay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Params">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PivotDay">
+              <PropertyRef Name="IdParam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Size_idSize">
+          <End Role="Size" Type="Self.Size" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="IdSize" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="idSize" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Competitor_UID">
+          <End Role="Competitor" Type="Self.Competitor" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competitor">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Product_SKU">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="SKU" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="SKU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_GetAttemps" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GetGameInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="todayDt" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_GetParamsFromGame" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdGameinfo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GetScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="nvarchar" Mode="In" />
+          <Parameter Name="TodayDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productPrice" Type="decimal" Mode="In" />
+          <Parameter Name="productClave" Type="int" Mode="In" />
+          <Parameter Name="productTicket" Type="nchar" Mode="In" />
+          <Parameter Name="UID" Type="nvarchar" Mode="In" />
+          <Parameter Name="Path" Type="nvarchar" Mode="In" />
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="BirthYear" Type="int" Mode="In" />
+          <Parameter Name="BirthMonth" Type="int" Mode="In" />
+          <Parameter Name="BirthDay" Type="int" Mode="In" />
+          <Parameter Name="CellPhone" Type="nvarchar" Mode="In" />
+          <Parameter Name="todayDt" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_Pivot_DeletePivotDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Pivot_GetGameInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Pivot_GetParams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Pivot_GetPivotDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Pivot_UpdatePivotDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="PivotDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="IdGameinfo" Type="int" Mode="In" />
+          <Parameter Name="IsProcessed" Type="bit" Mode="In" />
+          <Parameter Name="Days" Type="int" Mode="In" />
+          <Parameter Name="IdParam" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Session_GetAdminUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateSaveGame" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+          <Parameter Name="IdGame" Type="bigint" Mode="In" />
+          <Parameter Name="EndGameDt" Type="datetime" Mode="In" />
+          <Parameter Name="Time" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateSetGame" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="nvarchar" Mode="In" />
+          <Parameter Name="todayDt" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_GetAllTickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_GetGamesByTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdTicket" Type="nvarchar" Mode="In" />
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_GetRangeDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="todayDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_GetTickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfTickets" Type="int" Mode="In" />
+          <Parameter Name="BestTimeIdTicket" Type="nvarchar" Mode="In" />
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_GetUserRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_UpdateLockPivotDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_UpdateTicketByPivotDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Winners_UpdateTickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PivotDayId" Type="int" Mode="In" />
+          <Parameter Name="JsonTickets" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="wwwganakleenbebecomStoreContainer">
+          <EntitySet Name="AdminUser" EntityType="Self.AdminUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Competitor" EntityType="Self.Competitor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameInfo" EntityType="Self.GameInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Params" EntityType="Self.Params" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PivotDay" EntityType="Self.PivotDay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vwGame" EntityType="Self.vwGame" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwGame].[PivotDayId] AS [PivotDayId], 
+    [vwGame].[Id] AS [Id], 
+    [vwGame].[IdGameInfo] AS [IdGameInfo], 
+    [vwGame].[GameDate] AS [GameDate], 
+    [vwGame].[EndDate] AS [EndDate], 
+    [vwGame].[Time] AS [Time], 
+    [vwGame].[IdTicket] AS [IdTicket], 
+    [vwGame].[CreationDate] AS [CreationDate]
+    FROM [dbo].[vwGame] AS [vwGame]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketByPivotDay" EntityType="Self.vwTicketByPivotDay" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwTicketByPivotDay].[PivotDayId] AS [PivotDayId], 
+    [vwTicketByPivotDay].[IdTicket] AS [IdTicket], 
+    [vwTicketByPivotDay].[GameDescription] AS [GameDescription], 
+    [vwTicketByPivotDay].[TicketDate] AS [TicketDate], 
+    [vwTicketByPivotDay].[TicketAmount] AS [TicketAmount], 
+    [vwTicketByPivotDay].[BestTime] AS [BestTime], 
+    [vwTicketByPivotDay].[Product] AS [Product], 
+    [vwTicketByPivotDay].[ProductSize] AS [ProductSize], 
+    [vwTicketByPivotDay].[TicketAttempts] AS [TicketAttempts], 
+    [vwTicketByPivotDay].[TicketPath] AS [TicketPath], 
+    [vwTicketByPivotDay].[CompetitorUID] AS [CompetitorUID], 
+    [vwTicketByPivotDay].[CompetitorFirstName] AS [CompetitorFirstName], 
+    [vwTicketByPivotDay].[CompetitorLastName] AS [CompetitorLastName], 
+    [vwTicketByPivotDay].[CompetitorEmail] AS [CompetitorEmail], 
+    [vwTicketByPivotDay].[CompetitorBirthDay] AS [CompetitorBirthDay], 
+    [vwTicketByPivotDay].[CompetitorPhone] AS [CompetitorPhone], 
+    [vwTicketByPivotDay].[BestTimeIdTicket] AS [BestTimeIdTicket], 
+    [vwTicketByPivotDay].[IsValid] AS [IsValid], 
+    [vwTicketByPivotDay].[IsWinner] AS [IsWinner], 
+    [vwTicketByPivotDay].[UpdatedBy] AS [UpdatedBy], 
+    [vwTicketByPivotDay].[LastUpdate] AS [LastUpdate]
+    FROM [dbo].[vwTicketByPivotDay] AS [vwTicketByPivotDay]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Gameinfo_Params_IdParam" Association="Self.FK_Gameinfo_Params_IdParam">
+            <End Role="Params" EntitySet="Params" />
+            <End Role="GameInfo" EntitySet="GameInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PivotDay_GameInfo_IdGameinfo" Association="Self.FK_PivotDay_GameInfo_IdGameinfo">
+            <End Role="GameInfo" EntitySet="GameInfo" />
+            <End Role="PivotDay" EntitySet="PivotDay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PivotDay_Params_IdParam" Association="Self.FK_PivotDay_Params_IdParam">
+            <End Role="Params" EntitySet="Params" />
+            <End Role="PivotDay" EntitySet="PivotDay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Size_idSize" Association="Self.FK_Product_Size_idSize">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Competitor_UID" Association="Self.FK_Ticket_Competitor_UID">
+            <End Role="Competitor" EntitySet="Competitor" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Product_SKU" Association="Self.FK_Ticket_Product_SKU">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="www.gana.kleenbebe.com" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Competitor">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BirthYear" Type="Int32" Nullable="false" />
+          <Property Name="BirthMonth" Type="Int32" Nullable="false" />
+          <Property Name="BirthDay" Type="Int32" Nullable="false" />
+          <Property Name="CellPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Competitor_UID" FromRole="Competitor" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="GameInfo">
+          <Key>
+            <PropertyRef Name="IdGameinfo" />
+          </Key>
+          <Property Name="IdGameinfo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DevelopedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdParam" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Param" Relationship="Self.FK_Gameinfo_Params_IdParam" FromRole="GameInfo" ToRole="Params" />
+          <NavigationProperty Name="PivotDays" Relationship="Self.FK_PivotDay_GameInfo_IdGameinfo" FromRole="GameInfo" ToRole="PivotDay" />
+        </EntityType>
+        <EntityType Name="Param">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="GameInfoes" Relationship="Self.FK_Gameinfo_Params_IdParam" FromRole="Params" ToRole="GameInfo" />
+          <NavigationProperty Name="PivotDays" Relationship="Self.FK_PivotDay_Params_IdParam" FromRole="Params" ToRole="PivotDay" />
+        </EntityType>
+        <EntityType Name="PivotDay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="PivotDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdGameinfo" Type="Int32" Nullable="false" />
+          <Property Name="IsProcessed" Type="Boolean" Nullable="false" />
+          <Property Name="Days" Type="Int32" Nullable="false" />
+          <Property Name="IdParam" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="GameInfo" Relationship="Self.FK_PivotDay_GameInfo_IdGameinfo" FromRole="PivotDay" ToRole="GameInfo" />
+          <NavigationProperty Name="Param" Relationship="Self.FK_PivotDay_Params_IdParam" FromRole="PivotDay" ToRole="Params" />
+          <Property Name="Closeby" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ClosebyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="SKU" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Family" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idSize" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Size" Relationship="Self.FK_Product_Size_idSize" FromRole="Product" ToRole="Size" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Product_SKU" FromRole="Product" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="IdSize" />
+          </Key>
+          <Property Name="IdSize" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Size_idSize" FromRole="Size" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="IdTicket" />
+          </Key>
+          <Property Name="IdTicket" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="SKU" Type="Int32" Nullable="false" />
+          <Property Name="UrlPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Attempts" Type="Int32" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Competitor" Relationship="Self.FK_Ticket_Competitor_UID" FromRole="Ticket" ToRole="Competitor" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Ticket_Product_SKU" FromRole="Ticket" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="vwGame">
+          <Key>
+            <PropertyRef Name="PivotDayId" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdTicket" />
+            <PropertyRef Name="CreationDate" />
+          </Key>
+          <Property Name="PivotDayId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="IdGameInfo" Type="Int32" />
+          <Property Name="GameDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Time" Type="Time" Precision="7" />
+          <Property Name="IdTicket" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vwTicketByPivotDay">
+          <Key>
+            <PropertyRef Name="PivotDayId" />
+            <PropertyRef Name="IdTicket" />
+            <PropertyRef Name="GameDescription" />
+            <PropertyRef Name="TicketDate" />
+            <PropertyRef Name="TicketAmount" />
+            <PropertyRef Name="Product" />
+            <PropertyRef Name="ProductSize" />
+            <PropertyRef Name="TicketAttempts" />
+            <PropertyRef Name="TicketPath" />
+            <PropertyRef Name="CompetitorUID" />
+            <PropertyRef Name="CompetitorFirstName" />
+            <PropertyRef Name="CompetitorLastName" />
+            <PropertyRef Name="CompetitorEmail" />
+            <PropertyRef Name="CompetitorBirthDay" />
+            <PropertyRef Name="CompetitorPhone" />
+            <PropertyRef Name="BestTimeIdTicket" />
+            <PropertyRef Name="IsValid" />
+            <PropertyRef Name="IsWinner" />
+          </Key>
+          <Property Name="PivotDayId" Type="Int32" Nullable="false" />
+          <Property Name="IdTicket" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GameDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TicketDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TicketAmount" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="BestTime" Type="Time" Precision="7" />
+          <Property Name="Product" Type="Int32" Nullable="false" />
+          <Property Name="ProductSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TicketAttempts" Type="Int32" Nullable="false" />
+          <Property Name="TicketPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompetitorUID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompetitorFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompetitorLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompetitorEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompetitorBirthDay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompetitorPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BestTimeIdTicket" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsValid" Type="Boolean" Nullable="false" />
+          <Property Name="IsWinner" Type="Boolean" Nullable="false" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Ticket_Competitor_UID">
+          <End Role="Competitor" Type="Self.Competitor" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competitor">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gameinfo_Params_IdParam">
+          <End Role="Params" Type="Self.Param" Multiplicity="0..1" />
+          <End Role="GameInfo" Type="Self.GameInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Params">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameInfo">
+              <PropertyRef Name="IdParam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PivotDay_GameInfo_IdGameinfo">
+          <End Role="GameInfo" Type="Self.GameInfo" Multiplicity="1" />
+          <End Role="PivotDay" Type="Self.PivotDay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GameInfo">
+              <PropertyRef Name="IdGameinfo" />
+            </Principal>
+            <Dependent Role="PivotDay">
+              <PropertyRef Name="IdGameinfo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PivotDay_Params_IdParam">
+          <End Role="Params" Type="Self.Param" Multiplicity="1" />
+          <End Role="PivotDay" Type="Self.PivotDay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Params">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PivotDay">
+              <PropertyRef Name="IdParam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Size_idSize">
+          <End Role="Size" Type="Self.Size" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="IdSize" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="idSize" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Product_SKU">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="SKU" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="SKU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GanaKleenbebe" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Competitors" EntityType="Self.Competitor" />
+          <EntitySet Name="GameInfoes" EntityType="Self.GameInfo" />
+          <EntitySet Name="Params" EntityType="Self.Param" />
+          <EntitySet Name="PivotDays" EntityType="Self.PivotDay" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Sizes" EntityType="Self.Size" />
+          <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+          <EntitySet Name="vwGames" EntityType="Self.vwGame" />
+          <EntitySet Name="vwTicketByPivotDays" EntityType="Self.vwTicketByPivotDay" />
+          <AssociationSet Name="FK_Ticket_Competitor_UID" Association="Self.FK_Ticket_Competitor_UID">
+            <End Role="Competitor" EntitySet="Competitors" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gameinfo_Params_IdParam" Association="Self.FK_Gameinfo_Params_IdParam">
+            <End Role="Params" EntitySet="Params" />
+            <End Role="GameInfo" EntitySet="GameInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PivotDay_GameInfo_IdGameinfo" Association="Self.FK_PivotDay_GameInfo_IdGameinfo">
+            <End Role="GameInfo" EntitySet="GameInfoes" />
+            <End Role="PivotDay" EntitySet="PivotDays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PivotDay_Params_IdParam" Association="Self.FK_PivotDay_Params_IdParam">
+            <End Role="Params" EntitySet="Params" />
+            <End Role="PivotDay" EntitySet="PivotDays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Size_idSize" Association="Self.FK_Product_Size_idSize">
+            <End Role="Size" EntitySet="Sizes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Product_SKU" Association="Self.FK_Ticket_Product_SKU">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <FunctionImport Name="SP_GetAttemps" ReturnType="Collection(Int32)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetGameInfo" ReturnType="Collection(String)">
+          <Parameter Name="todayDt" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetParamsFromGame" ReturnType="Collection(String)">
+          <Parameter Name="IdGameinfo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetScore" ReturnType="Collection(www.gana.kleenbebe.com.SP_GetScore_Result)">
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="TodayDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertTicket" ReturnType="Collection(String)">
+            <Parameter Name="productPrice" Mode="In" Type="Decimal" />
+            <Parameter Name="productClave" Mode="In" Type="Int32" />
+            <Parameter Name="productTicket" Mode="In" Type="String" />
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="Path" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="BirthYear" Mode="In" Type="Int32" />
+            <Parameter Name="BirthMonth" Mode="In" Type="Int32" />
+            <Parameter Name="BirthDay" Mode="In" Type="Int32" />
+            <Parameter Name="CellPhone" Mode="In" Type="String" />
+            <Parameter Name="todayDt" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateSaveGame">
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+            <Parameter Name="IdGame" Mode="In" Type="Int64" />
+            <Parameter Name="EndGameDt" Mode="In" Type="DateTime" />
+            <Parameter Name="Time" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateSetGame" ReturnType="Collection(www.gana.kleenbebe.com.SP_UpdateSetGame_Result)">
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="todayDt" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetAttemps" ReturnType="Collection(Int32)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetGameInfo" ReturnType="Collection(String)">
+          <Parameter Name="todayDt" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetParamsFromGame" ReturnType="Collection(String)">
+          <Parameter Name="IdGameinfo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetScore" ReturnType="Collection(www.gana.kleenbebe.com.GetScore_Result)">
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="TodayDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTicket" ReturnType="Collection(String)">
+            <Parameter Name="productPrice" Mode="In" Type="Decimal" />
+            <Parameter Name="productClave" Mode="In" Type="Int32" />
+            <Parameter Name="productTicket" Mode="In" Type="String" />
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="Path" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="BirthYear" Mode="In" Type="Int32" />
+            <Parameter Name="BirthMonth" Mode="In" Type="Int32" />
+            <Parameter Name="BirthDay" Mode="In" Type="Int32" />
+            <Parameter Name="CellPhone" Mode="In" Type="String" />
+            <Parameter Name="todayDt" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateSaveGame">
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+            <Parameter Name="IdGame" Mode="In" Type="Int64" />
+            <Parameter Name="EndGameDt" Mode="In" Type="DateTime" />
+            <Parameter Name="Time" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateSetGame" ReturnType="Collection(www.gana.kleenbebe.com.UpdateSetGame_Result)">
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="todayDt" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_GetRangeDates" ReturnType="Collection(www.gana.kleenbebe.com.SP_Winners_GetRangeDates_Result)">
+          <Parameter Name="todayDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_GetRangeDates" ReturnType="Collection(www.gana.kleenbebe.com.Winners_GetRangeDates_Result)">
+          <Parameter Name="todayDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_GetTickets" ReturnType="Collection(www.gana.kleenbebe.com.SP_Winners_GetTickets_Result)">
+            <Parameter Name="NumberOfTickets" Mode="In" Type="Int32" />
+            <Parameter Name="BestTimeIdTicket" Mode="In" Type="String" />
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_GetTickets" ReturnType="Collection(www.gana.kleenbebe.com.Winners_GetTickets_Result)">
+            <Parameter Name="NumberOfTickets" Mode="In" Type="Int32" />
+            <Parameter Name="BestTimeIdTicket" Mode="In" Type="String" />
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_UpdateTicketByPivotDay">
+          <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_UpdateTicketByPivotDay" ReturnType="Collection(Int32)">
+          <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_GetAllTickets" ReturnType="Collection(www.gana.kleenbebe.com.SP_Winners_GetAllTickets_Result)">
+          <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_GetAllTickets" ReturnType="Collection(www.gana.kleenbebe.com.Winners_GetTickets_Result)">
+          <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_GetGamesByTicket" ReturnType="Collection(www.gana.kleenbebe.com.SP_Winners_GetGamesByTicket_Result)">
+            <Parameter Name="IdTicket" Mode="In" Type="String" />
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_GetGamesByTicket" ReturnType="Collection(www.gana.kleenbebe.com.Winners_GetGamesByTicket_Result)">
+            <Parameter Name="IdTicket" Mode="In" Type="String" />
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_UpdateTickets">
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+            <Parameter Name="JsonTickets" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_UpdateTickets">
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+            <Parameter Name="JsonTickets" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_UpdateLockPivotDay" ReturnType="Collection(String)">
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_UpdateLockPivotDay" ReturnType="Collection(String)">
+            <Parameter Name="PivotDayId" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Winners_GetUserRecords" ReturnType="Collection(www.gana.kleenbebe.com.SP_Winners_GetUserRecords_Result)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Winners_GetUserRecords" ReturnType="Collection(www.gana.kleenbebe.com.Winners_GetUserRecords_Result)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Pivot_DeletePivotDay" ReturnType="Collection(String)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Pivot_GetGameInfo" ReturnType="Collection(www.gana.kleenbebe.com.SP_Pivot_GetGameInfo_Result)" />
+          <FunctionImport Name="SP_Pivot_GetParams" ReturnType="Collection(www.gana.kleenbebe.com.SP_Pivot_GetParams_Result)" />
+          <FunctionImport Name="SP_Pivot_GetPivotDays" ReturnType="Collection(www.gana.kleenbebe.com.SP_Pivot_GetPivotDays_Result)" />
+          <FunctionImport Name="SP_Pivot_UpdatePivotDay" ReturnType="Collection(String)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="PivotDate" Mode="In" Type="String" />
+            <Parameter Name="IdGameinfo" Mode="In" Type="Int32" />
+            <Parameter Name="IsProcessed" Mode="In" Type="Boolean" />
+            <Parameter Name="Days" Mode="In" Type="Int32" />
+            <Parameter Name="IdParam" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Pivot_DeletePivotDay" ReturnType="Collection(String)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Pivot_GetGameInfo" ReturnType="Collection(www.gana.kleenbebe.com.Pivot_ComboBox_Result)" />
+          <FunctionImport Name="Pivot_GetParams" ReturnType="Collection(www.gana.kleenbebe.com.Pivot_ComboBox_Result)" />
+          <FunctionImport Name="Pivot_GetPivotDays" ReturnType="Collection(www.gana.kleenbebe.com.Pivot_GetPivotDays_Result)" />
+          <FunctionImport Name="Pivot_UpdatePivotDay" ReturnType="Collection(String)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="PivotDate" Mode="In" Type="String" />
+            <Parameter Name="IdGameinfo" Mode="In" Type="Int32" />
+            <Parameter Name="IsProcessed" Mode="In" Type="Boolean" />
+            <Parameter Name="Days" Mode="In" Type="Int32" />
+            <Parameter Name="IdParam" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Session_GetAdminUser" ReturnType="Collection(www.gana.kleenbebe.com.SP_Session_GetAdminUser_Result)">
+          <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Session_GetAdminUser" ReturnType="Collection(www.gana.kleenbebe.com.Session_GetAdminUser_Result)">
+          <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="AdminUsers" EntityType="www.gana.kleenbebe.com.AdminUser" />
+        </EntityContainer>
+        <ComplexType Name="SP_GetScore_Result">
+          <Property Type="DateTime" Name="GameDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Time" Name="Time" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_UpdateSetGame_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="true" />
+          <Property Type="Int64" Name="GameId" Nullable="true" />
+          <Property Type="Int32" Name="IdGameInfo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetScore_Result">
+          <Property Type="DateTime" Name="GameDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Time" Name="Time" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="UpdateSetGame_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="true" />
+          <Property Type="Int64" Name="GameId" Nullable="true" />
+          <Property Type="Int32" Name="IdGameInfo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Winners_GetRangeDates_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="initialDate" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="endDate" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="IsProcessed" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Winners_GetRangeDates_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="initialDate" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="endDate" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="IsProcessed" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Winners_GetTickets_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="false" />
+          <Property Type="String" Name="IdTicket" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="GameDescription" Nullable="false" />
+          <Property Type="DateTime" Name="TicketDate" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="TicketAmount" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Time" Name="BestTime" Nullable="true" />
+          <Property Type="Int32" Name="Product" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="false" />
+          <Property Type="Int32" Name="TicketAttempts" Nullable="false" />
+          <Property Type="String" Name="TicketPath" Nullable="false" />
+          <Property Type="String" Name="CompetitorUID" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="CompetitorFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorLastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorEmail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CompetitorBirthDay" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CompetitorPhone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="BestTimeIdTicket" Nullable="false" MaxLength="80" />
+          <Property Type="Boolean" Name="IsValid" Nullable="true" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetTicket_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="false" />
+          <Property Type="String" Name="IdTicket" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="GameDescription" Nullable="false" />
+          <Property Type="DateTime" Name="TicketDate" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="TicketAmount" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Time" Name="BestTime" Nullable="true" />
+          <Property Type="Int32" Name="Product" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="false" />
+          <Property Type="Int32" Name="TicketAttempts" Nullable="false" />
+          <Property Type="String" Name="TicketPath" Nullable="false" />
+          <Property Type="String" Name="CompetitorUID" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="CompetitorFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorLastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorEmail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CompetitorBirthDay" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CompetitorPhone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="BestTimeIdTicket" Nullable="false" MaxLength="80" />
+          <Property Type="Boolean" Name="IsValid" Nullable="true" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Winners_GetTickets_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="false" />
+          <Property Type="String" Name="IdTicket" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="GameDescription" Nullable="false" />
+          <Property Type="String" Name="TicketDate" Nullable="true" MaxLength="19" />
+          <Property Type="Decimal" Name="TicketAmount" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="String" Name="BestTime" Nullable="true" MaxLength="12" />
+          <Property Type="Int32" Name="Product" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="false" />
+          <Property Type="Int32" Name="TicketAttempts" Nullable="false" />
+          <Property Type="String" Name="TicketPath" Nullable="false" />
+          <Property Type="String" Name="CompetitorUID" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="CompetitorFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorLastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorEmail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CompetitorBirthDay" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CompetitorPhone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="BestTimeIdTicket" Nullable="false" MaxLength="80" />
+          <Property Type="Boolean" Name="IsValid" Nullable="false" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Winners_GetAllTickets_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="false" />
+          <Property Type="String" Name="IdTicket" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="GameDescription" Nullable="false" />
+          <Property Type="DateTime" Name="TicketDate" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="TicketAmount" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Time" Name="BestTime" Nullable="true" />
+          <Property Type="Int32" Name="Product" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="false" />
+          <Property Type="Int32" Name="TicketAttempts" Nullable="false" />
+          <Property Type="String" Name="TicketPath" Nullable="false" />
+          <Property Type="String" Name="CompetitorUID" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="CompetitorFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorLastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorEmail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CompetitorBirthDay" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CompetitorPhone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="BestTimeIdTicket" Nullable="false" MaxLength="80" />
+          <Property Type="Boolean" Name="IsValid" Nullable="true" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Winners_GetGamesByTicket_Result">
+          <Property Type="Int64" Name="numberGame" Nullable="true" />
+          <Property Type="DateTime" Name="GameDate" Nullable="true" Precision="23" />
+          <Property Type="Time" Name="Time" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Winners_GetGamesByTicket_Result">
+          <Property Type="Int64" Name="numberGame" Nullable="true" />
+          <Property Type="String" Name="GameDate" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="12" />
+        </ComplexType>
+        <ComplexType Name="SP_Winners_GetUserRecords_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="false" />
+          <Property Type="String" Name="IdTicket" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="GameDescription" Nullable="false" />
+          <Property Type="DateTime" Name="TicketDate" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="TicketAmount" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Time" Name="BestTime" Nullable="true" />
+          <Property Type="Int32" Name="Product" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="false" />
+          <Property Type="Int32" Name="TicketAttempts" Nullable="false" />
+          <Property Type="String" Name="TicketPath" Nullable="false" />
+          <Property Type="String" Name="CompetitorUID" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="CompetitorFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorLastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorEmail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CompetitorBirthDay" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CompetitorPhone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="BestTimeIdTicket" Nullable="false" MaxLength="80" />
+          <Property Type="Boolean" Name="IsValid" Nullable="false" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="false" />
+          <Property Type="Int64" Name="numberGame" Nullable="true" />
+          <Property Type="DateTime" Name="GameDate" Nullable="true" Precision="23" />
+          <Property Type="Time" Name="Time" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Winners_GetUserRecords_Result">
+          <Property Type="Int32" Name="PivotDayId" Nullable="false" />
+          <Property Type="String" Name="IdTicket" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="GameDescription" Nullable="false" />
+          <Property Type="DateTime" Name="TicketDate" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="TicketAmount" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Time" Name="BestTime" Nullable="true" />
+          <Property Type="Int32" Name="Product" Nullable="false" />
+          <Property Type="String" Name="ProductSize" Nullable="false" />
+          <Property Type="Int32" Name="TicketAttempts" Nullable="false" />
+          <Property Type="String" Name="TicketPath" Nullable="false" />
+          <Property Type="String" Name="CompetitorUID" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="CompetitorFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorLastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CompetitorEmail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CompetitorBirthDay" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CompetitorPhone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="BestTimeIdTicket" Nullable="false" MaxLength="80" />
+          <Property Type="Boolean" Name="IsValid" Nullable="false" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="false" />
+          <Property Type="Int64" Name="numberGame" Nullable="true" />
+          <Property Type="DateTime" Name="GameDate" Nullable="true" Precision="23" />
+          <Property Type="Time" Name="Time" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Pivot_GetGameInfo_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Pivot_GetParams_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Description" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Pivot_GetPivotDays_Result">
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="DateTime" Name="PivotDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="IdGameinfo" Nullable="true" />
+          <Property Type="String" Name="GameDescription" Nullable="true" />
+          <Property Type="Int32" Name="Days" Nullable="true" />
+          <Property Type="String" Name="IdParam" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="IsProcessed" Nullable="true" />
+          <Property Type="String" Name="Closeby" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="ClosebyDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="IsLive" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Pivot_ComboBox_Result">
+          <Property Type="String" Name="Id" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Description" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Pivot_GetPivotDays_Result">
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="String" Name="PivotDate" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="IdGameinfo" Nullable="true" />
+          <Property Type="String" Name="GameDescription" Nullable="true" />
+          <Property Type="Int32" Name="Days" Nullable="true" />
+          <Property Type="String" Name="IdParam" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CreationDate" Nullable="true" MaxLength="30" />
+          <Property Type="Boolean" Name="IsProcessed" Nullable="true" />
+          <Property Type="String" Name="Closeby" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ClosebyDate" Nullable="true" MaxLength="30" />
+          <Property Type="Boolean" Name="IsLive" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Session_GetAdminUser_Result">
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="200" />
+          <Property Type="Boolean" Name="isAdmin" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Session_GetAdminUser_Result">
+          <Property Type="Boolean" Name="isAdmin" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="200" />
+        </ComplexType>
+        <EntityType Name="AdminUser">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wwwganakleenbebecomStoreContainer" CdmEntityContainer="GanaKleenbebe">
+          <EntitySetMapping Name="Competitors">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.Competitor">
+              <MappingFragment StoreEntitySet="Competitor">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthYear" ColumnName="BirthYear" />
+                <ScalarProperty Name="BirthMonth" ColumnName="BirthMonth" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameInfoes">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.GameInfo">
+              <MappingFragment StoreEntitySet="GameInfo">
+                <ScalarProperty Name="IdGameinfo" ColumnName="IdGameinfo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="DevelopedBy" ColumnName="DevelopedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="IdParam" ColumnName="IdParam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Params">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.Param">
+              <MappingFragment StoreEntitySet="Params">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PivotDays">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.PivotDay">
+              <MappingFragment StoreEntitySet="PivotDay">
+                <ScalarProperty Name="ClosebyDate" ColumnName="ClosebyDate" />
+                <ScalarProperty Name="Closeby" ColumnName="Closeby" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PivotDate" ColumnName="PivotDate" />
+                <ScalarProperty Name="IdGameinfo" ColumnName="IdGameinfo" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="IdParam" ColumnName="IdParam" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="idSize" ColumnName="idSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sizes">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.Size">
+              <MappingFragment StoreEntitySet="Size">
+                <ScalarProperty Name="IdSize" ColumnName="IdSize" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="UrlPhoto" ColumnName="UrlPhoto" />
+                <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwGames">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.vwGame">
+              <MappingFragment StoreEntitySet="vwGame">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGameInfo" ColumnName="IdGameInfo" />
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwTicketByPivotDays">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.vwTicketByPivotDay">
+              <MappingFragment StoreEntitySet="vwTicketByPivotDay">
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetAttemps" FunctionName="www.gana.kleenbebe.com.Store.SP_GetAttemps" />
+          <FunctionImportMapping FunctionImportName="SP_GetGameInfo" FunctionName="www.gana.kleenbebe.com.Store.SP_GetGameInfo" />
+          <FunctionImportMapping FunctionImportName="SP_GetParamsFromGame" FunctionName="www.gana.kleenbebe.com.Store.SP_GetParamsFromGame" />
+          <FunctionImportMapping FunctionImportName="SP_GetScore" FunctionName="www.gana.kleenbebe.com.Store.SP_GetScore">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_GetScore_Result">
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertTicket" FunctionName="www.gana.kleenbebe.com.Store.SP_InsertTicket" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateSaveGame" FunctionName="www.gana.kleenbebe.com.Store.SP_UpdateSaveGame" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateSetGame" FunctionName="www.gana.kleenbebe.com.Store.SP_UpdateSetGame">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_UpdateSetGame_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="IdGameInfo" ColumnName="IdGameInfo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAttemps" FunctionName="www.gana.kleenbebe.com.Store.SP_GetAttemps" />
+          <FunctionImportMapping FunctionImportName="GetGameInfo" FunctionName="www.gana.kleenbebe.com.Store.SP_GetGameInfo" />
+          <FunctionImportMapping FunctionImportName="GetParamsFromGame" FunctionName="www.gana.kleenbebe.com.Store.SP_GetParamsFromGame" />
+          <FunctionImportMapping FunctionImportName="GetScore" FunctionName="www.gana.kleenbebe.com.Store.SP_GetScore">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.GetScore_Result">
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertTicket" FunctionName="www.gana.kleenbebe.com.Store.SP_InsertTicket" />
+          <FunctionImportMapping FunctionImportName="UpdateSaveGame" FunctionName="www.gana.kleenbebe.com.Store.SP_UpdateSaveGame" />
+          <FunctionImportMapping FunctionImportName="UpdateSetGame" FunctionName="www.gana.kleenbebe.com.Store.SP_UpdateSetGame">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.UpdateSetGame_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="IdGameInfo" ColumnName="IdGameInfo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Winners_GetRangeDates" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetRangeDates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Winners_GetRangeDates_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="initialDate" ColumnName="initialDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Winners_GetRangeDates" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetRangeDates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Winners_GetRangeDates_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="initialDate" ColumnName="initialDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Winners_GetTickets" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetTickets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Winners_GetTickets_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Winners_GetTickets" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetTickets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Winners_GetTickets_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Winners_UpdateTicketByPivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_UpdateTicketByPivotDay" />
+          <FunctionImportMapping FunctionImportName="Winners_UpdateTicketByPivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_UpdateTicketByPivotDay" />
+          <FunctionImportMapping FunctionImportName="SP_Winners_GetAllTickets" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetAllTickets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Winners_GetAllTickets_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Winners_GetAllTickets" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetAllTickets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Winners_GetTickets_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Winners_GetGamesByTicket" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetGamesByTicket">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Winners_GetGamesByTicket_Result">
+                <ScalarProperty Name="numberGame" ColumnName="numberGame" />
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Winners_GetGamesByTicket" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetGamesByTicket">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Winners_GetGamesByTicket_Result">
+                <ScalarProperty Name="numberGame" ColumnName="numberGame" />
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Winners_UpdateTickets" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_UpdateTickets" />
+          <FunctionImportMapping FunctionImportName="Winners_UpdateTickets" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_UpdateTickets" />
+          <FunctionImportMapping FunctionImportName="SP_Winners_UpdateLockPivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_UpdateLockPivotDay" />
+          <FunctionImportMapping FunctionImportName="Winners_UpdateLockPivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_UpdateLockPivotDay" />
+          <FunctionImportMapping FunctionImportName="SP_Winners_GetUserRecords" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetUserRecords">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Winners_GetUserRecords_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+                <ScalarProperty Name="numberGame" ColumnName="numberGame" />
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Winners_GetUserRecords" FunctionName="www.gana.kleenbebe.com.Store.SP_Winners_GetUserRecords">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Winners_GetUserRecords_Result">
+                <ScalarProperty Name="PivotDayId" ColumnName="PivotDayId" />
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="BestTime" ColumnName="BestTime" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+                <ScalarProperty Name="TicketAttempts" ColumnName="TicketAttempts" />
+                <ScalarProperty Name="TicketPath" ColumnName="TicketPath" />
+                <ScalarProperty Name="CompetitorUID" ColumnName="CompetitorUID" />
+                <ScalarProperty Name="CompetitorFirstName" ColumnName="CompetitorFirstName" />
+                <ScalarProperty Name="CompetitorLastName" ColumnName="CompetitorLastName" />
+                <ScalarProperty Name="CompetitorEmail" ColumnName="CompetitorEmail" />
+                <ScalarProperty Name="CompetitorBirthDay" ColumnName="CompetitorBirthDay" />
+                <ScalarProperty Name="CompetitorPhone" ColumnName="CompetitorPhone" />
+                <ScalarProperty Name="BestTimeIdTicket" ColumnName="BestTimeIdTicket" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+                <ScalarProperty Name="numberGame" ColumnName="numberGame" />
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Pivot_DeletePivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_DeletePivotDay" />
+          <FunctionImportMapping FunctionImportName="SP_Pivot_GetGameInfo" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_GetGameInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Pivot_GetGameInfo_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Pivot_GetParams" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_GetParams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Pivot_GetParams_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Pivot_GetPivotDays" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_GetPivotDays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Pivot_GetPivotDays_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PivotDate" ColumnName="PivotDate" />
+                <ScalarProperty Name="IdGameinfo" ColumnName="IdGameinfo" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="IdParam" ColumnName="IdParam" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+                <ScalarProperty Name="Closeby" ColumnName="Closeby" />
+                <ScalarProperty Name="ClosebyDate" ColumnName="ClosebyDate" />
+                <ScalarProperty Name="IsLive" ColumnName="IsLive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Pivot_UpdatePivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_UpdatePivotDay" />
+          <FunctionImportMapping FunctionImportName="Pivot_DeletePivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_DeletePivotDay" />
+          <FunctionImportMapping FunctionImportName="Pivot_GetGameInfo" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_GetGameInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Pivot_ComboBox_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pivot_GetParams" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_GetParams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Pivot_ComboBox_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pivot_GetPivotDays" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_GetPivotDays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Pivot_GetPivotDays_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PivotDate" ColumnName="PivotDate" />
+                <ScalarProperty Name="IdGameinfo" ColumnName="IdGameinfo" />
+                <ScalarProperty Name="GameDescription" ColumnName="GameDescription" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="IdParam" ColumnName="IdParam" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+                <ScalarProperty Name="Closeby" ColumnName="Closeby" />
+                <ScalarProperty Name="ClosebyDate" ColumnName="ClosebyDate" />
+                <ScalarProperty Name="IsLive" ColumnName="IsLive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pivot_UpdatePivotDay" FunctionName="www.gana.kleenbebe.com.Store.SP_Pivot_UpdatePivotDay" />
+          <FunctionImportMapping FunctionImportName="SP_Session_GetAdminUser" FunctionName="www.gana.kleenbebe.com.Store.SP_Session_GetAdminUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.SP_Session_GetAdminUser_Result">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Session_GetAdminUser" FunctionName="www.gana.kleenbebe.com.Store.SP_Session_GetAdminUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="www.gana.kleenbebe.com.Session_GetAdminUser_Result">
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="AdminUsers">
+            <EntityTypeMapping TypeName="www.gana.kleenbebe.com.AdminUser">
+              <MappingFragment StoreEntitySet="AdminUser">
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

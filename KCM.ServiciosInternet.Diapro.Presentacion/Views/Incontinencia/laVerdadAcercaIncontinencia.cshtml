@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Rompamos mitos de la incontinencia, Productos para Incontinencia";
+}
+
+@section metas{
+    @* Aquí colocar los metas que van en <head> *@
+<meta id="ctl00_MetaDesc" name="description" content="Seguro alguna vez has escuchado una de estas falsedades alrededor de la incontinencia. Tenemos la información para decir adiós a estos mitos." />
+<meta id="ctl00_MetaKey" name="keywords" content="Diapro, Productos incontinencia, incontinencia urinaria, pipi, pañales para adulto, pañales predoblados, calzón para incontinecia, Toallas Húmedas, Incontinencia, incontinencia en adultos, escapes de orina, se me sale la pipi"/>
+<link rel="canonical" href='@(ViewBag.UrlSite + "/Incontinencia/la-verdad-acerca-de-la-incontinencia")' />
+}
+
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerVerdadIncont.webp" title="La verdad de la Incontinencia" alt="La verdad de la Incontinencia" class="img-responsive d-none d-sm-none d-lg-block">
+                <img src="~/img/headerVerdadIncontMobile.webp" title="Consejos sobre Incontinencia" alt="Consejos sobre Incontinencia" class="img-responsive  d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+ <div class="container artIncontinencia">
+        <h1>La verdad acerca de la incontinencia</h1>
+        <p>La falta de información puede llevarnos a creer que es imposible llevar una vida normal, por eso es necesario hacer las preguntas que creamos necesarias para despejar cualquier duda.</p>
+           <p>Estos consejos te ayudarán a aclarar los mitos más comunes sobre la incontinencia.</p>
+            <h2>La incontinencia urinaria afecta solo a adultos mayores.</h2>
+            <p>La incontinencia sigue siendo un tema Tabú para muchas personas, la realidad es que personas de todas las edades son propensas a padecerla, desde mujeres embarazadas, personas con sobrepeso o estreñimiento hasta deportistas y no es una afección exclusiva del sector de adultos mayores.</p>
+            <hs2>La Incontinencia no tiene cura.</hs2>
+            <p>Ya que la incontinencia es un debilitamiento de músculos y suelo pélvico, es posible contrarrestar sus efectos en el cuerpo y disminuir su frecuencia con ejercicios de rehabilitación que les ayudará a disminuir su impacto y, en muchos casos, eliminarla casi por completo. Además de que para muchas personas, una cirugía puede ser una opción que su médico recomiende.</p>
+             
+            <h2>Mojar la cama es para llamar la atención.</h2>
+            <p>Se cree que muchas personas lo hacen cuando sus facultades mentales le indican que necesitan atención por parte de sus familiares, lo cierto es que se necesita de un diagnóstico médico para poder afirmar este tipo de hechos en relación al paciente.</p>
+             
+            <h2>Tendré que dejar de hacer todo lo que me gusta.</h2>
+            <p>A pesar de tener escapes de orina abundantes, no necesitas dejar atrás todas tus actividades, puedes realizar algunas modificaciones, pues tendrás necesidades distintas, pero con los cuidados necesarios, podrás llevar tu vida de manera normal.</p>
+             
+            <h2>No es grave, no hay que darle importancia.</h2>
+            <p>Esta es una creencia errónea de muchas personas, tal vez por no querer asumir el padecimiento, pero como todo cambio en la salud, es necesario llevar un tratamiento distinto y específico para el padecimiento.</p> 
+        <br>
+        <p class="text-info small"><strong>Fuente:</strong> Salud 180<br>
+            <strong>Link:</strong><a href="https://www.salud180.com/salud-dia-dia/5-mitos-sobre-la-incontinencia-urinaria" target="_blank" rel="noopener">
+                http://bit.ly/2hyWwXT</a>
+        </p>
+    </div>
+
+<div class="container artProd">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 col-sm-12 col-xs-12 frase">
+                <h3><strong>Disfruta la vida</strong></h3>
+               <p><em>Mantente activa, nosotros te ayudamos<br> a sentirte segura con protección 100% confiable</em></p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 artProducto center-block text-center">
+                <img src="~/img/pantsCalzones.webp" title="Pants Calzones para Incontinencia Urinaria" alt="Pants Calzones para Incontinencia Urinaria">
+                <h4>Pants Calzones Diapro®</h4>
+                <div class="butConoceSecc"><span><a href="/Productos/pants-calzones-diapro">CONÓCELO AQUÍ</a></span></div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+@Html.Partial("_sliderIncontinencia")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}

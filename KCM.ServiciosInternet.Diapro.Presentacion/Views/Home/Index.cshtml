@@ -1,0 +1,333 @@
+﻿@{
+    ViewBag.Title = "Diapro | Productos para la Incontinencia Urinaria";
+}
+
+@section metas{
+<meta id="ctl00_MetaDesc" name="description"
+    content="Diapro es la marca mexicana de productos para la incontinencia urinaria. Conoce qué es la incontinencia y los tratamientos para los escapes de orina." />
+<meta id="ctl00_MetaKey" name="keywords"
+    content="diapro, pañales para adulto, calzones desechables, incontinencia urinaria, incontinencia en adultos, escapes de orina, se me sale la pipi, " />
+<link rel="canonical" href="/Home/Index" />
+}
+
+@section styles{
+
+@*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+<div>
+    <div id="myCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+
+        <!-- Indicators -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="~/img/diapro-productos.webp" width="1400" height="500" title="Pañales Diapro"
+                    alt="Pañales Diapro" class="slider1 d-block w-100">
+                <div class="carousel-caption ">
+                    <h3>GARANTÍA ES<br> MÁXIMA ABSORCIÓN</h3>
+                    <div class="buttonSlider" onclick="descubreMas()"><span>Descubre más</span></div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="~/img/diapro-productos2.webp" width="1400" height="500" title="Pañal Diapro Absorción" alt="Pañal Diapro Absorción"
+                    class="slider1 d-block w-100">
+            </div>
+        </div>
+        <!-- Left and right controls -->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- carousel top MOVIL-->
+<div id="carouselMovil" class="carousel slide carousel-dark" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" role="option" data-bs-interval="4000">
+            <img src="~/img/productosDiaproMovil.webp" width="400" height="313" class="slider1 d-block w-100" title="Pañal Confort Diapro"
+                alt="Pañal Confort Diapro">
+            <div class="carousel-caption center-block text-center">
+                <h3>GARANTÍA ES<br> MÁXIMA ABSORCIÓN</h3>
+                <div class="botonMovil" onclick="descubreMas()"><span>Descubre más</span></div>
+            </div>
+        </div>
+        <div class="carousel-item" role="option" data-bs-interval="4000">
+            <img src="~/img/productosDiaproMovil2.webp" width="400" height="313" class="slider1 d-block w-100" title="Pañal Confort Diapro"
+                alt="Pañal Confort Diapro">
+            <div class="carousel-caption">
+            </div>
+        </div>
+    </div>
+    @*<button class="carousel-control-prev" type="button" data-bs-target="#carouselMovil" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselMovil" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>*@
+</div>
+<br><br>
+<div class="divTextoHome container-fluid text-center">
+    <h1>Diapro<sup>&reg;</sup> te brinda <strong>protección 100% confiable</strong></h1><br>
+</div>
+<!-- carousel movil fin-->
+<!-- carousel icons movil -->
+<div id="Carouselicons" class="carousel slide center-block text-center d-md-none d-lg-none d-xl-none"
+    data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#Carouselicons" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#Carouselicons" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#Carouselicons" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#Carouselicons" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active center-block text-center" role="option" data-bs-interval="5000">
+            <img src="~/img/iconGelanitiza.webp" width="150" height="150" title="Gelatiniza Líquidos"
+                alt="Gelatiniza Líquidos">
+            <h2>GELATINIZA LOS LÍQUIDOS</h2>
+        </div>
+        <div class="carousel-item center-block text-center" role="option" data-bs-interval="5000">
+            <img src="~/img/iconAromaManzanilla.webp" loading="lazy" title="Aroma a Manzanilla"
+                alt="Aroma a Manzanilla">
+            <h3>CON AROMA A MANZANILLA</h3>
+        </div>
+        <div class="carousel-item center-block text-center" role="option" data-bs-interval="5000">
+            <img src="~/img/iconTelaRespirable.webp" loading="lazy" title="Cuibierta tipo tela respirable"
+                alt="Cuibierta tipo tela respirable">
+            <h3>CUBIERTA TIPO TELA RESPIRABLE</h3>
+        </div>
+        <div class="carousel-item center-block text-center" role="option" data-bs-interval="5000">
+            <img src="~/img/iconTextura-ultrasuave.webp" loading="lazy" title="Textura ultrasuave"
+                alt="Textura ultrasuave">
+            <h3>TEXTURA ULTRASUAVE</h3>
+        </div>
+    </div>
+    <br><br>
+</div>
+
+<!-- carousel icons movil end -->
+<!-- carousel ICONS desktop-->
+<div class="container-fluid text-center iconoshome d-lg-block d-md-block d-xs-none d-sm-none">
+    <div class="row">
+
+        <div class="col-md-3">
+            <img src="~/img/iconGelanitiza.webp" width="150" height="150" title="Gelatiniza Líquidos"
+                alt="Gelatiniza Líquidos">
+            <h2>GELATINIZA LOS LÍQUIDOS</h2>
+        </div>
+
+        <div class="col-md-3">
+            <img src="~/img/iconAromaManzanilla.webp" width="150" height="150" title="Aroma a Manzanilla"
+                alt="Aroma a Manzanilla">
+            <h3>CON AROMA A MANZANILLA</h3>
+        </div>
+
+        <div class="col-md-3">
+            <img src="~/img/iconTelaRespirable.webp" width="150" height="150" title="Cuibierta tipo tela respirable"
+                alt="Cuibierta tipo tela respirable">
+            <h3>CUBIERTA TIPO TELA RESPIRABLE</h3>
+        </div>
+        <div class="col-md-3">
+            <img src="~/img/iconTextura-ultrasuave.webp" width="150" height="150" title="Textura ultrasuave"
+                alt="Textura ultrasuave">
+            <h3>TEXTURA ULTRASUAVE</h3>
+        </div>
+
+    </div>
+</div>
+<!-- logo-slider fin -->
+</div>
+<div class="divTextoHome container-fluid text-center">
+    <div class="row">
+        <h2>Tecnología de máxima absorción con aroma a manzanilla y textura ultrasuave</h2> <br>
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <div class="row divpanal">
+
+        <div class="col-xl-1 col-xxl-2"></div>
+        <div class="col-md-4 col-xl-4 col-xxl-4 col-sx-12 col-lg-4">
+            <h3>Pañal Anatómico<br> para Adulto<br> Diapro<sup>&reg;</sup></h3>
+            <div class="butDescubre" onclick="descubreMas()"><span>Descubre más</span></div>
+        </div>
+        <div class="col-md-1 col-xxl-1 d-sm-block"></div>
+        <div class="col-md-4 divproducto col-sx-12 center-block" id="animpanal">
+            <section class="center-block">
+                <img class="bottom img-responsive center-block" src="~/img/diapro10panales.webp" loading="lazy"
+                    alt="Diapro proteccion confiable" title="Diapro proteccion confiable" />
+                <img class="top" src="~/img/diapro10panales2.webp" loading="lazy" alt="Diapro confort"
+                    title="Diapro confort" />
+            </section>
+        </div>
+        <div class="col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+<br /><br /><br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="espacio d-none d-sm-none"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row otrosProductos">
+        <div class="col-md-4 col-sm-12">
+            <div class="row divProductos">
+                <div class="float-left">
+                    <p>
+                        Toallas Húmedas<br>
+                        <span class="diapro1">Diapro &reg;</span>
+                    </p>
+                    <div class="buttonConoce" onclick="conoceToallitas()"><span>Conoce más</span></div>
+                </div>
+                <div class="float-right">
+                    <img src="~/img/prod-toallitas.webp" width="173" height="135" loading="lazy"
+                        class="img1 img-responsive center-block" alt="Diapro toallitas humedas"
+                        title="Diapro toallas humedas">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="row divProductos">
+                <div class="float-left ">
+                    <p>
+                        Pants Calzones<br>
+                        <span class="diapro2">Diapro &reg;</span>
+                    </p>
+                    <div class="buttonConoce" onclick="conocePants()"><span>Conoce más</span></div>
+                </div>
+                <div class="float-right">
+                    <img src="~/img/prod-calzones.webp" width="134" height="129" loading="lazy"
+                        class="img-responsive center-block" alt="Diapro pants calzones" title="Diapro pants calzones">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="row divProductos">
+                <div class="float-left ">
+                    <p>
+                        Predoblados<br>
+                        <span class="diapro3">Diapro &reg; Gel</span>
+                    </p>
+                    <div class="buttonConoce3" onclick="conocePredoblados()"><span>Conoce más</span></div>
+                </div>
+                <div class="float-right">
+                    <img src="~/img/prod-panalesPredoblados.webp" width="134" height="135" loading="lazy"
+                        class="img-responsive center-block" alt="Diapro pañales predoblados"
+                        title="Diapro pañales predoblados gel">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container-fluid text-center">
+    <div class="row">
+        <h2>Información relevante acerca de la <strong>incontinencia</strong></h2>
+    </div>
+</div>
+
+<div class="container d-sm-block d-none">
+    <div class="row">
+        <div class="boxloading noticiasWaiting" style="display:initial;height:60%;width:70%">
+            <div class="preloader" style="margin-top:16%"></div>
+        </div>
+        <iframe id="ifrmNoticias" src="" loading="lazy" class="noticiasHome" title="Notas incontinencia"></iframe>
+    </div>
+</div>
+<!-- Notas movil -->
+<div class="container-fluid iframenotasMovil">
+    <div class="boxloading noticiasWaiting" style="display:block;width:352px;height:489px">
+        <div class="preloader" style="margin-top:60%"></div>
+    </div>
+    <iframe id="ifrmNoticiasMovil" src="" title="Notas sobre incontinencia" class="noticiasHome"
+        loading="lazy"></iframe>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div id="galvideosDesktop">
+                <div class="boxloading videosWaiting" style="display:initial;height:55%">
+                    <div class="preloader" style="margin-top:12%"></div>
+                </div>
+                <iframe src="" loading="lazy" title="Video incontinencia" class="iframeVideos"></iframe>
+            </div>
+            <div id="galvideosMovil" class="center-block text-center">
+                <div class="boxloading videosWaiting" style="display:initial;height:30%; width:347px;">
+                    <div class="preloader" style="margin-top:26%"></div>
+                </div>
+                <iframe src="" loading="lazy" title="Video sobre incontinencia" class="iframeVideos"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+@section scripts{
+
+<script>
+    // Carga los iframe al momento de que se muestran en el cliente
+
+    window.addEventListener('load', function () {
+        Observer.registerSelector('#ifrmNoticias', {
+            IntersectingAction: function () {
+                this.src = "/Noticias/Index";
+            }
+        });
+
+        Observer.registerSelector('#ifrmNoticiasMovil', {
+            IntersectingAction: function () {
+                this.src = "/Noticias/sliderNotasMovil";
+            }
+        });
+
+        Observer.registerSelector('.iframeVideos', {
+            IntersectingAction: function () {
+                this.src = "/SliderVideos/Index";
+            }
+        });
+
+        document.querySelectorAll('.noticiasHome, .iframeVideos').forEach(elem => elem.addEventListener('load', function (evt) {
+            if (evt.currentTarget.classList.contains('noticiasHome')) {
+                document.querySelectorAll('.noticiasWaiting').forEach(elem => elem.style.display = "none");
+            }
+            else
+                if (evt.currentTarget.classList.contains('iframeVideos')) {
+                    document.querySelectorAll('.videosWaiting').forEach(elem => elem.style.display = "none");
+                }
+        }));
+
+    });
+</script>
+
+<script defer id="rendered-js">
+    function descubreMas() {
+        location.href = '/Productos/panal-anatomico-diapro';
+    }
+    function conocePredoblados() {
+        location.href = '/Productos/gel-panales-predoblados';
+    }
+    function conocePants() {
+        location.href = '/Productos/pants-calzones-diapro';
+    }
+    function conoceToallitas() {
+        location.href = '/Productos/toallitas-humedas';
+    }
+   
+</script>
+}

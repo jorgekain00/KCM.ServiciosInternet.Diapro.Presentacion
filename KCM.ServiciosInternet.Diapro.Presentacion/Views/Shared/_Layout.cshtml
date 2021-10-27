@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @*<meta charset="utf-8">*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon-180x180.png" />
+    <meta name="theme-color" content="#4285f4">
+    @RenderSection("metas", required: false)
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+
+    <!-- Estilos en general -->
+
+    <style>
+        .preloader {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10%;
+            width: 70px;
+            height: 70px;
+            border: 10px solid #eee;
+            border-top: 10px solid #122566;
+            border-radius: 50%;
+            animation-name: girar;
+            /*animation-duration: 2s;*/
+            animation: girar 1s infinite;
+        }
+
+        @@keyframes girar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @@media (min-width: 900px) {
+            .preloader {
+                margin-top: 11%;
+            }
+        }
+
+        @@media (max-width: 480px) {
+            .preloader {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 60%;
+            }
+        }
+
+        .boxloading {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: white;
+            display: none;
+            z-index: 100;
+        }
+    </style>
+       <!-- fin de estilos en general -->
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-33826784-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+    <!-- Google Tag Manager -->
+    <!-- <script> -->
+	
+	<!-- (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': -->
+<!-- new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], -->
+<!-- j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= -->
+<!-- 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); -->
+<!-- })(window,document,'script','dataLayer','GTM-PGNSDL'); -->
+	
+	<!-- </script> <!-- End Google Tag Manager -->
+</head>
+
+<body>
+
+	
+	
+    <div id="pageLoading" class="boxloading" style="display:block;position:fixed">
+        <div class="preloader"> </div>
+        </div>
+
+    @Html.Partial("_menu")
+
+    @RenderBody()
+
+    @Html.Partial("_footer")
+
+    @Scripts.Render("~/bundles/scripts")
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script>
+        window.addEventListener('load', function () {
+			document.getElementById('pageLoading').style.display = "none"
+        });
+        function contactoForm() {
+            location.href = '#contacto';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C26C8C26-342E-4B81-BFF9-376616873CD3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KCM.ServiciosInternet.Diapro.Presentacion</RootNamespace>
+    <AssemblyName>KCM.ServiciosInternet.Diapro.Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CuidadoresController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IncontinenciaController.cs" />
+    <Compile Include="Controllers\NoticiasController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\SliderVideosController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\slidervideos.css" />
+    <Content Include="Content\styleIncontinencia.css" />
+    <Content Include="Content\stylemain.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\amin4Vasos.gif" />
+    <Content Include="img\anim4Vasos.gif" />
+    <Content Include="img\animVasos.gif" />
+    <Content Include="img\Elviajelargo.mp4" />
+    <Content Include="img\hederprueba.jpg" />
+    <Content Include="img\logoDiapro.svg" />
+    <Content Include="img\logoDiaproMail.png" />
+    <Content Include="img\productos.png" />
+    <Content Include="img\spin.svg" />
+    <Content Include="img\Tipsincontinencia.mp4" />
+    <Content Include="Scripts\JFM.ui.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="img\productosDiaproMovil.webp" />
+    <Content Include="img\prod-panal-AnatomicoDiapro.webp" />
+    <Content Include="img\productosDiaproMovil2.webp" />
+    <Content Include="img\poster-Diapro.webp" />
+    <Content Include="img\retailSanborns.webp" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="img\headerConsejosParaCuidadoMobile.webp" />
+    <Content Include="img\headerCudadoPacientesSillaMobile.webp" />
+    <Content Include="img\headerCuidadoPaciantesCamaMobile.webp" />
+    <Content Include="img\headerEjerciciosKegelMobile.webp" />
+    <Content Include="img\headerHerramientasParaCuidadoresMobile.webp" />
+    <Content Include="img\headerHigienePacientesMobile.webp" />
+    <Content Include="img\headerTiposIncontMobile.webp" />
+    <Content Include="img\headerTratamientosIncontMobile.webp" />
+    <Content Include="img\headerVerdadIncontMobile.webp" />
+    <Content Include="img\retailChedraui.webp" />
+    <Content Include="img\retailFarmAhorro.webp" />
+    <Content Include="img\retailGuadalajara.webp" />
+    <Content Include="img\retailHeb.webp" />
+    <Content Include="img\retailSanPablo.webp" />
+    <Content Include="img\retailSoriana.webp" />
+    <Content Include="Scripts\Observer.js" />
+    <Content Include="Scripts\popover.js" />
+    <Content Include="Scripts\xss.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_menu.cshtml" />
+    <Content Include="Views\Shared\_sharedlibs.cshtml" />
+    <Content Include="Views\Shared\_thankYouComment.cshtml" />
+    <Content Include="Views\Shared\_formularioContacto.cshtml" />
+    <Content Include="Views\Noticias\sliderNotasMovil.cshtml" />
+    <Content Include="Scripts\popover.js.map" />
+    <Content Include="Views\Home\Index - Copia.cshtml" />
+    <Content Include="Views\SliderVideos\Index - Copia.cshtml" />
+    <Content Include="Views\Productos\toallitasHumedas - Copia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="js backup\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="img\031-s190x90.webp" />
+    <Content Include="img\031.webp" />
+    <Content Include="img\032-s190x90.webp" />
+    <Content Include="img\032.webp" />
+    <Content Include="img\034-s190x90.webp" />
+    <Content Include="img\034.webp" />
+    <Content Include="img\035-s190x90.webp" />
+    <Content Include="img\035.webp" />
+    <Content Include="img\036-s190x90.webp" />
+    <Content Include="img\036.webp" />
+    <Content Include="img\037-s190x90.webp" />
+    <Content Include="img\037.webp" />
+    <Content Include="img\038-s190x90.webp" />
+    <Content Include="img\038.webp" />
+    <Content Include="img\backDiv.webp" />
+    <Content Include="img\bg-textura.webp" />
+    <Content Include="img\but-gel-panales-predoblados.webp" />
+    <Content Include="img\but-pantsCalzones.webp" />
+    <Content Include="img\but-tollitasHumedas.webp" />
+    <Content Include="img\confortG.webp" />
+    <Content Include="img\diapro-productos - copia.webp" />
+    <Content Include="img\diapro-productos.webp" />
+    <Content Include="img\diapro-productos2.webp" />
+    <Content Include="img\diapro-productos3.webp" />
+    <Content Include="img\diapro10panales - copia.webp" />
+    <Content Include="img\diapro10panales.webp" />
+    <Content Include="img\diapro10panales2.webp" />
+    <Content Include="img\hederProductos.webp" />
+    <Content Include="img\iconAntiescurrimiento.webp" />
+    <Content Include="img\iconCubierta-ultrasec.webp" />
+    <Content Include="img\iconMayor-proteccion.webp" />
+    <Content Include="img\iconTextura-ultrasuave.webp" />
+    <Content Include="img\logoDiapro.webp" />
+    <Content Include="img\notasMovil1.webp" />
+    <Content Include="img\notasMovil2.webp" />
+    <Content Include="img\pantsG.webp" />
+    <Content Include="img\predobladoG.webp" />
+    <Content Include="img\prod-borrar1.webp" />
+    <Content Include="img\prod-borrar2.webp" />
+    <Content Include="img\prod-borrar3.webp" />
+    <Content Include="img\prod-calzones.webp" />
+    <Content Include="img\prod-panalesPredoblados.webp" />
+    <Content Include="img\prod-toallitas.webp" />
+    <Content Include="img\seccioNoticias.webp" />
+    <Content Include="img\slider1.webp" />
+    <Content Include="img\slider2.webp" />
+    <Content Include="img\slidermovil1.webp" />
+    <Content Include="img\videos.webp" />
+    <Content Include="img\videosMovil1.webp" />
+    <Content Include="img\videosMovil2.webp" />
+    <Content Include="img\videosMovil3.webp" />
+    <Content Include="img\videosMovil4.webp" />
+    <Content Include="img\videosMovil5.webp" />
+    <Content Include="img\videosMovil6.webp" />
+    <Content Include="img\sombravideos.webp" />
+    <Content Include="img\headerCudadoPacientesSilla.webp" />
+    <Content Include="img\headerCuidadoPacienteSilla.webp" />
+    <Content Include="img\rotatorCudadoPacientesSilla.webp" />
+    <Content Include="img\rotatorCuidadoPacCama.webp" />
+    <Content Include="img\rotatorHerramientasCuidadores.webp" />
+    <Content Include="img\controls.webp" />
+    <Content Include="img\headerCuidadoPaciantesCama.webp" />
+    <Content Include="img\headerHerramientasParaCuidadores.webp" />
+    <Content Include="img\headerProductos.webp" />
+    <Content Include="img\headerProductosMovil.webp" />
+    <Content Include="img\amin4Vasos.webp" />
+    <Content Include="img\confortG3.webp" />
+    <Content Include="img\headerConsejosParaCuidado.webp" />
+    <Content Include="img\headerHigienePacientes.webp" />
+    <Content Include="img\headerTempVinetas.webp" />
+    <Content Include="img\iconAloeVera.webp" />
+    <Content Include="img\iconAromaManzanilla.webp" />
+    <Content Include="img\iconGelanitiza.webp" />
+    <Content Include="img\pantsG2.webp" />
+    <Content Include="img\pantsG3.webp" />
+    <Content Include="img\predobladoG2.webp" />
+    <Content Include="img\predobladoG3.webp" />
+    <Content Include="img\rotatorConsejosParaCuidado.webp" />
+    <Content Include="img\rotatorHigienePacientes.webp" />
+    <Content Include="img\toallitasHumedasG1.webp" />
+    <Content Include="img\toallitasHumedasG2.webp" />
+    <Content Include="img\toallitasHumedasG3.webp" />
+    <Content Include="img\panalesPredoblados.webp" />
+    <Content Include="img\pantsCalzones.webp" />
+    <Content Include="img\toallitasHumedas.webp" />
+    <Content Include="img\retailAmazon.webp" />
+    <Content Include="img\retailWalmart.webp" />
+    <Content Include="img\retailZorro.webp" />
+    <Content Include="img\confortG2.webp" />
+    <Content Include="img\sliderTiposIncontinencia.webp" />
+    <Content Include="img\rotatorTiposIncont.webp" />
+    <Content Include="img\rotatorTiposIncont2.webp" />
+    <Content Include="img\rotatorIncontKegel.webp" />
+    <Content Include="img\rotatorTiposIncont3.webp" />
+    <Content Include="img\headerTiposIncont.webp" />
+    <Content Include="img\headerVerdadIncont.webp" />
+    <Content Include="img\headerTratamientosIncont.webp" />
+    <Content Include="img\headerEjerciciosKegel.webp" />
+    <Content Include="img\ConsejosParaCuidado.webp" />
+    <Content Include="img\CuidadoPacientesCama.webp" />
+    <Content Include="img\cuidadoPacientesSillaRuedas.webp" />
+    <Content Include="img\EjerciciosKegel.webp" />
+    <Content Include="img\HerramientasParaAyudarlo.webp" />
+    <Content Include="img\HigieneEnPacientes.webp" />
+    <Content Include="img\iconCintaReajustable.webp" />
+    <Content Include="img\iconTelaRespirable.webp" />
+    <Content Include="img\LaVerdadAcercaIncontinencia.webp" />
+    <Content Include="img\logoDiaproPreload.webp" />
+    <Content Include="img\slider-productos.webp" />
+    <Content Include="img\sliderIncont1.webp" />
+    <Content Include="img\sliderNotas-ConsejosMejorCuidado.webp" />
+    <Content Include="img\TbmCuidadoPacientesSillaRuedas.webp" />
+    <Content Include="img\tiposIcontinencia.webp" />
+    <Content Include="img\tmbConsejosParaCuidado.webp" />
+    <Content Include="img\tmbCuidadoPacientesCama.webp" />
+    <Content Include="img\tmbEjerciciosKegel.webp" />
+    <Content Include="img\tmbHerramientasParaAyudarlo.webp" />
+    <Content Include="img\tmbHigienePacientes.webp" />
+    <Content Include="img\tmbLaVerdadAcercaIncontinencia.webp" />
+    <Content Include="img\tmbTiposIncontinencia.webp" />
+    <Content Include="img\tmbTratamientosIncontinencia.webp" />
+    <Content Include="img\tratamientosIncontinencia.webp" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Noticias\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\SliderVideos\Index.cshtml" />
+    <Content Include="Views\Error\error404.cshtml" />
+    <Content Include="Views\Cuidadores\Index.cshtml" />
+    <Content Include="Views\Cuidadores\paciente_Silla_Ruedas.cshtml" />
+    <Content Include="Views\Cuidadores\sliderCuidadores1.cshtml" />
+    <Content Include="Views\Cuidadores\herramientas_cuidadores.cshtml" />
+    <Content Include="Views\Cuidadores\cuidado_pacientes_cama.cshtml" />
+    <Content Include="Views\Home\avisoPrivacidad.cshtml" />
+    <Content Include="Views\Shared\_sliderCuidadores.cshtml" />
+    <Content Include="Views\Cuidadores\higiene_pacientes.cshtml" />
+    <Content Include="Views\Cuidadores\consejos_mejor_cuidado.cshtml" />
+    <Content Include="Views\Productos\gelPanalesPredoblados.cshtml" />
+    <Content Include="Views\Productos\panalAnatomicoDiapro.cshtml" />
+    <Content Include="Views\Productos\pantsCalzonesDiapro.cshtml" />
+    <Content Include="Views\Productos\toallitasHumedas.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Shared\_seccionProductos.cshtml" />
+    <Content Include="Views\Incontinencia\Index.cshtml" />
+    <Content Include="Views\Incontinencia\tiposIncontinencia.cshtml" />
+    <Content Include="Views\Shared\_sliderIncontinencia.cshtml" />
+    <Content Include="Views\Incontinencia\sliderincontinencia1.cshtml" />
+    <Content Include="Views\Incontinencia\laVerdadAcercaIncontinencia.cshtml" />
+    <Content Include="Views\Incontinencia\tratamientosIncontinencia.cshtml" />
+    <Content Include="Views\Incontinencia\ejerciciosKegel.cshtml" />
+    <Content Include="Views\Shared\_panalAtomico.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KCM.ServiciosInternet.Common.Library\KCM.ServiciosInternet.Common.Library.csproj">
+      <Project>{65417fa7-b600-463f-8c04-6ad77fc51554}</Project>
+      <Name>KCM.ServiciosInternet.Common.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KCM.ServiciosInternet.Site.Business\KCM.ServiciosInternet.Site.Business.csproj">
+      <Project>{5b376f9f-54ae-49ab-b04f-5645c4388dd2}</Project>
+      <Name>KCM.ServiciosInternet.Site.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KCM.ServiciosInternet.Site.Entity\KCM.ServiciosInternet.Site.Entity.csproj">
+      <Project>{bbe3d5d0-1edb-4d3f-b57f-698329613dbc}</Project>
+      <Name>KCM.ServiciosInternet.Site.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20522</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20522/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

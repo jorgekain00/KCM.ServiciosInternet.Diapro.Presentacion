@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.Diapro.Presentacion", "KCM.ServiciosInternet.Diapro.Presentacion\KCM.ServiciosInternet.Diapro.Presentacion.csproj", "{C26C8C26-342E-4B81-BFF9-376616873CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.KleenexMascarillas.Presentacion", "KCM.ServiciosInternet.KleenexMascarillas.Presentacion\KCM.ServiciosInternet.KleenexMascarillas.Presentacion.csproj", "{74674785-9933-4FDF-8FC0-91D2E0D030E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.Site.Entity", "KCM.ServiciosInternet.Site.Entity\KCM.ServiciosInternet.Site.Entity.csproj", "{BBE3D5D0-1EDB-4D3F-B57F-698329613DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.Site.Business", "KCM.ServiciosInternet.Site.Business\KCM.ServiciosInternet.Site.Business.csproj", "{5B376F9F-54AE-49AB-B04F-5645C4388DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.Common.Library", "KCM.ServiciosInternet.Common.Library\KCM.ServiciosInternet.Common.Library.csproj", "{65417FA7-B600-463F-8C04-6AD77FC51554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.Google.Services", "KCM.ServiciosInternet.Google.Services\KCM.ServiciosInternet.Google.Services.csproj", "{E92EF58E-0137-42BC-B307-5344346E3E71}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "KCM.ServiciosInternet.Site.BD", "KCM.ServiciosInternet.Site.BD\KCM.ServiciosInternet.Site.BD.sqlproj", "{5BE8FC57-6323-4000-BC8B-5E1F845C57C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCM.ServiciosInternet.ganaKleenbebe.FrontEnd", "KCM.ServiciosInternet.ganaKleenbebe.FrontEnd\KCM.ServiciosInternet.ganaKleenbebe.FrontEnd.csproj", "{5B67BEE9-0C9E-4514-B108-694864139B39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{9A963FDA-5D42-4516-B192-07CFDCAB51C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C26C8C26-342E-4B81-BFF9-376616873CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26C8C26-342E-4B81-BFF9-376616873CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26C8C26-342E-4B81-BFF9-376616873CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26C8C26-342E-4B81-BFF9-376616873CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74674785-9933-4FDF-8FC0-91D2E0D030E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74674785-9933-4FDF-8FC0-91D2E0D030E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74674785-9933-4FDF-8FC0-91D2E0D030E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74674785-9933-4FDF-8FC0-91D2E0D030E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE3D5D0-1EDB-4D3F-B57F-698329613DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE3D5D0-1EDB-4D3F-B57F-698329613DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE3D5D0-1EDB-4D3F-B57F-698329613DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE3D5D0-1EDB-4D3F-B57F-698329613DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B376F9F-54AE-49AB-B04F-5645C4388DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B376F9F-54AE-49AB-B04F-5645C4388DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B376F9F-54AE-49AB-B04F-5645C4388DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B376F9F-54AE-49AB-B04F-5645C4388DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65417FA7-B600-463F-8C04-6AD77FC51554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65417FA7-B600-463F-8C04-6AD77FC51554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65417FA7-B600-463F-8C04-6AD77FC51554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65417FA7-B600-463F-8C04-6AD77FC51554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E92EF58E-0137-42BC-B307-5344346E3E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E92EF58E-0137-42BC-B307-5344346E3E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E92EF58E-0137-42BC-B307-5344346E3E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E92EF58E-0137-42BC-B307-5344346E3E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE8FC57-6323-4000-BC8B-5E1F845C57C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE8FC57-6323-4000-BC8B-5E1F845C57C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5BE8FC57-6323-4000-BC8B-5E1F845C57C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE8FC57-6323-4000-BC8B-5E1F845C57C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE8FC57-6323-4000-BC8B-5E1F845C57C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5B67BEE9-0C9E-4514-B108-694864139B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B67BEE9-0C9E-4514-B108-694864139B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B67BEE9-0C9E-4514-B108-694864139B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B67BEE9-0C9E-4514-B108-694864139B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A963FDA-5D42-4516-B192-07CFDCAB51C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A963FDA-5D42-4516-B192-07CFDCAB51C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A963FDA-5D42-4516-B192-07CFDCAB51C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A963FDA-5D42-4516-B192-07CFDCAB51C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C78FE56-51A7-4B27-9EA6-7F6D798F414A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ustwa731:8080/tfs/int.na.mx.consumerit_mexico
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = KCM.ServiciosInternet.Common.Library\\KCM.ServiciosInternet.Common.Library.csproj
+		SccProjectName1 = KCM.ServiciosInternet.Common.Library
+		SccLocalPath1 = KCM.ServiciosInternet.Common.Library
+		SccProjectUniqueName2 = KCM.ServiciosInternet.Diapro.Presentacion\\KCM.ServiciosInternet.Diapro.Presentacion.csproj
+		SccProjectName2 = KCM.ServiciosInternet.Diapro.Presentacion
+		SccLocalPath2 = KCM.ServiciosInternet.Diapro.Presentacion
+		SccProjectUniqueName3 = KCM.ServiciosInternet.Google.Services\\KCM.ServiciosInternet.Google.Services.csproj
+		SccProjectName3 = KCM.ServiciosInternet.Google.Services
+		SccLocalPath3 = KCM.ServiciosInternet.Google.Services
+		SccProjectUniqueName4 = KCM.ServiciosInternet.KleenexMascarillas.Presentacion\\KCM.ServiciosInternet.KleenexMascarillas.Presentacion.csproj
+		SccProjectName4 = KCM.ServiciosInternet.KleenexMascarillas.Presentacion
+		SccLocalPath4 = KCM.ServiciosInternet.KleenexMascarillas.Presentacion
+		SccProjectUniqueName5 = KCM.ServiciosInternet.Site.Business\\KCM.ServiciosInternet.Site.Business.csproj
+		SccProjectName5 = KCM.ServiciosInternet.Site.Business
+		SccLocalPath5 = KCM.ServiciosInternet.Site.Business
+		SccProjectUniqueName6 = KCM.ServiciosInternet.Site.Entity\\KCM.ServiciosInternet.Site.Entity.csproj
+		SccProjectName6 = KCM.ServiciosInternet.Site.Entity
+		SccLocalPath6 = KCM.ServiciosInternet.Site.Entity
+		SccProjectUniqueName7 = KCM.ServiciosInternet.Site.BD\\KCM.ServiciosInternet.Site.BD.sqlproj
+		SccProjectName7 = KCM.ServiciosInternet.Site.BD
+		SccLocalPath7 = KCM.ServiciosInternet.Site.BD
+		SccProjectUniqueName8 = KCM.ServiciosInternet.ganaKleenbebe.FrontEnd\\KCM.ServiciosInternet.ganaKleenbebe.FrontEnd.csproj
+		SccProjectName8 = KCM.ServiciosInternet.ganaKleenbebe.FrontEnd
+		SccLocalPath8 = KCM.ServiciosInternet.ganaKleenbebe.FrontEnd
+		SccProjectUniqueName9 = ConsoleTest\\ConsoleTest.csproj
+		SccProjectName9 = ConsoleTest
+		SccLocalPath9 = ConsoleTest
+	EndGlobalSection
+EndGlobal

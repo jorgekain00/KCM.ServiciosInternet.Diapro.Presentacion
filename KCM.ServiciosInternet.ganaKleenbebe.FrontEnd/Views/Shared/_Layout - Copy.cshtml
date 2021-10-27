@@ -1,0 +1,138 @@
+﻿@using KCM.ServiciosInternet.Site.Entity.Config
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
+    @RenderSection("metas", required: false)
+    <title>@ViewBag.Title</title>
+	
+	    <style>
+		.loader {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  position:fixed;
+		  z-index: 500;
+		  /*background: rgb(255, 225, 255,0.7);*/
+		  width:100vw;
+		  height:100vh;
+		}
+
+		.loader > span {
+		  -webkit-animation: 0.7s ease-in 0s infinite alternate throb;
+				  animation: 0.7s ease-in 0s infinite alternate throb;
+		  width: 70px;
+		  height: 70px;
+		  background: #f00;
+		  transform: rotateZ(45deg);
+		  position: relative;
+		  filter: drop-shadow(2px 2px 2px #000);
+		}
+		
+		.loader > span:nth-child(n+2){
+			margin-left:100px;
+		}
+		
+		.loader > span::before, .loader > span::after {
+		  content: "";
+		  width: 70px;
+		  height: 70px;
+		  background: #f00;
+		  position: absolute;
+		  border-radius: 50%;
+		   animation: 0.7s ease-in 0s infinite alternate throb1;
+		}
+		
+		.loader > span::before {
+		  top: 0;
+		  left: -50%;
+		}
+		
+		.loader > span::after {
+		  top: -50%;
+		  right: 0;
+		}
+
+		@@-webkit-keyframes throb {
+		  0% {
+			transform: rotateZ(45deg) scale(1, 1);
+			background: #2e3192;
+		  }
+		  50%{
+			background-color: #f2b0a2;
+		  }
+		  100% {
+			transform: rotateZ(45deg) scale(1.3, 1.3);
+			background: #a0e2fa;
+		  }
+		}
+
+		@@keyframes throb {
+		  0% {
+			transform: rotateZ(45deg) scale(1, 1);
+			background: #2e3192;
+		  }
+		  50%{
+			background-color: #f2b0a2;
+		  }
+		  100% {
+			transform: rotateZ(45deg) scale(1.3, 1.3);
+			background: #a0e2fa;
+		  }
+		}
+		
+		@@keyframes throb1 {
+		  0% {
+			background: #2e3192;
+		  }
+		  50%{
+			background-color: #f2b0a2;
+		  }
+		  100% {
+			background: #a0e2fa;
+		  }
+		}
+		
+		 @@media (max-width:967px) {
+			.loader > span {
+				width: 45px;
+				height: 45px;
+			}
+			
+			.loader > span:nth-child(n+2){
+				margin-left:70px;
+			}
+			
+			.loader > span::before, .loader > span::after {
+				width: 45px;
+				height: 45px;
+			}
+        }
+		
+    </style>
+	
+	
+	
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+</head>
+<body class="kbb_game">
+	<div class="loader">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+    @Html.Partial("_nav")
+    @RenderBody()
+
+    @Html.Partial("_footer")
+
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="@(Global.strUrlSSOService)JS/JFMSSO?apiKey=@(Global.strSSOapiKey)&version=1.0"></script>
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

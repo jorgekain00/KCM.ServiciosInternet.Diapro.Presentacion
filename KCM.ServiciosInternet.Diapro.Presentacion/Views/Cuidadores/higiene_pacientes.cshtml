@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Higiene en pacientes | Diapro Productos para Incontinencia";
+}
+
+
+@section metas{
+   <meta id="ctl00_MetaDesc" name="description" content="Aseo general del paciente en cama" />
+   <meta id="ctl00_MetaKey" name="keywords" content="incontinencia, higiene, pacientes, diapro" />
+   <link rel="canonical" href='@(ViewBag.UrlSite + "/Cuidadores/higiene-en-pacientes")' />
+}
+
+@section styles{
+
+    @*Aquí ingresa los estilos que se colocaran en el html <head> de la página*@
+
+
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 headerArt">
+            <img src="~/img/headerHigienePacientes.webp" title="Higiene en pacientes" alt="Higiene en pacientes" class="img-responsive d-none d-sm-none d-lg-block">
+            <img src="~/img/headerHigienePacientesMobile.webp" title="Higiene en pacientes" alt="Higiene de pacientes en cama" class="img-responsive  d-lg-none d-md-none">
+        </div>
+    </div>
+</div>
+
+<div class="container artIncontinencia">
+    <h1>Higiene en pacientes</h1>
+    <p>
+        El aseo general de un paciente en cama es de vital importancia. Cuando ayudamos a asearse a nuestro familiar
+        aprendemos muchas cosas sobre él: no sólo valoraremos el estado e integridad de su piel, sino que, al ser un
+        momento de gran intimidad, podremos ver sus sentimientos y su proceso de enfermedad, escucharemos sus
+        necesidades y crearemos un clima común en el que la confianza crecerá.
+    </p>
+    <p>
+        Lo primero que debemos hacer es anular las posibles corrientes de aire e informarle todo lo que haremos para
+        asearlo, procurando ofrecerle toda la intimidad que podamos. A continuación, nos lavaremos bien las manos y
+        nos pondremos los guantes.
+    </p>
+    <p>
+        Cuando tengamos el agua de la palangana a una temperatura adecuada, introduciremos una esponja y le lavaremos
+        la cara, evitando el jabón en zonas como los ojos, boca y nariz. Al terminar, lo secaremos con una toalla.
+    </p>
+    <p>
+        Después le quitaremos la ropa de cama y lavaremos el cuello, torso, axilas, brazos, manos y abdomen,
+        insistiendo en las axilas y en zonas de pliegues cutáneos. Secaremos muy bien y taparemos con una toalla
+        para evitar enfriamientos.
+    </p>
+    <p>
+        Seguiremos con el aseo de las extremidades inferiores, poniendo especial cuidado en los espacios
+        interdigitales.
+    </p>
+    <p>
+        En cuanto a los genitales, tenemos dos opciones. Si nuestro familiar es mujer, lavaremos la zona con la
+        esponja jabonosa, de arriba hacia abajo, limpiando cuidadosamente labios y meato urinario. Después,
+        eliminaremos completamente los restos de jabón y secaremos. Si nuestro familiar es hombre, lavaremos con la
+        esponja jabonosa (teniendo especial cuidado con el prepucio), eliminaremos todo resto de jabón y secaremos.
+    </p>
+    <p>
+        El siguiente paso es pedirle que se volteé, para lavar la zona posterior del cuello, espalda, glúteos y
+        muslos. Secaremos bien y aprovecharemos para aplicar crema hidratante, masajeando hasta su total absorción.
+    </p>
+    <p>Por último, lo vestiremos y peinaremos.</p>
+    <p>
+        Para limpieza durante el día recomendamos el uso de Toallas Húmedas para adultos, que sean hipoalergénicas
+        y sin alcohol. Su tamaño Extra Grande permite cubrir la mano entera y dar una limpieza práctica y total. <a href="/Productos/toallitas-humedas" title="Toallas para higiene Diapro">Toallas Húmedas Diapro</a>
+    </p>
+    <br>
+    
+</div>
+
+  <div class="container artProd">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 col-sm-12 col-xs-12 frase">
+                <h4><strong>Cuida a tus familiares</strong></h4>
+                <p><em>Cuida de tus pacientes con nuestras toallas húmedas, el complemento ideal de nuestros productos. </em></p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 artProducto center-block text-center">
+                <img src="~/img/toallitasHumedas.webp" title="Toallas para higiene Diapro" alt="Toallas Húmedas Diapro">
+                <h4>Toallas Húmedas Diapro</h4>
+                <div class="butConoceSecc"><span><a href="/Productos/toallitas-humedas" title="Toallas para higiene Diapro">CONÓCELO AQUÍ</a></span></div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="container TitleArtRel">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Artículos relacionados</h2>
+            </div>
+        </div>
+    </div>
+
+
+@Html.Partial("_sliderCuidadores")
+
+
+@section scripts{
+    @*Aquí ingresa las sentencias javascripts que se agregaran al final de la página
+        y antes del cierra de la etiqueta </body>*@
+
+
+}
